@@ -20,22 +20,39 @@
 </head>
 
 <body class="font-primary antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-body dark:bg-gray-900">
+
+        {{-- Navigation --}}
         @include('layouts.navigation')
 
-        <!-- Page Heading -->
-        @isset($header)
-            <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endisset
+        <div class="flex">
+            {{-- Sidebar --}}
+            <aside
+            class="w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+            aria-label="Sidenav" id="drawer-navigation">
+            @include('layouts.sidebar') <!-- Assuming you have a sidebar view to include -->
+        </aside>
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+
+        <!-- Main Content Area -->
+            <div class="flex-1">
+                <!-- Page Heading -->
+                @isset($header)
+                    <header class="py-12 -mt-36">
+                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-16">
+                            <div class="bg-transparent dark:bg-gray-800 overflow-hidden sm:rounded-lg">
+                                {{ $header }}
+                            </div>
+                        </div>
+                    </header>
+                @endisset
+
+                <!-- Page Content -->
+                <main>
+                    {{ $slot }}
+                </main>
+            </div>
+        </div>
     </div>
 </body>
 

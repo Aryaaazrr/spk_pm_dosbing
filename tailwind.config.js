@@ -18,6 +18,9 @@ export default {
             colors: {
                 primary: "#1570EF",
                 secondary: "#53B1FD",
+                navy: "#1B2559",
+                purple: "#707EAE",
+                body: "#F4F7FE",
             },
         },
     },
