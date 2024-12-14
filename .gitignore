@@ -8,9 +8,9 @@
 .env
 .env.backup
 .env.production
-.composer.lock
-.package-lock.json
-.sail
+composer.lock
+package-lock.json
+sail
 Homestead.json
 Homestead.yaml
 auth.json
