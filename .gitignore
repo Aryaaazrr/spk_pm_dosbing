@@ -10,7 +10,6 @@
 .env.production
 composer.lock
 package-lock.json
-sail
 Homestead.json
 Homestead.yaml
 auth.json
