@@ -1,7 +1,12 @@
 <?php
 
-use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\AlternatifController;
+use App\Http\Controllers\AspekController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfileMethodController;
+use App\Http\Controllers\SubmissionsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,7 +14,13 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', [DashboardController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'] )->name('dashboard.index');
+
+    Route::resource('aspek', AspekController::class);
+    Route::resource('kriteria', KriteriaController::class);
+    Route::resource('alternatif', AlternatifController::class);
+    Route::resource('profile-method', ProfileMethodController::class);
+    Route::resource('submissions', SubmissionsController::class);
 
     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');

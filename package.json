@@ -16,5 +16,11 @@
         "postcss": "^8.4.49",
         "tailwindcss": "^3.4.15",
         "vite": "^5.0"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.8",
+        "@preline/layout-splitter": "^2.5.2",
+        "@preline/tooltip": "^2.5.2",
+        "preline": "^2.7.0"
     }
 }

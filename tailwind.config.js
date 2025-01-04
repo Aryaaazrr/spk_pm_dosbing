@@ -8,6 +8,7 @@ export default {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./node_modules/flowbite/**/*.js",
+        "node_modules/preline/dist/*.js",
     ],
 
     theme: {
@@ -23,7 +24,17 @@ export default {
                 body: "#F4F7FE",
             },
         },
+        container: {
+            center: true,
+            padding: {
+                DEFAULT: "1rem",
+                sm: "2rem",
+                lg: "4rem",
+                xl: "5rem",
+                "2xl": "6rem",
+            },
+        },
     },
 
-    plugins: [forms, require("flowbite/plugin")],
+    plugins: [forms, require("flowbite/plugin", "preline/plugin")],
 };
