@@ -19,8 +19,12 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",
+        "@preline/datatable": "^2.5.2",
         "@preline/layout-splitter": "^2.5.2",
         "@preline/tooltip": "^2.5.2",
-        "preline": "^2.7.0"
+        "datatables.net-dt": "^2.1.8",
+        "jquery": "^3.7.1",
+        "preline": "^2.7.0",
+        "simple-datatables": "^9.2.1"
     }
 }

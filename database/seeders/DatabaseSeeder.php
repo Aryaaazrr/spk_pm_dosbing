@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         AdminSeeder::class,
         MahasiswaSeeder::class,
         SettingSeeder::class,
+        AspekSeeder::class,
+        KriteriaSeeder::class,
     ]);
     }
 }

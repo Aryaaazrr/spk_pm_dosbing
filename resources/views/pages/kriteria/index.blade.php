@@ -2,7 +2,7 @@
 
     <div class="mt-10 mb-6 md:-mt-3">
         <div class="p-0 text-navy font-bold dark:text-gray-100">
-            {{ __('Data Aspek') }}
+            {{ __('Data Kriteria') }}
         </div>
         <ol class="flex items-center whitespace-nowrap">
             <li class="inline-flex items-center">
@@ -17,7 +17,7 @@
             </li>
             <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                 aria-current="page">
-                Data Aspek
+                Data Kriteria
             </li>
         </ol>
     </div>
@@ -27,12 +27,12 @@
         <div>
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-lg font-bold text-navy dark:text-gray-100">
-                    {{ __('Data Aspek') }}
+                    {{ __('Data Kriteria') }}
                 </h2>
-                <a href="{{ route('aspek.create') }}"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-success text-white hover:bg-successHover focus:outline-none focus:bg-green-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800">
+                <button type="button"
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-success text-white hover:bg-successHover focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800">
                     {{ __('Tambah Data') }}
-                </a>
+                </button>
             </div>
         </div>
 
@@ -61,7 +61,17 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Persentase
+                            Aspek
+                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                            </svg>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="flex items-center">
+                            Faktor
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -92,10 +102,11 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($aspek as $item)
+                @foreach ($kriteria as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->aspek_name }}</td>
+                        <td>{{ $item->kriteria_name }}</td>
+                        <td>{{ $item->aspek->aspek_name }}</td>
                         <td>{{ $item->persentase }} %</td>
                         <td>{{ $item->keterangan }}</td>
                         <td><a href="">Edit</a> <a href="">Delete</a></td>
@@ -103,6 +114,7 @@
                 @endforeach
             </tbody>
         </table>
+
 
     </div>
 </x-app-layout>

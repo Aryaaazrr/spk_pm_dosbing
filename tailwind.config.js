@@ -8,7 +8,7 @@ export default {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./node_modules/flowbite/**/*.js",
-        "node_modules/preline/dist/*.js",
+        "./node_modules/preline/dist/*.js",
     ],
 
     theme: {
@@ -22,6 +22,8 @@ export default {
                 navy: "#1B2559",
                 purple: "#707EAE",
                 body: "#F4F7FE",
+                success: "#05CD99",
+                successHover: "#6FEACA",
             },
         },
         container: {
@@ -36,5 +38,7 @@ export default {
         },
     },
 
-    plugins: [forms, require("flowbite/plugin", "preline/plugin")],
+    plugins: [forms, require("flowbite/plugin", "preline/plugin")({
+        datatables: true,
+    })],
 };
