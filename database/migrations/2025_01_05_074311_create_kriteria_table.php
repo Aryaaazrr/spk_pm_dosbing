@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_aspek');
             $table->foreign('id_aspek')->references('id_aspek')->on('aspek')->onUpdate('cascade')->onDelete('cascade');
             $table->string('kriteria_name')->unique();
+            $table->enum('tipe', ['Core Factor', 'Secondary Factor']);
             $table->string('keterangan');
             $table->timestamps();
         });

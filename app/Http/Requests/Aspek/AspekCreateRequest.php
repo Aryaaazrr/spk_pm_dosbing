@@ -11,7 +11,7 @@ class AspekCreateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->can('aspek-create');
+        return true;
     }
 
     /**

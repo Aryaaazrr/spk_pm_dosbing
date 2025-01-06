@@ -29,10 +29,10 @@
                 <h2 class="text-lg font-bold text-navy dark:text-gray-100">
                     {{ __('Data Kriteria') }}
                 </h2>
-                <button type="button"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-success text-white hover:bg-successHover focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800">
+                <a href="{{ route('kriteria.create') }}"
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-success text-white hover:bg-successHover focus:outline-none focus:bg-green-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800">
                     {{ __('Tambah Data') }}
-                </button>
+                </a>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Nama Aspek
+                            Nama Kriteria
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -71,7 +71,7 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Faktor
+                            Tipe
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -107,14 +107,48 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->kriteria_name }}</td>
                         <td>{{ $item->aspek->aspek_name }}</td>
-                        <td>{{ $item->persentase }} %</td>
+                        <td>{{ $item->tipe }}</td>
                         <td>{{ $item->keterangan }}</td>
-                        <td><a href="">Edit</a> <a href="">Delete</a></td>
+                        <td>
+                            <button id="dropdownMenuIconHorizontalButton"
+                                data-dropdown-toggle="dropdownDotsHorizontal-{{ $item->id_kriteria }} "
+                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                type="button">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 16 3">
+                                    <path
+                                        d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
+                                </svg>
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdownDotsHorizontal-{{ $item->id_kriteria }} "
+                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                    aria-labelledby="dropdownMenuIconHorizontalButton">
+                                    <li>
+                                        <a href="{{ route('kriteria.edit', $item->id_kriteria) }}"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_kriteria }}').submit();"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hapus</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <form id="delete-form-{{ $item->id_kriteria }}"
+                                action="{{ route('kriteria.destroy', $item->id_kriteria) }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-
 
     </div>
 </x-app-layout>
