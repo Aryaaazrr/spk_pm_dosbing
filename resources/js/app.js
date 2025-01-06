@@ -24,3 +24,17 @@ if (
         searchQuerySeparator: " ",
     });
 }
+
+function formatPresentase(input) {
+    let value = parseInt(input.value.replace(/[^0-9]/g, ""), 10);
+
+    if (isNaN(value) || value < 0) {
+        value = 0;
+    } else if (value > 100) {
+        value = 100;
+    }
+
+    input.value = value + "%";
+}
+
+window.formatPresentase = formatPresentase;

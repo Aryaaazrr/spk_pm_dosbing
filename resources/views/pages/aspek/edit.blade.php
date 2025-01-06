@@ -25,7 +25,7 @@
             </li>
             <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                 aria-current="page">
-                Tambah Data Aspek
+                Edit Data Aspek
             </li>
         </ol>
     </div>
@@ -35,13 +35,14 @@
         <div>
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-lg font-bold text-navy dark:text-gray-100">
-                    {{ __('Tambah Data Aspek') }}
+                    {{ __('Edit Data Aspek') }}
                 </h2>
             </div>
         </div>
 
-        <form action="{{ route('aspek.store') }}" method="POST">
+        <form action="{{ route('aspek.update', $aspek->id_aspek) }}" method="POST">
             @csrf
+            @method('PUT')
             <!-- Section -->
 
             @if ($errors->any())
@@ -83,7 +84,7 @@
 
                 <div class="sm:col-span-9">
                     <div class="sm:flex">
-                        <input id="af-submit-application-aspek-name" name="aspek_name" type="text"
+                        <input id="af-submit-application-aspek-name" name="aspek_name" type="text" value="{{ $aspek->aspek_name }}"
                             class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                     </div>
                 </div>
@@ -98,7 +99,7 @@
                 <!-- End Col -->
 
                 <div class="sm:col-span-9">
-                    <input id="af-submit-application-persentase" name="persentase" type="text"
+                    <input id="af-submit-application-persentase" name="persentase" type="text" value="{{ $aspek->persentase }}%"
                         oninput="formatPresentase(this)"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                 </div>
@@ -115,7 +116,7 @@
                 <!-- End Col -->
 
                 <div class="sm:col-span-9">
-                    <input id="af-submit-application-keterangan" name="keterangan" type="text"
+                    <input id="af-submit-application-keterangan" name="keterangan" type="text" value="{{ $aspek->keterangan }}"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                 </div>
                 <!-- End Col -->
