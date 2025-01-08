@@ -105,7 +105,7 @@
                 <div class="grow">
                     <div class="flex items-center gap-x-2">
                         <p class="tracking-wide text-gray-500 dark:text-neutral-500">
-                            Pengajuan Skripsi
+                            Pengajuan Judul
                         </p>
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">

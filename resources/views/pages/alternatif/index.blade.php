@@ -2,7 +2,7 @@
 
     <div class="mt-10 mb-6 md:-mt-3">
         <div class="p-0 text-navy font-bold dark:text-gray-100">
-            {{ __('Data Aspek') }}
+            {{ __('Data Alternatif') }}
         </div>
         <ol class="flex items-center whitespace-nowrap">
             <li class="inline-flex items-center">
@@ -17,7 +17,7 @@
             </li>
             <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                 aria-current="page">
-                Data Aspek
+                Data Alternatif
             </li>
         </ol>
     </div>
@@ -27,9 +27,9 @@
         <div>
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-lg font-bold text-navy dark:text-gray-100">
-                    {{ __('Data Aspek') }}
+                    {{ __('Data Alternatif') }}
                 </h2>
-                <a href="{{ route('aspek.create') }}"
+                <a href="{{ route('alternatif.create') }}"
                     class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-success text-white hover:bg-successHover focus:outline-none focus:bg-green-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800">
                     {{ __('Tambah Data') }}
                 </a>
@@ -51,7 +51,7 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Kode Aspek
+                            NIP
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -61,27 +61,7 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Nama Aspek
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Persentase
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Keterangan
+                            Nama Alternatif
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -102,16 +82,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($aspek as $item)
+                @foreach ($alternatif as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->kode_aspek }}</td>
-                        <td>{{ $item->aspek_name }}</td>
-                        <td>{{ $item->persentase }} %</td>
-                        <td>{{ $item->keterangan }}</td>
+                        <td>{{ $item->nip }}</td>
+                        <td>{{ $item->name }}</td>
                         <td>
                             <button id="dropdownMenuIconHorizontalButton"
-                                data-dropdown-toggle="dropdownDotsHorizontal-{{ $item->id_aspek }} "
+                                data-dropdown-toggle="dropdownDotsHorizontal-{{ $item->id_alternatif }} "
                                 class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                                 type="button">
                                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -122,24 +100,24 @@
                             </button>
 
                             <!-- Dropdown menu -->
-                            <div id="dropdownDotsHorizontal-{{ $item->id_aspek }} "
+                            <div id="dropdownDotsHorizontal-{{ $item->id_alternatif }} "
                                 class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                     aria-labelledby="dropdownMenuIconHorizontalButton">
                                     <li>
-                                        <a href="{{ route('aspek.edit', $item->id_aspek) }}"
+                                        <a href="{{ route('alternatif.edit', $item->id_alternatif) }}"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                     </li>
                                     <li>
                                         <a href="#"
-                                            onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_aspek }}').submit();"
+                                            onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_alternatif }}').submit();"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hapus</a>
                                     </li>
                                 </ul>
                             </div>
 
-                            <form id="delete-form-{{ $item->id_aspek }}"
-                                action="{{ route('aspek.destroy', $item->id_aspek) }}" method="POST"
+                            <form id="delete-form-{{ $item->id_alternatif }}"
+                                action="{{ route('alternatif.destroy', $item->id_alternatif) }}" method="POST"
                                 style="display: none;">
                                 @csrf
                                 @method('DELETE')

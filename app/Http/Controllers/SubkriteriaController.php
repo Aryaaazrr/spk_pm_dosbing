@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Kriteria;
+use App\Models\Subkriteria;
 use Illuminate\Http\Request;
 
-class MahasiswaController extends Controller
+class SubkriteriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data['mahasiswa'] = User::all();
+        $data['subkriteria'] = Subkriteria::all();
 
-        return view('pages.mahasiswa.index', $data);
+        return view('pages.subkriteria.index', $data);
     }
 
     /**
@@ -22,7 +23,9 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        $data['kriteria'] = Kriteria::all();
+        
+        return view('pages.subkriteria.create', $data);
     }
 
     /**

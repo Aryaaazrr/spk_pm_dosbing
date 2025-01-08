@@ -8,6 +8,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileMatchingController;
 use App\Http\Controllers\ProfileMethodController;
+use App\Http\Controllers\SubkriteriaController;
 use App\Http\Controllers\SubmissionsController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('aspek', AspekController::class);
     Route::resource('kriteria', KriteriaController::class);
+    Route::resource('subkriteria', SubkriteriaController::class);
     Route::resource('alternatif', AlternatifController::class);
-    Route::resource('profile-method', ProfileMethodController::class);
+    Route::resource('method-profile', ProfileMethodController::class);
     Route::resource('mahasiswa', MahasiswaController::class);
     Route::resource('profile-matching', ProfileMatchingController::class);
     Route::resource('submissions', SubmissionsController::class);

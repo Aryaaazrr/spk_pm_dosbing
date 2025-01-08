@@ -46,4 +46,9 @@ class Kriteria extends Model
     {
         return $this->belongsTo(Aspek::class, 'id_aspek');
     }
+
+    public function profile_method()
+    {
+        return $this->hasMany(ProfileMethod::class, 'id_kriteria');
+    }
 }

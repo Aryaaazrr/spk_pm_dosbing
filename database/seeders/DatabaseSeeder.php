@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Database\Seeders\User\AdminSeeder;
 use Database\Seeders\User\MahasiswaSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -22,6 +21,8 @@ class DatabaseSeeder extends Seeder
         SettingSeeder::class,
         AspekSeeder::class,
         KriteriaSeeder::class,
+        SubkriteriaSeeder::class,
+        AlternatifSeeder::class,
     ]);
     }
 }

@@ -49,15 +49,12 @@
                     title="Aspek" :active="Route::is('aspek*')" />
 
                 <x-nav-item href="{{ route('kriteria.index') }}"
-                    icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="lucide lucide-list-check group-hover:text-white">
-                            <path d="M11 18H3" />
-                            <path d="m15 18 2 2 4-4" />
-                            <path d="M16 12H3" />
-                            <path d="M16 6H3" />
-                        </svg>'
+                    icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-collapse group-hover:text-white"><path d="m3 10 2.5-2.5L3 5"/><path d="m3 19 2.5-2.5L3 14"/><path d="M10 6h11"/><path d="M10 12h11"/><path d="M10 18h11"/></svg>'
                     title="Kriteria" :active="Route::is('kriteria*')" />
+
+                <x-nav-item href="{{ route('subkriteria.index') }}"
+                    icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-tree group-hover:text-white"><path d="M21 12h-8"/><path d="M21 6H8"/><path d="M21 18h-8"/><path d="M3 6v4c0 1.1.9 2 2 2h3"/><path d="M3 10v6c0 1.1.9 2 2 2h3"/></svg>'
+                    title="Subkriteria" :active="Route::is('subkriteria*')" />
 
                 <x-nav-item href="{{ route('alternatif.index') }}"
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -70,7 +67,7 @@
                         </svg>'
                     title="Alternatif" :active="Route::is('alternatif*')" />
 
-                <x-nav-item href="{{ route('profile-method.index') }}"
+                <x-nav-item href="{{ route('method-profile.index') }}"
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="lucide lucide-user-round-check group-hover:text-white">
@@ -78,7 +75,7 @@
                             <circle cx="10" cy="8" r="5" />
                             <path d="m16 19 2 2 4-4" />
                         </svg>'
-                    title="Profile" :active="Route::is('profile-method*')" />
+                    title="Profile" :active="Route::is('method-profile*')" />
 
                 <x-nav-item href="{{ route('mahasiswa.index') }}"
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -109,7 +106,7 @@
                             <circle cx="10" cy="8" r="5" />
                             <path d="m16 19 2 2 4-4" />
                         </svg>'
-                    title="Pemilihan Dosen" :active="Route::is('profile-method*')" />
+                    title="Pemilihan Dosen" :active="Route::is('profil-method*')" />
             @endrole
             <li>
                 <a href="#"
@@ -126,10 +123,8 @@
             </li>
         </ul>
         <ul class="space-y-2 p-2 border-t border-gray-200 dark:border-gray-700">
-            <li>
-                <a href="{{ route('profile.edit') }}"
-                    class="flex items-center p-2 text-base font-medium text-third rounded-lg dark:text-white hover:bg-primary  dark:hover:bg-gray-700 group">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            <x-nav-item href="{{ route('profile.edit') }}"
+                icon=' <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="lucide lucide-user-round-cog group-hover:text-white">
                         <path d="M2 21a8 8 0 0 1 10.434-7.62" />
@@ -143,10 +138,8 @@
                         <path d="m15.2 19.1-.9.4" />
                         <path d="m19.5 21.7-.4-.9" />
                         <path d="m16.9 15.2-.4-.9" />
-                    </svg>
-                    <span class="ml-3 group-hover:text-white">Akun</span>
-                </a>
-            </li>
+                    </svg>'
+                title="Akun" :active="Route::is('profile*')" />
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
