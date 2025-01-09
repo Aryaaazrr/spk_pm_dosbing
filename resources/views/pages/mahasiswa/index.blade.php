@@ -51,7 +51,7 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Kode Kriteria
+                            NIM
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -61,7 +61,7 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Nama Kriteria
+                            Nama
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -71,27 +71,7 @@
                     </th>
                     <th>
                         <span class="flex items-center">
-                            Aspek
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Tipe
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Keterangan
+                            Email
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -112,17 +92,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($kriteria as $item)
+                @foreach ($mahasiswa as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->kode_kriteria }}</td>
-                        <td>{{ $item->kriteria_name }}</td>
-                        <td>{{ $item->aspek->aspek_name }}</td>
-                        <td>{{ $item->tipe }}</td>
-                        <td>{{ $item->keterangan }}</td>
+                        <td>{{ $item->nim }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->email }}</td>
                         <td>
                             <button id="dropdownMenuIconHorizontalButton"
-                                data-dropdown-toggle="dropdownDotsHorizontal-{{ $item->id_kriteria }} "
+                                data-dropdown-toggle="dropdownDotsHorizontal-{{ $item->id }} "
                                 class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                                 type="button">
                                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -133,24 +111,24 @@
                             </button>
 
                             <!-- Dropdown menu -->
-                            <div id="dropdownDotsHorizontal-{{ $item->id_kriteria }} "
+                            <div id="dropdownDotsHorizontal-{{ $item->id }} "
                                 class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                     aria-labelledby="dropdownMenuIconHorizontalButton">
                                     <li>
-                                        <a href="{{ route('kriteria.edit', $item->id_kriteria) }}"
+                                        <a href="{{ route('kriteria.edit', $item->id) }}"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                     </li>
                                     <li>
                                         <a href="#"
-                                            onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_kriteria }}').submit();"
+                                            onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id }}').submit();"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hapus</a>
                                     </li>
                                 </ul>
                             </div>
 
-                            <form id="delete-form-{{ $item->id_kriteria }}"
-                                action="{{ route('kriteria.destroy', $item->id_kriteria) }}" method="POST"
+                            <form id="delete-form-{{ $item->id }}"
+                                action="{{ route('kriteria.destroy', $item->id) }}" method="POST"
                                 style="display: none;">
                                 @csrf
                                 @method('DELETE')

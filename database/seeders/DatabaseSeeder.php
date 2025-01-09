@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         KriteriaSeeder::class,
         SubkriteriaSeeder::class,
         AlternatifSeeder::class,
+        ProfileMethodSeeder::class,
     ]);
     }
 }

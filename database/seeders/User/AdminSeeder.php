@@ -19,6 +19,7 @@ class AdminSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $admin = User::firstOrCreate([
+            'nim' => 'E4211320',
             'email' => 'admin@gmail.com',
         ], [
             'name' => 'Admin',

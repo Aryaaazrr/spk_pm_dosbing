@@ -12,7 +12,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $data['mahasiswa'] = User::all();
+        $data['mahasiswa'] = User::role('mahasiswa')->get();
 
         return view('pages.mahasiswa.index', $data);
     }

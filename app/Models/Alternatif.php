@@ -40,4 +40,9 @@ class Alternatif extends Model
     {
         return $this->hasMany(ProfileMethod::class, 'id_alternatif');
     }
+
+    public function submission()
+    {
+        return $this->hasMany(Submissions::class, 'id_alternatif');
+    }
 }

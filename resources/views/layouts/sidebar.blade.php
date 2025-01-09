@@ -86,10 +86,19 @@
                             <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
                         </svg>'
                     title="Mahasiswa" :active="Route::is('mahasiswa*')" />
+                <x-nav-item href="{{ route('submissions.index') }}"
+                    icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-files group-hover:text-white">
+                            <path d="M20 7h-3a2 2 0 0 1-2-2V2" />
+                            <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z" />
+                            <path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8" />
+                        </svg>'
+                    title="Daftar Pengajuan" :active="Route::is('submissions*')" />
             @endrole
 
             @role('mahasiswa')
-                <x-nav-item href="{{ route('mahasiswa.index') }}"
+                <x-nav-item href="{{ route('alternatif.index') }}"
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="lucide lucide-users-round group-hover:text-white">
@@ -97,8 +106,8 @@
                             <circle cx="10" cy="8" r="5" />
                             <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
                         </svg>'
-                    title="Daftar Dosen" :active="Route::is('mahasiswa*')" />
-                <x-nav-item href="{{ route('profile-method.index') }}"
+                    title="Daftar Dosen" :active="Route::is('alternatif*')" />
+                <x-nav-item href="{{ route('submissions.index') }}"
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="lucide lucide-user-round-check group-hover:text-white">
@@ -106,21 +115,8 @@
                             <circle cx="10" cy="8" r="5" />
                             <path d="m16 19 2 2 4-4" />
                         </svg>'
-                    title="Pemilihan Dosen" :active="Route::is('profil-method*')" />
+                    title="Pemilihan Dosen" :active="Route::is('submissions*')" />
             @endrole
-            <li>
-                <a href="#"
-                    class="flex items-center p-2 text-base font-medium text-third rounded-lg dark:text-white hover:bg-primary  dark:hover:bg-gray-700 group">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-files group-hover:text-white">
-                        <path d="M20 7h-3a2 2 0 0 1-2-2V2" />
-                        <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z" />
-                        <path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8" />
-                    </svg>
-                    <span class="ml-3 group-hover:text-white">Pengajuan Judul</span>
-                </a>
-            </li>
         </ul>
         <ul class="space-y-2 p-2 border-t border-gray-200 dark:border-gray-700">
             <x-nav-item href="{{ route('profile.edit') }}"

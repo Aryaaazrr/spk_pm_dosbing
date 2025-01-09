@@ -170,13 +170,13 @@
         <!-- End Card Section -->
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-        <div class="bg-white rounded-3xl overflow-hidden shadow-sm h-fit col-span-2 md:h-72">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm h-fit col-span-2">
             <div class="flex flex-col p-10">
-                <div class="">
+                <div class="mb-4">
                     <h1 class="text-lg font-bold italic">Profile Matching</h1>
                 </div>
                 <div class="my-2">
-                    <p>Profile matching merupakan proses membandingkan antara kompetensi
+                    <p class="leading-loose">Profile matching merupakan proses membandingkan antara kompetensi
 
                         individu ke dalam kompetensi jabatan sehingga dapat diketahui perbedaan
 
@@ -194,7 +194,47 @@
                 </div>
             </div>
         </div>
-        <div class="bg-white rounded-3xl shadow-sm h-48 md:h-72"></div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm h-fit col-span-1 md:h-full">
+            <div class="flex flex-col p-10">
+                <!-- Header -->
+                <div class="mb-4">
+                    <h1 class="text-lg font-bold">Dosen Pembimbing</h1>
+                </div>
+
+                <!-- Content -->
+                <div class="my-2">
+                    @php
+                        $maxItems = 3;
+                    @endphp
+
+                    @foreach ($alternatif->take($maxItems) as $item)
+                        <a href="https://jti.polije.ac.id/dosen" target="_blank" class="flex items-center mb-10">
+                            <img src="{{ asset('static/image/logo_polije.png') }}" class="mr-3 h-12"
+                                alt="Polije Logo" />
+
+                            <div class="flex flex-col items-start">
+                                <span class="text-base font-bold whitespace-nowrap text-navy dark:text-white">
+                                    {{ $item->name }}
+                                </span>
+                                <span class="text-sm font-medium whitespace-nowrap text-navy dark:text-white">
+                                    {{ $item->nip }}
+                                </span>
+                            </div>
+                        </a>
+                    @endforeach
+
+                    <!-- View All -->
+                    @if ($alternatif->count() > $maxItems)
+                        <a href="{{ route('alternatif.index') }}"
+                            class="text-blue-500 hover:underline text-sm font-medium">
+                            View All
+                        </a>
+                    @endif
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 </x-app-layout>
