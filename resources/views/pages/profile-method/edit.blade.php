@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <form action="{{ route('method-profile.update', $profile_method->id_profile) }}" method="POST">
+        <form action="{{ route('method-profile.update', $profile_method->id_alternatif) }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -92,24 +92,24 @@
                     </select>
                 </div>
 
-                @foreach ($kriteria->groupBy('id_kriteria') as $id_kriteria => $kriteriaGroup)
+                @foreach ($kriteria as $kriteriaItem)
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-kriteria-{{ $id_kriteria }}"
+                        <label for="af-submit-application-kriteria-{{ $kriteriaItem->id_kriteria }}"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
-                            {{ $kriteriaGroup->first()->kode_kriteria }} -
-                            {{ $kriteriaGroup->first()->kriteria_name }}
+                            {{ $kriteriaItem->kode_kriteria }} - {{ $kriteriaItem->kriteria_name }}
                         </label>
                     </div>
-
                     <div class="sm:col-span-9">
-                        <select id="af-submit-application-kriteria-{{ $id_kriteria }}"
-                            name="kriteria[{{ $id_kriteria }}]"
+                        <select id="af-submit-application-kriteria-{{ $kriteriaItem->id_kriteria }}"
+                            name="kriteria[{{ $kriteriaItem->id_kriteria }}]"
                             class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                            <option selected disabled>Pilih Nilai Profile</option>
-                            @foreach ($subkriteria->where('id_kriteria', $id_kriteria) as $subkriteriaItem)
+                            <option disabled>Pilih Nilai Profile</option>
+                            @foreach ($kriteriaItem->subkriteria as $subkriteriaItem)
                                 <option value="{{ $subkriteriaItem->id_subkriteria }}"
-                                    @if (optional($kriteriaGroup->first()->subkriteria)->id_subkriteria == $subkriteriaItem->id_subkriteria) selected @endif>
-                                    {{ $subkriteriaItem->nilai }} - ( {{ $subkriteriaItem->subkriteria_name }} )
+                                    @if (isset($profile_method) &&
+                                            $profile_method->kriteria->where('id_kriteria', $kriteriaItem->id_kriteria)->first() &&
+                                            $profile_method->kriteria->where('id_kriteria', $kriteriaItem->id_kriteria)->first()->subkriteria->pluck('id_subkriteria')->contains($subkriteriaItem->id_subkriteria)) selected @endif>
+                                    {{ $subkriteriaItem->nilai }} - ({{ $subkriteriaItem->subkriteria_name }})
                                 </option>
                             @endforeach
                         </select>

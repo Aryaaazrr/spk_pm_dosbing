@@ -17,7 +17,7 @@ class AspekSeeder extends Seeder
             [
                 'kode_aspek' => 'A001',
                 'aspek_name' => 'Kuota Bimbingan',
-                'persentase' => 35,
+                'persentase' => 45,
                 'keterangan' => 'Aspek ini mengukur jumlah maksimum bimbingan  oleh seorang dosen pada satu periode tertentu.',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -33,7 +33,7 @@ class AspekSeeder extends Seeder
             [
                 'kode_aspek' => 'A003',
                 'aspek_name' => 'Riset Penelitian',
-                'persentase' => 30,
+                'persentase' => 20,
                 'keterangan' => 'Aspek ini mengukur pengalaman dosen dalam kegiatan riset dan penelitian yang relevan dengan topik skripsi mahasiswa.',
                 'created_at' => now(),
                 'updated_at' => now(),

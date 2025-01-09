@@ -14,8 +14,8 @@ if (
 ) {
     const dataTable = new simpleDatatables.DataTable("#pagination-table", {
         paging: true,
-        perPage: 5,
-        perPageSelect: [5, 10, 15, 20, 25],
+        perPage: 10,
+        perPageSelect: [10, 15, 20, 25],
         sortable: true,
         firstLast: true,
         nextPrev: true,
@@ -38,3 +38,37 @@ function formatPresentase(input) {
 }
 
 window.formatPresentase = formatPresentase;
+
+let selectedCount = 0;
+
+function limitCheckboxes(checkbox) {
+    const checkboxes = document.querySelectorAll(".checkbox");
+
+    if (checkbox.checked) {
+        selectedCount++;
+    } else {
+        selectedCount--;
+    }
+
+    if (selectedCount >= 3) {
+        checkboxes.forEach(function (cb) {
+            if (!cb.checked) {
+                cb.disabled = true;
+            }
+        });
+    } else {
+        checkboxes.forEach(function (cb) {
+            cb.disabled = false;
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll(".checkbox");
+
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("click", function () {
+            limitCheckboxes(checkbox);
+        });
+    });
+});

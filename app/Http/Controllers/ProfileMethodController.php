@@ -75,10 +75,9 @@ class ProfileMethodController extends Controller
      */
     public function edit(string $id)
     {
-        $data['profile_method'] = ProfileMethod::find($id);
+        $data['profile_method'] = ProfileMethod::with('kriteria.subkriteria')->findOrFail($id);
         $data['alternatif'] = Alternatif::all();
-        $data['kriteria'] = Kriteria::all();
-        $data['subkriteria'] = Subkriteria::all();
+        $data['kriteria'] = Kriteria::with('subkriteria')->get();
 
         return view('pages.profile-method.edit', $data);
     }
