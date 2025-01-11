@@ -15,7 +15,7 @@
                     <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
                 </svg>
                 <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                    href="{{ route('kriteria.index') }}">
+                    href="{{ route('subkriteria.index') }}">
                     Data Subkriteria
                 </a>
                 <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
@@ -25,7 +25,7 @@
             </li>
             <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                 aria-current="page">
-                Tambah Data Subkriteria
+                Edit Data Subkriteria
             </li>
         </ol>
     </div>
@@ -35,13 +35,14 @@
         <div>
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-lg font-bold text-navy dark:text-gray-100">
-                    {{ __('Tambah Data Subkriteria') }}
+                    {{ __('Edit Data Subkriteria') }}
                 </h2>
             </div>
         </div>
 
-        <form action="{{ route('subkriteria.store') }}" method="POST">
+        <form action="{{ route('subkriteria.update', $subkriteria->id_subkriteria) }}" method="POST">
             @csrf
+            @method('PUT')
             <!-- Section -->
 
             @if ($errors->any())
@@ -84,10 +85,8 @@
                     <select for="af-submit-application-kriteria" name="id_kriteria"
                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                         <option selected disabled>Pilih Kriteria</option>
-                        @foreach ($kriteria as $item)
-                            <option value="{{ $item->id_kriteria }}">{{ $item->kode_kriteria }} -
-                                {{ $item->kriteria_name }}</option>
-                        @endforeach
+                        <option value="{{ $subkriteria->kriteria->id_kriteria }}" selected>{{ $subkriteria->kriteria->kode_kriteria }} -
+                            {{ $subkriteria->kriteria->kriteria_name }}</option>
                     </select>
                 </div>
 
@@ -101,7 +100,7 @@
 
                 <div class="sm:col-span-9">
                     <div class="sm:flex">
-                        <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
+                        <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text" value="{{ $subkriteria->subkriteria_name }}"
                             class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                     </div>
                 </div>

@@ -83,6 +83,7 @@
         @role('mahasiswa')
             <div class="px-4 2xl:px-0 mb-5">
                 <div class="gap-8 lg:flex">
+                    
                     <form action="#" class="w-full space-y-6 lg:space-y-8">
                         <div class="space-y-6 sm:space-y-8">
                             <ol
@@ -142,7 +143,7 @@
                                     @php
                                         $firstItem = $items->first();
                                     @endphp
-                                    
+
                                     <a href="#"
                                         class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 p-4">
