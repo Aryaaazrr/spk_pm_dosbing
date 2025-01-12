@@ -16,7 +16,7 @@ class ProfileMethodSeeder extends Seeder
         $alternatifData = [
             1 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 16],
                 ['id_kriteria' => 5, 'id_subkriteria' => 23],
@@ -24,7 +24,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             2 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 16],
                 ['id_kriteria' => 5, 'id_subkriteria' => 22],
@@ -32,7 +32,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             3 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 23],
@@ -40,7 +40,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             4 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 24],
@@ -48,7 +48,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             5 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -56,7 +56,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             6 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -64,7 +64,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             7 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -72,7 +72,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             8 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -80,7 +80,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             9 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -88,7 +88,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             10 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -96,7 +96,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             11 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -104,7 +104,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             12 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -112,7 +112,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             13 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -120,7 +120,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             14 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -128,7 +128,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             15 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -136,7 +136,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             16 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -144,7 +144,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             17 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -152,7 +152,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             18 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 17],
                 ['id_kriteria' => 5, 'id_subkriteria' => 20],
@@ -160,7 +160,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             19 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 20],
                 ['id_kriteria' => 5, 'id_subkriteria' => 21],
@@ -168,7 +168,7 @@ class ProfileMethodSeeder extends Seeder
             ],
             20 => [
                 ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 11],
+                ['id_kriteria' => 2, 'id_subkriteria' => 12],
                 ['id_kriteria' => 3, 'id_subkriteria' => 13],
                 ['id_kriteria' => 4, 'id_subkriteria' => 20],
                 ['id_kriteria' => 5, 'id_subkriteria' => 22],

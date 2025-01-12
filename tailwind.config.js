@@ -38,7 +38,11 @@ export default {
         },
     },
 
-    plugins: [forms, require("flowbite/plugin", "preline/plugin")({
-        datatables: true,
-    })],
+    plugins: [
+        forms,
+        require("preline/plugin"),
+        require("flowbite/plugin")({
+            datatables: true,
+        }),
+    ],
 };

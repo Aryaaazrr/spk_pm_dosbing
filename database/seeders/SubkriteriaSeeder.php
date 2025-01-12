@@ -27,8 +27,8 @@ class SubkriteriaSeeder extends Seeder
                 ['subkriteria' => '10 Mahasiswa', 'nilai' => 10],
             ],
             2 => [
-                ['subkriteria' => 'Belum Terpenuhi', 'nilai' => 1],
-                ['subkriteria' => 'Terpenuhi', 'nilai' => 2],
+                ['subkriteria' => 'Terpenuhi', 'nilai' => 1],
+                ['subkriteria' => 'Belum Terpenuhi', 'nilai' => 2],
             ],
             3 => [
                 ['subkriteria' => 'Software Engineer', 'nilai' => 1],

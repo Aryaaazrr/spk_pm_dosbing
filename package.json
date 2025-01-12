@@ -20,7 +20,9 @@
     "dependencies": {
         "@popperjs/core": "^2.11.8",
         "@preline/datatable": "^2.5.2",
+        "@preline/dropdown": "^2.5.2",
         "@preline/layout-splitter": "^2.5.2",
+        "@preline/stepper": "^2.5.2",
         "@preline/tooltip": "^2.5.2",
         "datatables.net-dt": "^2.1.8",
         "jquery": "^3.7.1",

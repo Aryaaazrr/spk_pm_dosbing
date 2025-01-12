@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alternatif;
+use App\Models\Kriteria;
 use App\Models\ProfileMethod;
 use App\Models\Submissions;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class SubmissionsController extends Controller
     {
         $data['submission'] = Submissions::all();
         $data['profile'] = ProfileMethod::with(['alternatif', 'kriteria', 'subkriteria'])->get();
-        
+        $data['kriteria'] = Kriteria::with('subkriteria')->get();
+
         return view('pages.submissions.index', $data);
     }
 

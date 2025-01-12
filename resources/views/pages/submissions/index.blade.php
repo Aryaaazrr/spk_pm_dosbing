@@ -83,8 +83,8 @@
         @role('mahasiswa')
             <div class="px-4 2xl:px-0 mb-5">
                 <div class="gap-8 lg:flex">
-                    
-                    <form action="#" class="w-full space-y-6 lg:space-y-8">
+
+                    {{-- <form action="#" class="w-full space-y-6 lg:space-y-8">
                         <div class="space-y-6 sm:space-y-8">
                             <ol
                                 class="flex flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 sm:justify-center md:flex-row md:items-center lg:gap-6">
@@ -144,66 +144,63 @@
                                         $firstItem = $items->first();
                                     @endphp
 
-                                    <a href="#"
-                                        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 p-4">
+                                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 p-4">
 
-                                            <!-- Checkbox untuk Alternatif -->
-                                            <div class="flex items-center justify-center col-span-1">
-                                                <input id="dosen-{{ $firstItem->id_alternatif }}" type="checkbox"
-                                                    value="{{ $firstItem->id_alternatif }}"
-                                                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-700 cursor-pointer focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600 checkbox" />
-                                                <label for="dosen-{{ $firstItem->id_alternatif }}" class="sr-only">
-                                                    Dosen {{ $firstItem->id_alternatif }}
-                                                </label>
-                                            </div>
-
-                                            <!-- Informasi Alternatif -->
-                                            <div class="flex items-center justify-start col-span-3 gap-6">
-                                                <div class="flex items-center gap-4 w-82 mr-4">
-                                                    <a href="#" class="flex aspect-square h-14 w-14 shrink-0">
-                                                        <img class="h-auto max-h-full w-full dark:hidden"
-                                                            src="{{ asset('static/image/logo_polije.png') }}"
-                                                            alt="Polije Logo" />
-                                                    </a>
-                                                    <div class="flex flex-col">
-                                                        <a href="#"
-                                                            class="font-medium text-gray-900 hover:underline dark:text-white whitespace-nowrap">
-                                                            {{ $firstItem->alternatif->name }}
-                                                        </a>
-                                                        <span class="text-sm font-medium text-gray-500 dark:text-white">
-                                                            {{ $firstItem->alternatif->nip }}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- List Kriteria dan Subkriteria -->
-                                            <div class="flex items-start justify-start col-span-8 gap-6">
-                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
-                                                    @foreach ($items as $item)
-                                                        @if (isset($item->kriteria, $item->subkriteria))
-                                                            <div class="flex items-center gap-2">
-                                                                <!-- Nama Kriteria -->
-                                                                <span
-                                                                    class="text-base font-normal text-gray-500 dark:text-gray-400">
-                                                                    {{ $item->kriteria->kriteria_name }}:
-                                                                </span>
-                                                                <!-- Nama Subkriteria -->
-                                                                <span
-                                                                    class="text-base font-normal text-gray-500 dark:text-gray-400">
-                                                                    <a href="#" class="hover:underline">
-                                                                        {{ $item->subkriteria->subkriteria_name }}
-                                                                    </a>
-                                                                </span>
-                                                            </div>
-                                                        @endif
-                                                    @endforeach
-                                                </div>
-                                            </div>
-
+                                        <!-- Checkbox untuk Alternatif -->
+                                        <div class="flex items-center justify-center col-span-1">
+                                            <input id="dosen-{{ $firstItem->id_alternatif }}" type="checkbox"
+                                                value="{{ $firstItem->id_alternatif }}"
+                                                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-700 cursor-pointer focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600 checkbox" />
+                                            <label for="dosen-{{ $firstItem->id_alternatif }}" class="sr-only">
+                                                Dosen {{ $firstItem->id_alternatif }}
+                                            </label>
                                         </div>
-                                    </a>
+
+                                        <!-- Informasi Alternatif -->
+                                        <div class="flex items-center justify-start col-span-4 gap-6">
+                                            <div class="flex items-center w-full gap-4 w-82 mr-4">
+                                                <a href="#" class="flex aspect-square h-14 w-14 shrink-0">
+                                                    <img class="h-auto max-h-full w-full dark:hidden"
+                                                        src="{{ asset('static/image/logo_polije.png') }}"
+                                                        alt="Polije Logo" />
+                                                </a>
+                                                <div class="flex flex-col">
+                                                    <a href="#"
+                                                        class="font-medium text-gray-900 hover:underline dark:text-white whitespace-nowrap">
+                                                        {{ $firstItem->alternatif->name }}
+                                                    </a>
+                                                    <span class="text-sm font-medium text-gray-500 dark:text-white">
+                                                        {{ $firstItem->alternatif->nip }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- List Kriteria dan Subkriteria -->
+                                        <div class="flex items-start justify-start col-span-7 gap-6">
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
+                                                @foreach ($items as $item)
+                                                    @if (isset($item->kriteria, $item->subkriteria))
+                                                        <div class="flex items-center gap-2">
+                                                            <!-- Nama Kriteria -->
+                                                            <span
+                                                                class="text-base font-normal text-gray-500 dark:text-gray-400">
+                                                                {{ $item->kriteria->kriteria_name }}:
+                                                            </span>
+                                                            <!-- Nama Subkriteria -->
+                                                            <span
+                                                                class="text-base font-normal text-gray-500 dark:text-gray-400">
+                                                                <a href="#" class="hover:underline">
+                                                                    {{ $item->subkriteria->subkriteria_name }}
+                                                                </a>
+                                                            </span>
+                                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 @endforeach
                             </div>
 
@@ -215,7 +212,294 @@
                                     Input Judul</button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
+
+                    <!-- Stepper -->
+                    <div class="w-full" data-hs-stepper="">
+                        <!-- Stepper Nav -->
+                        <ul class="relative flex flex-row gap-x-2 w-full">
+
+                            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
+                                data-hs-stepper-nav-item='{
+                              "index": 1
+                            }'>
+                                <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle">
+                                    <span
+                                        class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                                        <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">1</span>
+                                        <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2 text-sm font-medium text-gray-800 dark:text-white">
+                                        Pilih Dosen
+                                    </span>
+                                </span>
+                                <div
+                                    class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600 dark:bg-neutral-600 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500">
+                                </div>
+                            </li>
+
+                            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
+                                data-hs-stepper-nav-item='{
+                              "index": 2
+                            }'>
+                                <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle">
+                                    <span
+                                        class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                                        <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
+                                        <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2 text-sm font-medium text-gray-800 dark:text-white">
+                                        Pilih Kriteria
+                                    </span>
+                                </span>
+                                <div
+                                    class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600 dark:bg-neutral-600 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500">
+                                </div>
+                            </li>
+
+                            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
+                                data-hs-stepper-nav-item='{
+                                "index": 3
+                              }'>
+                                <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle">
+                                    <span
+                                        class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                                        <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
+                                        <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2 text-sm font-medium text-gray-800 dark:text-white">
+                                        Hasil Rekomendasi
+                                    </span>
+                                </span>
+                            </li>
+                            <!-- End Item -->
+                        </ul>
+                        <!-- End Stepper Nav -->
+
+                        <!-- Stepper Content -->
+                        <div class="mt-5 sm:mt-8">
+                            <!-- First Content -->
+                            <div
+                                data-hs-stepper-content-item='{
+                          "index": 1
+                        }'>
+                                <div
+                                    class="p-4 flex justify-center items-center rounded-xl dark:bg-neutral-700 dark:border-neutral-600">
+                                    <div class="space-y-6 w-full">
+                                        <h2 class="text-lg font-semibold text-navy dark:text-white">1. Pilih Maksimal 3
+                                            Dosen:</h2>
+
+                                        @php
+                                            $groupedProfiles = $profile->groupBy('id_alternatif');
+                                        @endphp
+
+                                        @foreach ($groupedProfiles as $alternatifId => $items)
+                                            @php
+                                                $firstItem = $items->first();
+                                            @endphp
+
+                                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 p-4">
+
+                                                <!-- Checkbox untuk Alternatif -->
+                                                <div class="flex items-center justify-center col-span-1">
+                                                    <input id="dosen-{{ $firstItem->id_alternatif }}" type="checkbox"
+                                                        value="{{ $firstItem->id_alternatif }}"
+                                                        class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-700 cursor-pointer focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600 checkbox" />
+                                                    <label for="dosen-{{ $firstItem->id_alternatif }}" class="sr-only">
+                                                        Dosen {{ $firstItem->id_alternatif }}
+                                                    </label>
+                                                </div>
+
+                                                <!-- Informasi Alternatif -->
+                                                <div class="flex items-center justify-start col-span-4 gap-6">
+                                                    <div class="flex items-center w-full gap-4 w-82 mr-4">
+                                                        <a href="#" class="flex aspect-square h-14 w-14 shrink-0">
+                                                            <img class="h-auto max-h-full w-full dark:hidden"
+                                                                src="{{ asset('static/image/logo_polije.png') }}"
+                                                                alt="Polije Logo" />
+                                                        </a>
+                                                        <div class="flex flex-col">
+                                                            <a href="#"
+                                                                class="font-medium text-gray-900 hover:underline dark:text-white whitespace-nowrap">
+                                                                {{ $firstItem->alternatif->name }}
+                                                            </a>
+                                                            <span
+                                                                class="text-sm font-medium text-gray-500 dark:text-white">
+                                                                {{ $firstItem->alternatif->nip }}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- List Kriteria dan Subkriteria -->
+                                                <div class="flex items-start justify-start col-span-7 gap-6">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
+                                                        @foreach ($items as $item)
+                                                            @if (isset($item->kriteria, $item->subkriteria))
+                                                                <div class="flex items-center gap-2">
+                                                                    <!-- Nama Kriteria -->
+                                                                    <span
+                                                                        class="text-base font-normal text-gray-500 dark:text-gray-400">
+                                                                        {{ $item->kriteria->kriteria_name }}:
+                                                                    </span>
+                                                                    <!-- Nama Subkriteria -->
+                                                                    <span
+                                                                        class="text-base font-normal text-gray-500 dark:text-gray-400">
+                                                                        <a href="#" class="hover:underline">
+                                                                            {{ $item->subkriteria->subkriteria_name }}
+                                                                        </a>
+                                                                    </span>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End First Content -->
+
+                            <!-- First Content -->
+                            <div data-hs-stepper-content-item='{
+                          "index": 2
+                        }'
+                                style="display: none;">
+                                <div
+                                    class="p-4 flex justify-center items-center rounded-xl dark:bg-neutral-700 dark:border-neutral-600">
+                                    <div class="space-y-6 w-full">
+                                        <h2 class="text-lg w-full font-semibold text-navy dark:text-white">1. Pilih
+                                            Kriteria :</h2>
+                                        <div class="grid sm:grid-cols-12 gap-2 sm:gap-4 first:pt-0 last:pb-0 ">
+
+                                            @foreach ($kriteria as $item)
+                                                <div class="sm:col-span-3">
+                                                    <label for="af-submit-application-kriteria-name-{{ $item->id_kriteria }}"
+                                                        class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
+                                                        {{ $item->kriteria_name }}
+                                                    </label>
+                                                </div>
+
+                                                <div class="sm:col-span-9">
+                                                    <div
+                                                        class="hs-dropdown [--strategy:absolute] [--flip:false] hs-dropdown-example relative inline-flex w-full">
+                                                        <button id="hs-dropdown-{{ $item->id_kriteria }}" type="button"
+                                                            class="hs-dropdown-toggle py-3 px-4 w-full inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                                            aria-haspopup="menu" aria-expanded="false"
+                                                            aria-label="Dropdown">
+                                                            Pilih {{ $item->kriteria_name }}
+                                                            <svg class="hs-dropdown-open:rotate-180 size-4 text-gray-600 dark:text-neutral-600"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m6 9 6 6 6-6"></path>
+                                                            </svg>
+                                                        </button>
+
+                                                        <div class="hs-dropdown-menu transition-[opacity,margin] w-full duration hs-dropdown-open:opacity-100 opacity-0 hidden z-10 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700"
+                                                            role="menu" aria-orientation="vertical"
+                                                            aria-labelledby="hs-dropdown-{{ $item->id_kriteria }}">
+                                                            @foreach ($item->subkriteria as $subkriteria)
+                                                                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                                    href="#">
+                                                                    {{ $subkriteria->subkriteria_name }}
+                                                                </a>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End First Content -->
+
+                            <!-- First Content -->
+                            <div data-hs-stepper-content-item='{
+                          "index": 3
+                        }'
+                                style="display: none;">
+                                <div
+                                    class="p-4 flex justify-center items-center rounded-xl dark:bg-neutral-700 dark:border-neutral-600">
+                                    <h3 class="text-gray-500 dark:text-neutral-400">
+                                        Third content
+                                    </h3>
+                                </div>
+                            </div>
+                            <!-- End First Content -->
+
+                            <!-- Final Content -->
+                            <div data-hs-stepper-content-item='{
+                          "isFinal": true
+                        }'
+                                style="display: none;">
+                                <div
+                                    class="p-4 h-48 bg-gray-50 flex justify-center items-center border border-dashed border-gray-200 rounded-xl dark:bg-neutral-700 dark:border-neutral-600">
+                                    <h3 class="text-gray-500 dark:text-neutral-400">
+                                        Final content
+                                    </h3>
+                                </div>
+                            </div>
+                            <!-- End Final Content -->
+
+                            <!-- Button Group -->
+                            <div class="mt-5 flex justify-between items-center gap-x-2">
+                                <button type="button"
+                                    class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                                    data-hs-stepper-back-btn="">
+                                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m15 18-6-6 6-6"></path>
+                                    </svg>
+                                    Back
+                                </button>
+                                <button type="button"
+                                    class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                    data-hs-stepper-next-btn="">
+                                    Next
+                                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m9 18 6-6-6-6"></path>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                    data-hs-stepper-finish-btn="" style="display: none;">
+                                    Finish
+                                </button>
+                                <button type="reset"
+                                    class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                    data-hs-stepper-reset-btn="" style="display: none;">
+                                    Reset
+                                </button>
+                            </div>
+                            <!-- End Button Group -->
+                        </div>
+                        <!-- End Stepper Content -->
+                    </div>
+                    <!-- End Stepper -->
                 </div>
             </div>
         @endrole
