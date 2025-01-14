@@ -17,6 +17,9 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- jquery --}}
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 </head>
 
 <body class="font-primary antialiased">
@@ -40,7 +43,8 @@
     {{-- flowbite --}}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
-    <script src="{{ asset('/node_modules/preline/dist/preline.js') }}"></script>
+    {{-- preline --}}
+    {{-- <script src="{{ asset('./node_modules/preline/dist/preline.js') }}"></script> --}}
 </body>
 
 </html>
