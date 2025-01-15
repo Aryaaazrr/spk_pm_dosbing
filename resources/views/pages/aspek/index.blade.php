@@ -101,7 +101,7 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="content-aspek">
                 @foreach ($aspek as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
@@ -151,4 +151,87 @@
         </table>
 
     </div>
+
+    <script>
+         $(document).ready(() => {
+            const container = $('#content-aspek');
+            const apiUrl = `{{ url('/api/v1/aspek') }}`;
+            let metaData = null;
+
+            const loadAspek = (apiUrl) => {
+                $.ajax({
+                    url: apiUrl,
+                    type: "GET",
+                    beforeSend: () => {
+                        container.empty();
+                        container.append(`
+                                <div class="col-span-full flex justify-center items-center h-64" id="loading">
+                                    <div class="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full dark:text-blue-500" role="status" aria-label="loading">
+                                    <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                            `);
+                    },
+                    success: (response) => {
+                        const {
+                            data: aspek,
+                            pagination
+                        } = response;
+                        metaData = pagination;
+
+                        $('#loading').remove();
+
+                        if (aspek.length === 0) {
+                            container.append(`
+                                    <div class="col-span-full flex justify-center items-center h-64">
+                                    <h4 class="text-lg font-semibold text-center text-gray-700 dark:text-gray-400">Data tidak ditemukan</h4>
+                                    </div>
+                                `);
+                            return;
+                        } else {
+                            renderAspek(aspek);
+                        }
+                    }
+                });
+            };
+
+            const renderAspek = (aspek) => {
+                container.empty();
+
+                $.each(aspek, (index, item) => {
+                    container.append(`
+                            <div class="grid sm:grid-cols-12 gap-2 sm:gap-4">
+                                <div class="sm:col-span-3 my-0 lg:my-2">
+                                    <label for="kriteria-${item.id_kriteria}" class="inline-block text-sm font-medium text-gray-500 mt-2.5 lg:my-2.5 dark:text-neutral-500">
+                                        ${item.kriteria_name}
+                                    </label>
+                                </div>
+                                <div class="sm:col-span-9 my-0 lg:my-2">
+                                    <select
+                                    data-hs-select='{
+                                        "placeholder": "Pilih ${item.kriteria_name}",
+                                        "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 ps-4 pe-9 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border-gray-200 rounded-lg text-start text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-neutral-600",
+                                        "dropdownClasses": "mt-2 z-50 w-full max-h-72 p-1 space-y-0.5 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-neutral-900 dark:border-neutral-700",
+                                        "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hover:bg-primary hover:text-white rounded-lg focus:outline-none focus:bg-primary dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-neutral-200 dark:focus:bg-neutral-800"
+                                    }'
+                                    id="kriteria-${item.id_kriteria}"
+                                    class="hidden" name="kriteria-${item.id_kriteria}"
+                                    >
+                                    <option value="">Pilih ${item.kriteria_name}</option>
+                                        ${subkriteriaOptions}
+                                    </select>
+                                    @error('kriteria-${item.id_kriteria}')
+                                        <div class="text-red-500 text-sm">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        `);
+                });
+
+                window.HSStaticMethods.autoInit(['select']);
+            };
+
+            loadAspek(apiUrl);
+        });
+    </script>
 </x-app-layout>

@@ -83,7 +83,7 @@
         @role('mahasiswa')
             <div class="px-4 2xl:px-0 mb-5">
                 <div class="gap-8 lg:flex">
-                    <div class="w-full" data-hs-stepper="">
+                    <div class="w-full" data-hs-stepper="" id="stepper">
                         <div class="flex items-center justify-center w-full">
                             <ul class="relative flex flex-row gap-x-2 w-full">
                                 <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
@@ -112,7 +112,8 @@
 
                                 <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
                                     data-hs-stepper-nav-item='{
-                                  "index": 2
+                                  "index": 2,
+                                  "hasError": true
                                 }'>
                                     <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle">
                                         <span
@@ -120,8 +121,8 @@
                                             <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
                                             <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round">
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="20 6 9 17 4 12"></polyline>
                                             </svg>
                                         </span>
@@ -141,8 +142,8 @@
                                             <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
                                             <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round">
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="20 6 9 17 4 12"></polyline>
                                             </svg>
                                         </span>
@@ -158,6 +159,34 @@
                         <form action="{{ route('profile-matching.start') }}" method="POST" id="form-profile-matching">
                             @csrf
                             <div class="mt-5 sm:mt-8" id="step-container">
+
+                                @if ($errors->any())
+                                    <div class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                                        role="alert" id="alert-status">
+                                        <svg class="flex-shrink-0 w-4 h-4 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                                        </svg>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li class="ms-3 text-sm font-medium">{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                        <button type="button"
+                                            class="ms-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
+                                            data-dismiss-target="#alert-status" aria-label="Close">
+                                            <span class="sr-only">Close</span>
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7l-6 6" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                @endif
+
                                 <div
                                     data-hs-stepper-content-item='{
                           "index": 1
@@ -168,7 +197,6 @@
                                             <h2 class="text-lg w-full font-semibold text-navy dark:text-white">1. Input
                                                 Judul:</h2>
                                             <div id="content-judul">
-
                                             </div>
                                         </div>
                                     </div>
@@ -218,7 +246,7 @@
                                                                 <div class="grow">
                                                                     <input id="dosen-{{ $firstItem->id_alternatif }}"
                                                                         type="checkbox"
-                                                                        name="alternatif-{{ $firstItem->id_alternatif }}"
+                                                                        name="alternatif[]"
                                                                         value="{{ $firstItem->id_alternatif }}"
                                                                         class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-700 cursor-pointer focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600 checkbox" />
                                                                     <label for="dosen-{{ $firstItem->id_alternatif }}"
@@ -528,7 +556,6 @@
 
     <script>
         $(document).ready(() => {
-            // e.preventDefault();
             const containerJudul = $('#content-judul');
             const container = $('#content-kriteria');
             const apiUrl = `{{ url('/api/v1/kriteria') }}`;

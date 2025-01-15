@@ -11,10 +11,11 @@ class ProfileMatchingController extends Controller
 {
     public function handleProfileMatching(ProfileMatchingRequest $request)
     {
-        dd($request->all());
         try {
             $validated = $request->validated();
 
+            $judul = $request->input('judul');
+            $deskripsi = $request->input('deskripsi');
             $selectedKriteria = $request->input('kriteria');
             $selectedAlternatif = $request->input('alternatif') ?? [];
 
@@ -46,8 +47,6 @@ class ProfileMatchingController extends Controller
 
     private function calculateScore($lecturer, $criterion)
     {
-        // Contoh penghitungan skor untuk setiap kriteria
-        // Implementasi spesifik sesuai rumus Profile Matching
         return rand(0, 100);
     }
 }

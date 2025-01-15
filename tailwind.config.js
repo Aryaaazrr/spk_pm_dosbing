@@ -9,6 +9,8 @@ export default {
         "./resources/views/**/*.blade.php",
         "./node_modules/flowbite/**/*.js",
         "./node_modules/preline/dist/*.js",
+        "./node_modules/jquery/dist/jquery.min.js",
+        "./node_modules/datatables.net/js/dataTables.min.js",
     ],
 
     theme: {

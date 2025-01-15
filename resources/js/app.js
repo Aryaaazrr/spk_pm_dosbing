@@ -3,6 +3,7 @@ import "flowbite";
 import "preline";
 
 import Alpine from "alpinejs";
+import HSStepper from "@preline/stepper";
 
 window.Alpine = Alpine;
 
