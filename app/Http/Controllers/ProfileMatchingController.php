@@ -32,6 +32,8 @@ class ProfileMatchingController extends Controller
             $data['totalValue'] = $this->totalValue($data['factorValue']);
             $data['ranking'] = $this->rankAlternatif($data['totalValue']);
 
+            // dd($data['factorValue']);
+
             return view('profile-matching.result', $data);
         } catch (\Exception $e) {
             return back()->withErrors($e->getMessage());
