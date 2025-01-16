@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",
+        "@preline/accordion": "^2.5.2",
         "@preline/datatable": "^2.5.2",
         "@preline/dropdown": "^2.5.2",
         "@preline/layout-splitter": "^2.5.2",

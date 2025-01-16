@@ -23,16 +23,17 @@ class ProfileMatchingRequest extends FormRequest
     {
         $rules = [
             'judul' => ['required', 'max:255'],
-            'deskripsi' => ['required', 'max:255']
+            'deskripsi' => ['required', 'max:255'],
         ];
 
-        for ($i = 1; $i <= 6; $i++) {
-            $rules["kriteria-$i"] = ['required', 'exists:subkriteria,id_subkriteria,id_kriteria,' . $i];
+        $rules['kriteria'] = ['required', 'array', 'size:6'];
+        foreach (range(0, 5) as $index) {
+            $rules["kriteria.$index"] = ['required', 'exists:subkriteria,id_subkriteria'];
         }
 
         $rules['alternatif'] = ['required', 'array', 'min:1', 'max:3'];
-        for ($i = 0; $i < 3; $i++) {
-            $rules["alternatif.$i"] = ['nullable', 'exists:alternatif,id_alternatif'];
+        foreach (range(0, 2) as $index) {
+            $rules["alternatif.$index"] = ['nullable', 'exists:alternatif,id_alternatif'];
         }
 
         return $rules;
@@ -50,12 +51,10 @@ class ProfileMatchingRequest extends FormRequest
             'judul.max' => 'Judul tidak boleh lebih dari 255 karakter.',
             'deskripsi.required' => 'Deskripsi harus diisi.',
 
-            'kriteria-1.required' => 'Kriteria Jumlah Kuota Bimbingan harus diisi.',
-            'kriteria-2.required' => 'Kriteria Pemenuhan Kuota Bimbingan harus diisi.',
-            'kriteria-3.required' => 'Kriteria Keahlian Utama harus diisi.',
-            'kriteria-4.required' => 'Kriteria Pengalaman Dalam Bidang harus diisi.',
-            'kriteria-5.required' => 'Kriteria Proyek Penelitian harus diisi.',
-            'kriteria-6.required' => 'Kriteria Jumlah Publikasi Ilmiah harus diisi.',
+            'kriteria.required' => 'Semua kriteria harus diisi.',
+            'kriteria.array' => 'Format kriteria tidak valid.',
+            'kriteria.size' => 'Semua 6 kriteria harus dipilih.',
+            'kriteria.*.exists' => 'Kriteria yang dipilih tidak valid.',
 
             'alternatif.required' => 'Setidaknya satu alternatif harus dipilih.',
             'alternatif.array' => 'Format alternatif tidak valid.',

@@ -121,8 +121,8 @@
                                             <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
                                             <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="20 6 9 17 4 12"></polyline>
                                             </svg>
                                         </span>
@@ -245,8 +245,7 @@
                                                             <div class="flex justify-between items-center gap-x-3">
                                                                 <div class="grow">
                                                                     <input id="dosen-{{ $firstItem->id_alternatif }}"
-                                                                        type="checkbox"
-                                                                        name="alternatif[]"
+                                                                        type="checkbox" name="alternatif[]"
                                                                         value="{{ $firstItem->id_alternatif }}"
                                                                         class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-700 cursor-pointer focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600 checkbox" />
                                                                     <label for="dosen-{{ $firstItem->id_alternatif }}"
@@ -675,14 +674,14 @@
                         `<option value="">Tidak ada subkriteria tersedia</option>`;
 
                     container.append(`
-                            <div class="grid sm:grid-cols-12 gap-2 sm:gap-4">
-                                <div class="sm:col-span-3 my-0 lg:my-2">
-                                    <label for="kriteria-${item.id_kriteria}" class="inline-block text-sm font-medium text-gray-500 mt-2.5 lg:my-2.5 dark:text-neutral-500">
-                                        ${item.kriteria_name}
-                                    </label>
-                                </div>
-                                <div class="sm:col-span-9 my-0 lg:my-2">
-                                    <select
+                        <div class="grid sm:grid-cols-12 gap-2 sm:gap-4">
+                            <div class="sm:col-span-3 my-0 lg:my-2">
+                                <label for="kriteria-${item.id_kriteria}" class="inline-block text-sm font-medium text-gray-500 mt-2.5 lg:my-2.5 dark:text-neutral-500">
+                                    ${item.kriteria_name}
+                                </label>
+                            </div>
+                            <div class="sm:col-span-9 my-0 lg:my-2">
+                                <select
                                     data-hs-select='{
                                         "placeholder": "Pilih ${item.kriteria_name}",
                                         "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 ps-4 pe-9 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border-gray-200 rounded-lg text-start text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-neutral-600",
@@ -690,17 +689,18 @@
                                         "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hover:bg-primary hover:text-white rounded-lg focus:outline-none focus:bg-primary dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-neutral-200 dark:focus:bg-neutral-800"
                                     }'
                                     id="kriteria-${item.id_kriteria}"
-                                    class="hidden" name="kriteria-${item.id_kriteria}"
-                                    >
+                                    class="hidden"
+                                    name="kriteria[]"
+                                >
                                     <option value="">Pilih ${item.kriteria_name}</option>
-                                        ${subkriteriaOptions}
-                                    </select>
-                                    @error('kriteria-${item.id_kriteria}')
-                                        <div class="text-red-500 text-sm">{{ $message }}</div>
-                                    @enderror
-                                </div>
+                                    ${subkriteriaOptions}
+                                </select>
+                                @error('kriteria.*')
+                                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                                @enderror
                             </div>
-                        `);
+                        </div>
+                    `);
                 });
 
                 window.HSStaticMethods.autoInit(['select']);
