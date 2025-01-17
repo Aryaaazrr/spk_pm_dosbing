@@ -4,6 +4,7 @@ import "preline";
 
 import Alpine from "alpinejs";
 import HSStepper from "@preline/stepper";
+import { HSDataTable } from "preline";
 
 window.Alpine = Alpine;
 

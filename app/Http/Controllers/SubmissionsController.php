@@ -35,7 +35,7 @@ class SubmissionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

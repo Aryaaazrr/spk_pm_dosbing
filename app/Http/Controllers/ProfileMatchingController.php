@@ -32,11 +32,13 @@ class ProfileMatchingController extends Controller
             $data['totalValue'] = $this->totalValue($data['factorValue']);
             $data['ranking'] = $this->rankAlternatif($data['totalValue']);
 
-            // dd($data['factorValue']);
+            $data['data_aspek'] = Aspek::all();
+            $data['data_kriteria'] = Kriteria::all();
 
             return view('profile-matching.result', $data);
         } catch (\Exception $e) {
-            return back()->withErrors($e->getMessage());
+            Log::error('Error in Profile Matching:', ['message' => $e->getMessage()]);
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
