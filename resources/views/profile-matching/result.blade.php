@@ -363,17 +363,17 @@
                                             <thead
                                                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                 <tr>
-                                                    <th scope="col" 
-                                                        class="px-6 py-3 text-center">
+                                                    <th scope="col" class="px-6 py-3 text-center">
                                                         Kode Alternatif
                                                     </th>
-                                                    <th scope="col" 
-                                                        class="px-6 py-3 text-center">
+                                                    <th scope="col" class="px-6 py-3 text-center">
                                                         Nilai Akhir
                                                     </th>
-                                                    <th scope="col" 
-                                                        class="px-6 py-3 text-center">
+                                                    <th scope="col" class="px-6 py-3 text-center">
                                                         Ranking
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3 text-center">
+                                                        Pilih Dosen
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -386,7 +386,6 @@
                                                                 {{ is_array($value) ? implode(', ', $value) : $value }}
                                                             </th>
                                                         @endforeach
-                                                    </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>

@@ -156,7 +156,7 @@
                             </ul>
                         </div>
 
-                        <form action="{{ route('profile-matching.start') }}" method="POST" id="form-profile-matching">
+                        <form action="{{ route('results.start') }}" method="POST" id="form-profile-matching">
                             @csrf
                             <div class="mt-5 sm:mt-8" id="step-container">
 

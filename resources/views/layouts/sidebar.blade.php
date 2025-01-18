@@ -115,7 +115,7 @@
                             <circle cx="10" cy="8" r="5" />
                             <path d="m16 19 2 2 4-4" />
                         </svg>'
-                    title="Pemilihan Dosen" :active="Route::is('submissions*')" />
+                    title="Pemilihan Dosen" :active="Route::is('submissions*') || Route::is('results*')" />
             @endrole
         </ul>
         <ul class="space-y-2 p-2 border-t border-gray-200 dark:border-gray-700">
