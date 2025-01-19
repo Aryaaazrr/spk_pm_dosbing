@@ -20,8 +20,8 @@ class ProfileMatchingController extends Controller
         try {
             $validated = $request->validated();
 
-            $data['judul'] = $request->input('judul');
-            $data['deskripsi'] = $request->input('deskripsi');
+            // $data['judul'] = $request->input('judul');
+            // $data['deskripsi'] = $request->input('deskripsi');
             $selectedKriteria = $request->input('kriteria', []);
             $selectedAlternatif = $request->input('alternatif', []);
 

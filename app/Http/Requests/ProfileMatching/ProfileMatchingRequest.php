@@ -21,10 +21,10 @@ class ProfileMatchingRequest extends FormRequest
      */
     public function rules(): array
     {
-        $rules = [
-            'judul' => ['required', 'max:255'],
-            'deskripsi' => ['required', 'max:255'],
-        ];
+        // $rules = [
+        //     'judul' => ['required', 'max:255'],
+        //     'deskripsi' => ['required', 'max:255'],
+        // ];
 
         $rules['kriteria'] = ['required', 'array', 'size:6'];
         foreach (range(0, 5) as $index) {

@@ -88,8 +88,13 @@
                             <ul class="relative flex flex-row gap-x-2 w-full">
                                 <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
                                     data-hs-stepper-nav-item='{
-                                  "index": 1
+                                  "index": 1,
+                                   "hasError": true
                                 }'>
+                                
+                                    <div
+                                        class="w-5 h-px flex-1 bg-gray-200 hs-stepper-active:bg-blue-600 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600 dark:bg-neutral-600 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500">
+                                    </div>
                                     <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle">
                                         <span
                                             class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
@@ -102,12 +107,10 @@
                                             </svg>
                                         </span>
                                         <span class="ms-2 text-sm font-medium text-gray-800 inline-flex dark:text-white">
-                                            <span class="hidden me-1 md:block">Judul</span>
+                                            <span class="hidden me-1 md:block">Kriteria</span>
                                         </span>
                                     </span>
-                                    <div
-                                        class="w-5 h-px flex-1 bg-gray-200 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600 dark:bg-neutral-600 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500">
-                                    </div>
+
                                 </li>
 
                                 <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
@@ -115,6 +118,9 @@
                                   "index": 2,
                                   "hasError": true
                                 }'>
+                                    <div
+                                        class="w-full h-px flex-1 bg-gray-200 hs-stepper-active:bg-blue-600 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600 dark:bg-neutral-600 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500">
+                                    </div>
                                     <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle">
                                         <span
                                             class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
@@ -127,15 +133,13 @@
                                             </svg>
                                         </span>
                                         <span class="ms-2 text-sm font-medium text-gray-800 inline-flex dark:text-white">
-                                            <span class="hidden me-1 md:block">Kriteria</span>
+                                            <span class="hidden me-1 md:block">Dosen</span>
                                         </span>
                                     </span>
-                                    <div
-                                        class="w-full h-px flex-1 bg-gray-200 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600 dark:bg-neutral-600 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500">
-                                    </div>
+
                                 </li>
 
-                                <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group">
+                                {{-- <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group">
                                     <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle">
                                         <span
                                             class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
@@ -151,7 +155,7 @@
                                             <span class="hidden me-1 md:block">Dosen</span>
                                         </span>
                                     </span>
-                                </li>
+                                </li> --}}
                                 <!-- End Item -->
                             </ul>
                         </div>
@@ -196,7 +200,7 @@
                                         <div class="space-y-6 w-full">
                                             <h2 class="text-lg w-full font-semibold text-navy dark:text-white">1. Input
                                                 Judul:</h2>
-                                            <div id="content-judul">
+                                            <div id="content-kriteria">
                                             </div>
                                         </div>
                                     </div>
@@ -210,8 +214,134 @@
                                         class="flex justify-center items-center rounded-xl dark:bg-neutral-700 dark:border-neutral-600">
                                         <div class="space-y-6 w-full">
                                             <h2 class="text-lg w-full font-semibold text-navy dark:text-white">2. Pilih
-                                                Kriteria:</h2>
-                                            <div id="content-kriteria">
+                                                Maksimal 3 Dosen:</h2>
+                                            <div class="grid sm:grid-cols-1 xl:grid-cols-3 gap-3 sm:gap-6">
+                                                @php
+                                                    $groupedProfiles = $profile->groupBy('id_alternatif');
+                                                @endphp
+
+                                                @foreach ($groupedProfiles as $alternatifId => $items)
+                                                    @php
+                                                        $firstItem = $items->first();
+                                                    @endphp
+
+                                                    <div
+                                                        class="group flex flex-col justify-center bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800">
+                                                        <div class="p-4 md:p-5 w-full">
+                                                            <div class="flex justify-between items-center gap-x-3">
+                                                                <div class="grow">
+                                                                    <input id="dosen-{{ $firstItem->id_alternatif }}"
+                                                                        type="checkbox" name="alternatif[]"
+                                                                        value="{{ $firstItem->id_alternatif }}"
+                                                                        class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-700 cursor-pointer focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600 checkbox" />
+                                                                    <label for="dosen-{{ $firstItem->id_alternatif }}"
+                                                                        class="sr-only">
+                                                                        Dosen {{ $firstItem->id_alternatif }}
+                                                                    </label>
+                                                                </div>
+
+                                                                <button type="button" aria-haspopup="dialog"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="hs-vertically-centered-modal-{{ $firstItem->id_alternatif }}"
+                                                                    data-hs-overlay="#hs-vertically-centered-modal-{{ $firstItem->id_alternatif }}"
+                                                                    class="flex justify-between items-center gap-x-3 w-full">
+                                                                    <div class="flex items-center gap-x-3">
+                                                                        <img class="size-[38px] rounded-full"
+                                                                            src="{{ asset('static/image/logo_polije.png') }}"
+                                                                            alt="Avatar">
+                                                                        <div class="grow">
+                                                                            <h5
+                                                                                class="group-hover:text-blue-600 font-semibold text-sm text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                                                                                {{ $firstItem->alternatif->name }}
+                                                                            </h5>
+                                                                            <p
+                                                                                class="group-hover:text-blue-600 text-center w-full md:text-start font-semibold text-xs text-gray-500 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                                                                                {{ $firstItem->alternatif->nip }}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <svg class="shrink-0 size-5 text-gray-800 dark:text-neutral-200"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            width="24" height="24"
+                                                                            viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <path d="m9 18 6-6-6-6" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="hs-vertically-centered-modal-{{ $firstItem->id_alternatif }}"
+                                                        class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none"
+                                                        role="dialog" tabindex="-1"
+                                                        aria-labelledby="hs-vertically-centered-modal-label-{{ $firstItem->id_alternatif }}">
+                                                        <div
+                                                            class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
+                                                            <div
+                                                                class="w-full flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                                                                <div
+                                                                    class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+                                                                    <h3 id="hs-vertically-centered-modal-label"
+                                                                        class="font-bold text-gray-800 dark:text-white">
+                                                                        {{ $firstItem->alternatif->name }}
+                                                                    </h3>
+                                                                    <button type="button"
+                                                                        class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+                                                                        aria-label="Close"
+                                                                        data-hs-overlay="#hs-vertically-centered-modal-{{ $firstItem->id_alternatif }}">
+                                                                        <span class="sr-only">Close</span>
+                                                                        <svg class="shrink-0 size-4"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            width="24" height="24"
+                                                                            viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <path d="M18 6 6 18"></path>
+                                                                            <path d="m6 6 12 12"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="p-4 overflow-y-auto">
+                                                                    <div class="grid grid-cols-1 gap-2 w-full">
+                                                                        @foreach ($items as $item)
+                                                                            @if (isset($item->kriteria, $item->subkriteria))
+                                                                                <div class="flex items-center gap-2">
+                                                                                    <!-- Nama Kriteria -->
+                                                                                    <span
+                                                                                        class="text-base font-normal text-gray-500 dark:text-gray-400">
+                                                                                        {{ $item->kriteria->kriteria_name }}:
+                                                                                    </span>
+                                                                                    <!-- Nama Subkriteria -->
+                                                                                    <span
+                                                                                        class="text-base font-normal text-gray-500 dark:text-gray-400">
+                                                                                        <a href="#"
+                                                                                            class="hover:underline">
+                                                                                            {{ $item->subkriteria->subkriteria_name }}
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </div>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
+                                                                    <button type="button"
+                                                                        class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                                                        data-hs-overlay="#hs-vertically-centered-modal-{{ $firstItem->id_alternatif }}">
+                                                                        Close
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -706,7 +836,7 @@
                 window.HSStaticMethods.autoInit(['select']);
             };
 
-            loadJudul(apiUrl);
+            // loadJudul(apiUrl);
             loadKriteria(apiUrl);
         });
     </script>
