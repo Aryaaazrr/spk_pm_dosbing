@@ -31,7 +31,7 @@
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">
                         <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-                            72,540
+                            {{ $jumlah_alternatif }}
                         </h3>
                         <span
                             class="inline-flex items-center gap-x-1 py-0.5 px-2 rounded-full bg-green-100 text-green-900 dark:bg-green-800 dark:text-green-100">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">
                         <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-                            72,540
+                            {{ $jumlah_mahasiswa }}
                         </h3>
                         <span
                             class="inline-flex items-center gap-x-1 py-0.5 px-2 rounded-full bg-green-100 text-green-900 dark:bg-green-800 dark:text-green-100">
@@ -110,7 +110,7 @@
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">
                         <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-                            72,540
+                            {{ $jumlah_pengajuan }}
                         </h3>
                         <span
                             class="inline-flex items-center gap-x-1 py-0.5 px-2 rounded-full bg-green-100 text-green-900 dark:bg-green-800 dark:text-green-100">
@@ -144,7 +144,7 @@
                 <div class="grow">
                     <div class="flex items-center gap-x-2">
                         <p class="tracking-wide text-gray-500 dark:text-neutral-500">
-                            Dosen
+                            Pengunjung Website
                         </p>
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">

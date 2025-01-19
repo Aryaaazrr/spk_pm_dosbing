@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alternatif;
+use App\Models\Submissions;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class DashboardController extends Controller
 {
@@ -13,6 +16,12 @@ class DashboardController extends Controller
     public function index()
     {
         $data['alternatif'] = Alternatif::all();
+        $data['jumlah_alternatif'] = Alternatif::count();
+        $data['jumlah_mahasiswa'] = Role::where('name', 'mahasiswa')
+        ->first()
+        ->users()
+        ->count();
+        $data['jumlah_pengajuan'] = Submissions::count();
 
         return view('pages.dashboard.index', $data);
     }
