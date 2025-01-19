@@ -77,7 +77,7 @@
                     class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-neutral-700 dark:first:border-transparent">
 
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-subkriteria-name"
+                        <label for="af-submit-application-nim"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
                             NIM
                         </label>
@@ -86,14 +86,15 @@
 
                     <div class="sm:col-span-9">
                         <div class="sm:flex">
-                            <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                            <input id="af-submit-application-nim" name="nim" type="text"
+                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                value="{{ Auth::user()->nim }}" readonly>
                         </div>
                     </div>
                     <!-- End Col -->
 
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-nilai"
+                        <label for="af-submit-application-name"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
                             Nama
                         </label>
@@ -102,14 +103,15 @@
 
                     <div class="sm:col-span-9">
                         <div class="sm:flex">
-                            <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                            <input id="af-submit-application-name" name="name" type="text"
+                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                value="{{ Auth::user()->name }}" readonly>
                         </div>
                     </div>
 
                     <!-- End Col -->
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-nilai"
+                        <label for="af-submit-application-angkatan"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
                             Angkatan
                         </label>
@@ -118,14 +120,14 @@
 
                     <div class="sm:col-span-9">
                         <div class="sm:flex">
-                            <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
+                            <input id="af-submit-application-angkatan" name="angkatan" type="text"
                                 class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                         </div>
                     </div>
-                    
+
                     <!-- End Col -->
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-nilai"
+                        <label for="af-submit-application-prodi"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
                             Jenjang - Program Studi
                         </label>
@@ -134,14 +136,15 @@
 
                     <div class="sm:col-span-9">
                         <div class="sm:flex">
-                            <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                            <input id="af-submit-application-prodi" name="prodi" type="text"
+                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                value="D4 - Teknik Informatika" readonly>
                         </div>
                     </div>
 
                     <!-- End Col -->
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-nilai"
+                        <label for="af-submit-application-judul"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
                             Judul
                         </label>
@@ -150,14 +153,15 @@
 
                     <div class="sm:col-span-9">
                         <div class="sm:flex">
-                            <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                            <textarea
+                                class="py-2 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                rows="3" name="judul" placeholder="Masukkan deksripsi judul anda..."></textarea>
                         </div>
                     </div>
 
                     <!-- End Col -->
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-nilai"
+                        <label for="af-submit-application-deskripsi"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
                             Deskripsi
                         </label>
@@ -166,14 +170,15 @@
 
                     <div class="sm:col-span-9">
                         <div class="sm:flex">
-                            <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                            <textarea
+                                class="py-2 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                rows="3" name="deskripsi" placeholder="Masukkan deksripsi judul anda..."></textarea>
                         </div>
                     </div>
 
                     <!-- End Col -->
                     <div class="sm:col-span-3">
-                        <label for="af-submit-application-nilai"
+                        <label for="af-submit-application-dosen"
                             class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
                             Dosen Pembimbing
                         </label>
@@ -181,10 +186,19 @@
                     <!-- End Col -->
 
                     <div class="sm:col-span-9">
-                        <div class="sm:flex">
-                            <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                        </div>
+                        <select
+                            data-hs-select='{
+                                "placeholder": "Pilih Dosen Pembimbing",
+                                "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 ps-4 pe-9 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border-gray-200 rounded-lg text-start text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-neutral-600",
+                                "dropdownClasses": "mt-2 z-50 w-full max-h-72 p-1 space-y-0.5 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-neutral-900 dark:border-neutral-700",
+                                "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hover:bg-primary hover:text-white rounded-lg focus:outline-none focus:bg-primary dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-neutral-200 dark:focus:bg-neutral-800"
+                            }'
+                            name="dosen">
+                            <option value="" selected disabled>Pilih Dosen Pembimbing</option>
+                            @foreach ($alternatif as $item)
+                                <option value="{{ $item->id_alternatif }}">{{ $item->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <!-- End Col -->
 
@@ -192,10 +206,6 @@
                 <!-- End Section -->
 
                 <div class="flex justify-center lg:justify-end items-center w-full gap-2">
-                    <a href="{{ route('aspek.index') }}"
-                        class="w-full lg:w-1/12 py-3 px-4 flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-400 text-white hover:bg-gray-500 focus:outline-none focus:bg-gray-600 disabled:opacity-50 disabled:pointer-events-none">
-                        Batal
-                    </a>
                     <button type="submit"
                         class="w-full lg:w-1/12 py-3 px-4 flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
                         Simpan

@@ -91,7 +91,7 @@
                                   "index": 1,
                                    "hasError": true
                                 }'>
-                                
+
                                     <div
                                         class="w-5 h-px flex-1 bg-gray-200 hs-stepper-active:bg-blue-600 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600 dark:bg-neutral-600 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500">
                                     </div>
@@ -198,8 +198,7 @@
                                     <div
                                         class="flex justify-center items-center rounded-xl dark:bg-neutral-700 dark:border-neutral-600">
                                         <div class="space-y-6 w-full">
-                                            <h2 class="text-lg w-full font-semibold text-navy dark:text-white">1. Input
-                                                Judul:</h2>
+                                            <h2 class="text-lg w-full font-semibold text-navy dark:text-white">1. Pilih Kriteria:</h2>
                                             <div id="content-kriteria">
                                             </div>
                                         </div>

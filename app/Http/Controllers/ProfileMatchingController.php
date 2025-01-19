@@ -32,6 +32,7 @@ class ProfileMatchingController extends Controller
             Log::info('Selected Kriteria:', ['data' => $selectedKriteria]);
             Log::info('Selected Alternatif:', ['data' => $selectedAlternatif]);
 
+            $data['selectedKriteria'] = $selectedKriteria;
             $data['resultsGAP'] = $this->gapProfil($selectedAlternatif, $selectedKriteria);
             $data['normalizedGAP'] = $this->normalizeGAP($data['resultsGAP']);
             $data['factorValue'] = $this->factorValue($data['normalizedGAP']);

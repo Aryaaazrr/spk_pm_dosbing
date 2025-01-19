@@ -29,7 +29,8 @@ class SubmissionsController extends Controller
      */
     public function create()
     {
-        return view('pages.submissions.create');
+        $data['alternatif'] = Alternatif::all();
+        return view('pages.submissions.create', $data);
     }
 
     /**

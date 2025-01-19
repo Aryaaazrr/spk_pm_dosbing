@@ -75,8 +75,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// window.addEventListener('load', () => {
-//     setTimeout(() => {
-//         document.querySelectorAll('.hs-overlay').forEach((el) => HSOverlay.open(el));
-//     });
-// });
+window.HSStaticMethods.autoInit(['select']);
