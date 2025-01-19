@@ -25,7 +25,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('alternatif', AlternatifController::class);
     Route::resource('method-profile', ProfileMethodController::class);
     Route::resource('mahasiswa', MahasiswaController::class);
-
     Route::resource('submissions', SubmissionsController::class);
 
     Route::post('results', [ProfileMatchingController::class, 'handleProfileMatching'])->name('results.start');

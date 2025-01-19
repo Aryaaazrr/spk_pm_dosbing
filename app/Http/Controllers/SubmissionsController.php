@@ -29,7 +29,7 @@ class SubmissionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.submissions.create');
     }
 
     /**
