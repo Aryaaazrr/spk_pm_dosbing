@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1\ProfileMatching;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileMatching\ProfileMatchingRequest;
-use App\Http\Requests\Submission\SubmissionRequest;
 use App\Models\Alternatif;
 use App\Models\Aspek;
 use App\Models\Kriteria;
 use App\Models\ProfileMethod;
 use App\Models\Subkriteria;
-use App\Models\Submissions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -45,6 +44,7 @@ class ProfileMatchingController extends Controller
                 return back()->withErrors('Terjadi kesalahan saat memproses data.')->withInput();
             }
 
+            // dd($data);
             return view('profile-matching.result', $data);
 
         } catch (\Exception $e) {
@@ -52,7 +52,7 @@ class ProfileMatchingController extends Controller
 
             return response()->json(['error' => 'Terjadi kesalahan saat memproses data: ' . $e->getMessage()], 500);
         }
-    }
+}
 
     private function gapProfil($alternatif, $kriteria)
     {
@@ -218,20 +218,4 @@ class ProfileMatchingController extends Controller
 
         return $rankedResults;
     }
-
-    public function submit(SubmissionRequest $request)
-    {
-        try {
-            $validated = $request->validated();
-
-            Submissions::create($validated);
-
-            return redirect()->route('results.data')->with('success', 'Pengajuan Judul Berhasil');
-            // return view('profile-matching.result');
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            return back()->with(['error' => 'Pengajuan Judul Gagal: ' . $e->getMessage()]);
-        }
-    }
-
 }

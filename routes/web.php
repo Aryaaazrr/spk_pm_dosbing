@@ -29,6 +29,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('submissions', SubmissionsController::class);
 
     Route::post('results', [ProfileMatchingController::class, 'handleProfileMatching'])->name('results.start');
+    Route::post('results/{id}', [ProfileMatchingController::class, 'submit'])->name('results.submit');
+    Route::get('results/{id}', [ProfileMatchingController::class, 'data'])->name('results.data');
 
     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');

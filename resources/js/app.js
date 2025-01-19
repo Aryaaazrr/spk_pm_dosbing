@@ -4,7 +4,7 @@ import "preline";
 
 import Alpine from "alpinejs";
 import HSStepper from "@preline/stepper";
-import { HSDataTable } from "preline";
+import { HSDataTable, HSOverlay } from "preline";
 
 window.Alpine = Alpine;
 
@@ -74,3 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// window.addEventListener('load', () => {
+//     setTimeout(() => {
+//         document.querySelectorAll('.hs-overlay').forEach((el) => HSOverlay.open(el));
+//     });
+// });

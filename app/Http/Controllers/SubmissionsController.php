@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Submission\SubmissionRequest;
 use App\Models\Alternatif;
 use App\Models\Kriteria;
 use App\Models\ProfileMethod;
 use App\Models\Submissions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SubmissionsController extends Controller
 {
@@ -35,7 +37,16 @@ class SubmissionsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        try {
+            $validated = $request->validated();
+
+            Submissions::create($validated);
+
+            return redirect()->route('submissions.index')->with('success', 'Pengajuan Judul Berhasil');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return back()->with(['error' => 'Pengajuan Judul Gagal: ' . $e->getMessage()]);
+        }
     }
 
     /**
