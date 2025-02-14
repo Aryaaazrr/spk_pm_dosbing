@@ -1,6 +1,8 @@
 import "./bootstrap";
 import "flowbite";
 import "preline";
+import Swiper from 'swiper';
+import 'swiper/css';
 
 import Alpine from "alpinejs";
 import HSStepper from "@preline/stepper";
@@ -76,3 +78,30 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.HSStaticMethods.autoInit(['select']);
+
+// Initialize Swiper
+document.addEventListener("DOMContentLoaded", function() {
+    new Swiper(".sliderOurWork", {
+        centeredSlides: true,
+        slidesPerView: 6,
+        spaceBetween: 20,
+        loop: true,
+        speed: 800,
+        effect:'slide',
+        lazyLoadingInPrevNext: true,
+        preloadImages: true,
+        freeMode: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+            renderProgressbar: function(progressbarFillClass) {
+                return '<span class="' + progressbarFillClass +
+                    '" style="background-color: white;transition: all 500ms ease-in-out !important;"></span>';
+            },
+        },
+        navigation: {
+            nextEl: "#button-next-our-work",
+            prevEl: "#button-prev-our-work",
+        },
+    });
+});

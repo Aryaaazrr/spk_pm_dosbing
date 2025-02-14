@@ -28,6 +28,7 @@
         "datatables.net-dt": "^2.2.1",
         "jquery": "^3.7.1",
         "preline": "^2.7.0",
-        "simple-datatables": "^9.2.1"
+        "simple-datatables": "^9.2.1",
+        "swiper": "^11.2.3"
     }
 }
