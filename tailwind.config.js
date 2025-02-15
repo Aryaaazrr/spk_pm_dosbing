@@ -1,3 +1,4 @@
+import defaultTheme from "tailwindcss/defaultTheme";
 import forms from "@tailwindcss/forms";
 
 /** @type {import('tailwindcss').Config} */
@@ -14,8 +15,14 @@ export default {
 
     theme: {
         extend: {
+            keyframes: {
+                customBounce: {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-10px)" },
+                },
+            },
             fontFamily: {
-                primary: ["Poppins"],
+                primary: ["Poppins", ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 primary: "#1570EF",
@@ -26,6 +33,9 @@ export default {
                 success: "#05CD99",
                 successHover: "#6FEACA",
             },
+            animation: {
+                CustomBounce : "customBounce 2s ease-in-out infinite"
+            }
         },
         container: {
             center: true,

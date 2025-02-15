@@ -26,7 +26,9 @@
         "@preline/stepper": "^2.5.2",
         "@preline/tooltip": "^2.5.2",
         "datatables.net-dt": "^2.2.1",
+        "gsap": "^3.12.7",
         "jquery": "^3.7.1",
+        "lenis": "^1.1.20",
         "preline": "^2.7.0",
         "simple-datatables": "^9.2.1",
         "swiper": "^11.2.3"

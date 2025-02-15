@@ -1,12 +1,30 @@
 import "./bootstrap";
 import "flowbite";
 import "preline";
-import Swiper from 'swiper';
-import 'swiper/css';
-
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Lenis from "lenis";
 import Alpine from "alpinejs";
 import HSStepper from "@preline/stepper";
 import { HSDataTable, HSOverlay } from "preline";
+import { initNavigation } from "./animated/navigation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const lenis = new Lenis();
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
 
 window.Alpine = Alpine;
 
@@ -75,33 +93,101 @@ document.addEventListener("DOMContentLoaded", function () {
             limitCheckboxes(checkbox);
         });
     });
-});
 
-window.HSStaticMethods.autoInit(['select']);
+    const navbar = document.querySelector("nav");
 
-// Initialize Swiper
-document.addEventListener("DOMContentLoaded", function() {
-    new Swiper(".sliderOurWork", {
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add("shadow-md");
+        } else {
+            navbar.classList.remove("shadow-md");
+        }
+    });
+
+    new Swiper(".slider-testimonials", {
+        modules: [Navigation, Pagination],
         centeredSlides: true,
-        slidesPerView: 6,
-        spaceBetween: 20,
-        loop: true,
-        speed: 800,
-        effect:'slide',
+        effect: "slide",
         lazyLoadingInPrevNext: true,
         preloadImages: true,
         freeMode: true,
+        centeredSlides: true,
+        centerInsufficientSlides: true,
+        centeredSlidesBounds: true,
+        loop: true,
+        slidesPerView: 1.45,
+        spaceBetween: 10,
+        breakpoints: {
+            320: {
+                slidesPerView: 1.6,
+                spaceBetween: 10,
+            },
+            370: {
+                slidesPerView: 1.8,
+                spaceBetween: 15,
+            },
+            400: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+            },
+            450: {
+                slidesPerView: 2.3,
+                spaceBetween: 15,
+            },
+            500: {
+                slidesPerView: 2.5,
+                spaceBetween: 15,
+            },
+            550: {
+                slidesPerView: 2.8,
+                spaceBetween: 15,
+            },
+            600: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            650: {
+                slidesPerView: 3.2,
+            },
+            700: {
+                slidesPerView: 3.5,
+            },
+            750: {
+                slidesPerView: 3.7,
+            },
+            800: {
+                slidesPerView: 4,
+            },
+            900: {
+                slidesPerView: 4.2,
+            },
+            940: {
+                slidesPerView: 4.5,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+            },
+        },
+        speed: 800,
         pagination: {
             el: ".swiper-pagination",
             type: "progressbar",
-            renderProgressbar: function(progressbarFillClass) {
-                return '<span class="' + progressbarFillClass +
-                    '" style="background-color: white;transition: all 500ms ease-in-out !important;"></span>';
+            renderProgressbar: function (progressbarFillClass) {
+                return (
+                    '<span class="' +
+                    progressbarFillClass +
+                    '" style="background: linear-gradient(to right, #2563eb, #4f46e5); height: 100%; transition: all 500ms ease-in-out !important;"></span>'
+                );
             },
         },
         navigation: {
-            nextEl: "#button-next-our-work",
-            prevEl: "#button-prev-our-work",
+            nextEl: "#button-next",
+            prevEl: "#button-prev",
         },
     });
 });
+
+window.HSStaticMethods.autoInit(["select"]);
+
+initNavigation();
