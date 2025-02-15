@@ -8,7 +8,6 @@
 .env
 .env.backup
 .env.production
-composer.lock
 package-lock.json
 Homestead.json
 Homestead.yaml
@@ -19,3 +18,4 @@ yarn-error.log
 /.idea
 /.vscode
 tailwind.config copy.js
+composer.lock
