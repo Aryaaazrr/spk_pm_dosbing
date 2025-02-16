@@ -911,8 +911,8 @@
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Contact</h4>
-                    <p class="text-gray-400">Email: info@spkpm.com</p>
-                    <p class="text-gray-400">Phone: +62 123 4567</p>
+                    <p class="text-gray-400">Email: info@achmadzakariya.my.id</p>
+                    <p class="text-gray-400">Phone: +62 878 330 2407</p>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Follow Us</h4>

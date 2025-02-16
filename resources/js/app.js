@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    const navbar = document.querySelector("nav");
+    const navbar = document.querySelector(".frame");
 
     window.addEventListener("scroll", function () {
         if (window.scrollY > 50) {
