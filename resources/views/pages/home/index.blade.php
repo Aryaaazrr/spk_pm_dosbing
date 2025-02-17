@@ -617,7 +617,7 @@
                     </span>
                 </a>
             </div>
-            <div class="swiper-container w-full h-[400px] md:h-[500px] mt-14 slider-testimonials  overflow-hidden">
+            <div class="swiper-container w-full h-[480px] md:h-[500px] mt-14 slider-testimonials  overflow-hidden">
                 <div class="swiper-wrapper flex w-full h-full" id="portfolio-swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide cursor-pointer">
