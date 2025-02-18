@@ -10,15 +10,15 @@
             <div class="max-w-2xl">
                 <h1 class="text-3xl font-bold text-white sm:text-4xl leading-tight">
                     Sistem Pendukung Keputusan <br>
-                    <span class="font-light">Profile Matching Method</span>
+                    <span class="font-light">Pemilihan Dosen Pembimbing Skripsi</span>
                 </h1>
                 <p class="mt-6 text-xl text-blue-100">
-                    Create beautiful, modern, and responsive web applications with Tailwind CSS and Flowbite.
+                    Sistem ini membantu mahasiswa D4-Teknik Informatika memilih dosen pembimbing skripsi dengan menggunakan metode <i><b>Profile Matching</b></i>.
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4">
                     <a href="{{ route('login') }}"
                         class="px-8 py-4 text-blue-900 bg-white rounded-lg hover:bg-blue-50 transition duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-semibold">
-                        Get Started
+                        Isi Kuisioner
                     </a>
                     <a href="#"
                         class="px-8 py-4 text-white border-2 border-white rounded-lg hover:bg-white/10 transition duration-300 transform hover:-translate-y-1 font-semibold">

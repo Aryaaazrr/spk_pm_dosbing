@@ -159,8 +159,8 @@
             <div class="flex order-last space-x-3 md:space-x-0 rtl:space-x-reverse" id="navheader-right">
                 <button id="navbutton"
                     class="relative flex flex-col justify-between w-[60px] h-[28px] group p-2 border-2 border-transparent lg:hidden">
-                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300"></span>
-                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300"></span>
+                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300 lg:hidden"></span>
+                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300 lg:hidden"></span>
                 </button>
             </div>
         </div>
@@ -193,12 +193,6 @@
                                 <a href="/" class="menu__item focus:outline-none hover-underline">Instagram</a>
                             </span>
                             <span>
-                                <a href="/" class="menu__item focus:outline-none hover-underline">X</a>
-                            </span>
-                            <span>
-                                <a href="/" class="menu__item focus:outline-none hover-underline">Facebook</a>
-                            </span>
-                            <span>
                                 <a href="/" class="menu__item focus:outline-none hover-underline">Linkedin</a>
                             </span>
                         </div>
@@ -206,7 +200,7 @@
 
                     <div
                         class="flex flex-col md:flex-row text-2xl font-[110] items-start justify-start w-full md:w-1/2">
-                        <h1 class="text-2xl text-neutral-400 pb-4 mr-8">Menu</h1>
+                        <h1 class="text-2xl text-neutral-200 pb-4 mr-8">Menu</h1>
                         <div class="flex flex-col text-white space-y-9 md:space-y-6">
                             <span>
                                 <a href=""
@@ -214,39 +208,32 @@
                             </span>
                             <span>
                                 <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Our
-                                    Work</a>
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Pendahuluan</a>
                             </span>
                             <span>
                                 <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">About
-                                    Us</a>
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Tinjauan</a>
                             </span>
                             <span>
                                 <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">People</a>
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Metode</a>
                             </span>
                             <span>
                                 <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Services</a>
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Hasil</a>
                             </span>
                             <span>
                                 <a href=""
-                                    class="menu__item {text-[40px] lg:text-5xl focus:outline-none hover-underline">Contact
-                                    Us</a>
-                            </span>
-                            <span>
-                                <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">News</a>
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Kesimpulan</a>
                             </span>
                         </div>
                     </div>
 
                     <div class="absolute bottom-0 left-0 p-6">
-                        <h1 class="text-2xl font-[110] text-neutral-400">Get in touch</h1>
+                        <h1 class="text-2xl font-[110] text-neutral-200">Get in touch</h1>
                         <a href="/"
-                            class="menu__item text-[32px] font-normal text-white focus:outline-none hover-underline">
-                            info@reddarch.com
+                            class="menu__item text-[24px] font-normal text-white focus:outline-none hover-underline">
+                            info@skripsi.achmadzakariya.my.id
                         </a>
                     </div>
                 </div>
