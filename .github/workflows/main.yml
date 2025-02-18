@@ -1,0 +1,57 @@
+name: SPK_PM_DOSBING
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  deploy:
+    name: deploy to staging
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+        with:
+          php-version: "8.2"
+
+      - name: Install Dependencies
+        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --no-dev --optimize-autoloader
+
+      - name: Set Directory Permissions
+        run: chmod -R 775 storage bootstrap/cache
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Install Dependencies & Build
+        run: |
+          npm install
+          npm run build
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.ftp_servername }}
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            node_modules/
+            storage/logs/
+            storage/framework/cache/
+            storage/framework/sessions/
+            storage/framework/views/
+            .env  # Jangan upload .env agar tetap sama di server
+
+      - name: Clear Cache & Migrate Database
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan view:clear
+          php artisan route:clear
+          php artisan migrate --force
