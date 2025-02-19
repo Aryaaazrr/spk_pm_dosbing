@@ -38,5 +38,3 @@ jobs:
           server: ${{ secrets.ftp_servername }}
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          php artisan route:clear
-          php artisan migrate --force
