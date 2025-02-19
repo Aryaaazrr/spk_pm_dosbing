@@ -17,7 +17,7 @@ jobs:
           php-version: "8.2"
 
       - name: Install Dependencies
-        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --no-dev --optimize-autoloader
+        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Set Directory Permissions
         run: chmod -R 775 storage bootstrap/cache
@@ -38,20 +38,5 @@ jobs:
           server: ${{ secrets.ftp_servername }}
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            node_modules/
-            storage/logs/
-            storage/framework/cache/
-            storage/framework/sessions/
-            storage/framework/views/
-            .env  # Jangan upload .env agar tetap sama di server
-
-      - name: Clear Cache & Migrate Database
-        run: |
-          php artisan config:clear
-          php artisan cache:clear
-          php artisan view:clear
           php artisan route:clear
           php artisan migrate --force
