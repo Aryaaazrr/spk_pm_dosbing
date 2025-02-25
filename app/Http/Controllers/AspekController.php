@@ -62,7 +62,9 @@ class AspekController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data['aspek'] = Aspek::find($id);
+
+        return view('pages.aspek.show', $data);
     }
 
     /**

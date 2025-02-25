@@ -24,7 +24,7 @@ class SubkriteriaRequest extends FormRequest
         return [
             'id_kriteria' => ['required'],
             'subkriteria_name' => ['required', 'string', 'max:255'],
-            'nilai' => ['numeric'],
+            'id_nilai' => ['numeric'],
         ];
     }
 }

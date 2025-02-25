@@ -16,6 +16,11 @@ class ProfileMethod extends Model
         'id_subkriteria',
     ];
 
+    public function alternatif()
+    {
+        return $this->belongsTo(Alternatif::class, 'id_alternatif');
+    }
+    
     public function kriteria()
     {
         return $this->belongsTo(Kriteria::class, 'id_kriteria');
@@ -24,10 +29,5 @@ class ProfileMethod extends Model
     public function subkriteria()
     {
         return $this->belongsTo(Subkriteria::class, 'id_subkriteria');
-    }
-
-    public function alternatif()
-    {
-        return $this->belongsTo(Alternatif::class, 'id_alternatif');
     }
 }

@@ -91,5 +91,62 @@ class SettingSeeder extends Seeder
                 ])
             ]
         ]);
+
+        DB::table('nilai')->insert([
+            [
+                'value' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'value' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'value' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'value' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'value' => 5,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+
+        DB::table('angkatan')->insert([
+            [
+                'tahun' => '2021',
+                'jumlah_mahasiswa' => '185',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'tahun' => '2022',
+                'jumlah_mahasiswa' => '169',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'tahun' => '2023',
+                'jumlah_mahasiswa' => '181',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
+
+        DB::table('izin_pengajuan')->insert([
+            [
+                'izin' => 'off',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 }

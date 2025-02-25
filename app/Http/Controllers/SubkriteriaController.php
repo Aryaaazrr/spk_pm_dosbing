@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Subkriteria\SubkriteriaRequest;
 use App\Models\Kriteria;
+use App\Models\Nilai;
 use App\Models\Subkriteria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -23,9 +24,16 @@ class SubkriteriaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Kriteria $kriteria)
     {
-        $data['kriteria'] = Kriteria::all();
+        $count = Subkriteria::where('id_kriteria', $kriteria->id_kriteria)->count();
+        
+        if ($count >= 5) {
+            return redirect()->route('kriteria.edit', $kriteria)->withErrors(['Kriteria ' . $kriteria->kriteria_name .' sudah memiliki subkriteria maksimal 5']);
+        }
+        
+        $data['kriteria'] = $kriteria;
+        $data['nilai'] = Nilai::all();
 
         return view('pages.subkriteria.create', $data);
     }
@@ -33,14 +41,14 @@ class SubkriteriaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(SubkriteriaRequest $request)
+    public function store(SubkriteriaRequest $request, $kriteria)
     {
         try {
             $validated = $request->validated();
 
             Subkriteria::create($validated);
 
-            return redirect()->route('subkriteria.index')->with('success', 'Data Berhasil Ditambah');
+            return redirect()->route('kriteria.edit', $kriteria)->with('success', 'Data Berhasil Ditambah');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return back()->with(['error' => 'Gagal Menambahkan Data: ' . $e->getMessage()]);
@@ -50,18 +58,23 @@ class SubkriteriaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Kriteria $kriteria, Subkriteria $subkriteria)
     {
-        //
+        $data['subkriteria'] = $subkriteria;
+        $data['kriteria'] = $kriteria;
+        $data['nilai'] = Nilai::all();
+
+        return view('pages.subkriteria.show', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Kriteria $kriteria, Subkriteria $subkriteria)
     {
-        $data['subkriteria'] = Subkriteria::find($id);
-        $data['kriteria'] = Kriteria::all();
+        $data['subkriteria'] = $subkriteria;
+        $data['kriteria'] = $kriteria;
+        $data['nilai'] = Nilai::all();
 
         return view('pages.subkriteria.edit', $data);
     }
@@ -69,14 +82,14 @@ class SubkriteriaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(SubkriteriaRequest $request, string $id)
+    public function update(SubkriteriaRequest $request, $kriteria, $subkriteria)
     {
         try {
             $validated = $request->validated();
 
-            Subkriteria::find($id)->update($validated);
+            Subkriteria::find($subkriteria)->update($validated);
 
-            return redirect()->route('subkriteria.index')->with('success', 'Data Berhasil Diperbarui');
+            return redirect()->route('kriteria.edit', $kriteria)->with('success', 'Data Berhasil Diperbarui');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
 
@@ -87,11 +100,12 @@ class SubkriteriaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($kriteria, $subkriteria)
     {
         try {
-            Subkriteria::find($id)->delete();
-            return redirect()->route('subkriteria.index')->with('success', 'Data Berhasil Dihapus');
+            Subkriteria::find($subkriteria)->delete();
+            
+            return redirect()->route('kriteria.edit', $kriteria)->with('success', 'Data Berhasil Dihapus');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return back()->with(['error' => 'Gagal Menghapus Data: ' . $e->getMessage()]);

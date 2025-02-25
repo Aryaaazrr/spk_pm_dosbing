@@ -23,9 +23,10 @@ class SubmissionRequest extends FormRequest
     {
         return [
             'id' => ['required'],
-            'id_alternatif' => ['required'],
+            'prodi' => ['required', 'string', 'max:255'],
             'judul' => ['required', 'string', 'max:255'],
             'deskripsi' => ['required', 'string', 'max:255'],
+            'id_alternatif' => ['required'],
         ];
     }
 }

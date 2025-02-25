@@ -109,7 +109,7 @@
                             @foreach ($subkriteria->where('id_kriteria', $id_kriteria) as $subkriteriaItem)
                                 <option value="{{ $subkriteriaItem->id_subkriteria }}"
                                     @if ($subkriteriaItem->nilai == ($kriteriaGroup->first()->nilai ?? null)) selected @endif>
-                                    {{ $subkriteriaItem->nilai }} - ( {{ $subkriteriaItem->subkriteria_name }} )
+                                    {{ $subkriteriaItem->nilai->value }} - ( {{ $subkriteriaItem->subkriteria_name }} )
                                 </option>
                             @endforeach
                         </select>

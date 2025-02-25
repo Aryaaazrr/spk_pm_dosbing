@@ -13,176 +13,418 @@ class ProfileMethodSeeder extends Seeder
      */
     public function run(): void
     {
-        $alternatifData = [
+        $alternatif = [
             1 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 16],
-                ['id_kriteria' => 5, 'id_subkriteria' => 23],
-                ['id_kriteria' => 6, 'id_subkriteria' => 29],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 18]
+                ],
+                5 => [
+                    ['id_subkriteria' => 21],
+                ],
+                6 => [
+                    ['id_subkriteria' => 27],
+                ]
             ],
             2 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 16],
-                ['id_kriteria' => 5, 'id_subkriteria' => 22],
-                ['id_kriteria' => 6, 'id_subkriteria' => 26],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 18],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             3 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 23],
-                ['id_kriteria' => 6, 'id_subkriteria' => 26],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 17],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             4 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 24],
-                ['id_kriteria' => 6, 'id_subkriteria' => 32],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 17],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 25],
+                ]
             ],
             5 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 18],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             6 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 17],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 26],
+                ]
             ],
             7 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 15],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 26],
-                ['id_kriteria' => 6, 'id_subkriteria' => 38],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 17],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 27],
+                ]
             ],
             8 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 15],
-                ['id_kriteria' => 4, 'id_subkriteria' => 19]    ,
-                ['id_kriteria' => 5, 'id_subkriteria' => 24],
-                ['id_kriteria' => 6, 'id_subkriteria' => 40],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 15],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             9 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 26],
-                ['id_kriteria' => 6, 'id_subkriteria' => 40],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 17],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             10 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 15],
+                ],
+                5 => [
+                    ['id_subkriteria' => 21],
+                ],
+                6 => [
+                    ['id_subkriteria' => 26],
+                ]
             ],
             11 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 15],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             12 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 15],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             13 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 15],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             14 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 15],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             15 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 15],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 27],
+                ]
             ],
             16 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 14],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 25],
+                ]
             ],
             17 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 14],
+                ],
+                5 => [
+                    ['id_subkriteria' => 19],
+                ],
+                6 => [
+                    ['id_subkriteria' => 26],
+                ]
             ],
             18 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 17],
-                ['id_kriteria' => 5, 'id_subkriteria' => 20],
-                ['id_kriteria' => 6, 'id_subkriteria' => 26],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 14],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 28],
+                ]
             ],
             19 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 20],
-                ['id_kriteria' => 5, 'id_subkriteria' => 21],
-                ['id_kriteria' => 6, 'id_subkriteria' => 31],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 14],
+                ],
+                5 => [
+                    ['id_subkriteria' => 19],
+                ],
+                6 => [
+                    ['id_subkriteria' => 24],
+                ]
             ],
             20 => [
-                ['id_kriteria' => 1, 'id_subkriteria' => 10],
-                ['id_kriteria' => 2, 'id_subkriteria' => 12],
-                ['id_kriteria' => 3, 'id_subkriteria' => 13],
-                ['id_kriteria' => 4, 'id_subkriteria' => 20],
-                ['id_kriteria' => 5, 'id_subkriteria' => 22],
-                ['id_kriteria' => 6, 'id_subkriteria' => 33],
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 10],
+                ],
+                3 => [
+                    ['id_subkriteria' => 11],
+                ],
+                4 => [
+                    ['id_subkriteria' => 14],
+                ],
+                5 => [
+                    ['id_subkriteria' => 19],
+                ],
+                6 => [
+                    ['id_subkriteria' => 25],
+                ]
             ],
         ];
 
-        foreach ($alternatifData as $alternatifId => $kriteria) {
-            foreach ($kriteria as $kriteria) {
-                ProfileMethod::create([
-                    'id_alternatif' => $alternatifId,
-                    'id_kriteria' => $kriteria['id_kriteria'],
-                    'id_subkriteria' => $kriteria['id_subkriteria']
-                ]);
+        foreach ($alternatif as $alternatifId => $kriteria) {
+            foreach ($kriteria as $kriteriaId => $valueProfile) {
+                foreach ($valueProfile as $value) {
+                    ProfileMethod::create([
+                        'id_alternatif' => $alternatifId,
+                        'id_kriteria' => $kriteriaId,
+                        'id_subkriteria' => $value['id_subkriteria'],
+                    ]);
+                }
             }
         }
     }

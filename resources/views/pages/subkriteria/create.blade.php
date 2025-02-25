@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <form action="{{ route('subkriteria.store') }}" method="POST">
+        <form action="{{ route('kriteria.subkriteria.store', $kriteria) }}" method="POST">
             @csrf
             <!-- Section -->
 
@@ -84,10 +84,8 @@
                     <select for="af-submit-application-kriteria" name="id_kriteria"
                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                         <option selected disabled>Pilih Kriteria</option>
-                        @foreach ($kriteria as $item)
-                            <option value="{{ $item->id_kriteria }}">{{ $item->kode_kriteria }} -
-                                {{ $item->kriteria_name }}</option>
-                        @endforeach
+                        <option selected value="{{ $kriteria->id_kriteria }}">{{ $kriteria->kode_kriteria }} -
+                            {{ $kriteria->kriteria_name }}</option>
                     </select>
                 </div>
 
@@ -119,9 +117,9 @@
                     <select for="af-submit-application-nilai" name="nilai"
                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                         <option selected disabled>Pilih Nilai</option>
-                        @for ($i = 1; $i <= 10; $i++)
-                            <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
+                        @foreach ($nilai as $value)
+                            <option value="{{ $value->id_nilai }}">{{ $value->value }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <!-- End Col -->
@@ -130,7 +128,7 @@
             <!-- End Section -->
 
             <div class="flex justify-center lg:justify-end items-center w-full gap-2">
-                <a href="{{ route('aspek.index') }}"
+                <a href="{{ route('kriteria.edit', $kriteria) }}"
                     class="w-full lg:w-1/12 py-3 px-4 flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-400 text-white hover:bg-gray-500 focus:outline-none focus:bg-gray-600 disabled:opacity-50 disabled:pointer-events-none">
                     Batal
                 </a>

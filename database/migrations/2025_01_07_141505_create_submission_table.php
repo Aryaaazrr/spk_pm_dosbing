@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id('id_submission');
             $table->unsignedBigInteger('id');
             $table->foreign('id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('id_alternatif');
-            $table->foreign('id_alternatif')->references('id_alternatif')->on('alternatif')->onUpdate('cascade')->onDelete('cascade');
             $table->string('judul');
             $table->string('deskripsi');
+            $table->string('prodi');
             $table->timestamps();
         });
     }

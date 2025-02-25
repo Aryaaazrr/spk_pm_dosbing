@@ -55,6 +55,7 @@ class ProfileMatchingController extends Controller
         }
     }
 
+
     private function gapProfil($alternatif, $kriteria)
     {
         $resultsGAP = [];
@@ -72,7 +73,7 @@ class ProfileMatchingController extends Controller
                 $idealKriteria = $idealValue->kriteria;
 
                 if ($dosenKriteria->id_kriteria == $idealKriteria->id_kriteria) {
-                    $gapValues[$idealValue->id_kriteria] = $dosenSubkriteria->nilai - $idealValue->nilai;
+                    $gapValues[$idealValue->id_kriteria] = $dosenSubkriteria->nilai->value - $idealValue->nilai->value;
                 }
             }
 

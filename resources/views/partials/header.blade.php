@@ -1,15 +1,15 @@
 <!-- ========== HEADER ========== -->
 <header
-    class="sticky top-4 inset-x-0 before:absolute before:inset-0 before:max-w-screen-xl before:mx-2 before:lg:mx-auto before:rounded-[26px] after:absolute after:inset-0 after:-z-[1] after:max-w-screen-xl after:mx-2 after:lg:mx-auto after:rounded-[26px] after:bg-white/10 dark:bg-neutral-900 after:backdrop-blur-lg lg:flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full hidden">
+    class="fixed top-4 inset-x-0 before:absolute before:inset-0 before:max-w-screen-xl before:mx-2 before:lg:mx-auto before:rounded-[26px] after:absolute after:inset-0 after:-z-[1] after:max-w-screen-xl after:mx-2 after:lg:mx-auto after:rounded-[26px] after:bg-white/10 dark:bg-neutral-900 after:backdrop-blur-lg lg:flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full ">
     <nav
-        class="relative max-w-screen-xl w-full md:flex md:items-center md:justify-between md:gap-3 ps-5 pe-2 mx-2 lg:mx-auto py-2">
+        class="relative max-w-screen-xl w-full md:flex md:items-center md:justify-between md:gap-3 ps-5 pe-2 mx-2 lg:mx-auto py-2 hidden">
         <!-- Logo w/ Collapse Button -->
         <div class="flex items-center justify-between">
             <a class="flex-none font-semibold text-xl text-black focus:outline-none focus:opacity-80 dark:text-white"
                 href="#" aria-label="Brand">
                 <span class="flex items-center space-x-3">
                     <img src="{{ asset('static/image/logo_polije.png') }}" class="h-8" alt="logo">
-                    <h1 class="text-neutral-950">SPK PM</h1>
+                    <h1 class="text-white" id="brand">SPK PM</h1>
                 </span>
             </a>
             <!-- Collapse Button -->
@@ -45,8 +45,8 @@
             <div
                 class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
                 <div class="py-2 md:py-0 flex flex-col md:flex-row md:items-center md:justify-end gap-0.5 md:gap-1">
-                    <a class="p-2 flex items-center text-sm text-neutral-950 hover:text-neutral-700 focus:outline-none focus:text-neutral-300 dark:text-blue-500 dark:focus:text-blue-500"
-                        href="#" aria-current="page">
+                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-300 dark:text-blue-500 dark:focus:text-blue-500"
+                        href="/" aria-current="page" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -57,8 +57,8 @@
                         Beranda
                     </a>
 
-                    <a class="p-2 flex items-center text-sm text-neutral-950 hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#">
+                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+                        href="/pendahuluan" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -68,8 +68,8 @@
                         Pendahuluan
                     </a>
 
-                    <a class="p-2 flex items-center text-sm text-neutral-950 hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#">
+                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+                        href="#" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -81,8 +81,8 @@
                         Tinjauan
                     </a>
 
-                    <a class="p-2 flex items-center text-sm text-neutral-950 hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#">
+                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+                        href="#" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -95,8 +95,8 @@
                         Metode
                     </a>
 
-                    <a class="p-2 flex items-center text-sm text-neutral-950 hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#">
+                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+                        href="#" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -109,8 +109,8 @@
                         Hasil
                     </a>
 
-                    <a class="p-2 flex items-center text-sm text-neutral-950 hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#">
+                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+                        href="#" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -126,8 +126,8 @@
                     <!-- Button Group -->
                     <div
                         class="relative flex flex-wrap items-center gap-x-1.5 md:ps-2.5  md:ms-1.5 before:block before:absolute before:top-1/2 before:-start-px before:w-px before:h-4 before:bg-gray-300 before:-translate-y-1/2 dark:before:bg-neutral-700">
-                        <a class="p-2 w-full flex items-center text-sm text-neutral-950 hover:text-neutral-800 focus:outline-none focus:text-neutral-800 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                            href="{{ route('login') }}">
+                        <a class="p-2 w-full flex items-center text-sm text-white hover:text-neutral-800 focus:outline-none focus:text-neutral-800 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+                            href="{{ route('login') }}" id="nav-link">
                             <svg class="shrink-0 size-4 me-3 md:me-2" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -144,10 +144,8 @@
         </div>
         <!-- End Collapse -->
     </nav>
-</header>
-
-<header >
-    <nav class="bg-gradient-to-r from-blue-600 to-indigo-700 fixed w-full h-[68px] z-20 lg:-z-50 top-0 left-0 frame">
+    <nav
+        class="bg-gradient-to-r from-blue-600 to-indigo-700 fixed lg:hidden lg:h-0 w-full h-[68px] z-20 lg:-z-50 top-0 left-0 frame">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" id="navheader">
             <div class="flex items-center space-x-3 rtl:space-x-reverse" id="navheader-left">
                 <a href="/" class="flex items-center space-x-3 lg:hidden">
@@ -241,4 +239,101 @@
         </div>
     </nav>
 </header>
+
+{{-- <header>
+    <nav
+        class="bg-gradient-to-r from-blue-600 to-indigo-700 fixed lg:h-0 w-full h-[68px] z-20 lg:-z-50 top-0 left-0 frame">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" id="navheader">
+            <div class="flex items-center space-x-3 rtl:space-x-reverse" id="navheader-left">
+                <a href="/" class="flex items-center space-x-3 lg:hidden">
+                    <img src="{{ asset('static/image/logo_polije.png') }}" class="h-8" alt="logo">
+                    <span class="font-semibold text-white text-lg">SPK PM</span>
+                </a>
+            </div>
+
+            <div class="flex order-last space-x-3 md:space-x-0 rtl:space-x-reverse" id="navheader-right">
+                <button id="navbutton"
+                    class="relative flex flex-col justify-between w-[60px] h-[28px] group p-2 border-2 border-transparent lg:hidden">
+                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300 lg:hidden"></span>
+                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300 lg:hidden"></span>
+                </button>
+            </div>
+        </div>
+
+        <svg class="overlay absolute inset-0 w-screen h-screen z-50 pointer-events-none" width="100%"
+            height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+            <defs>
+                <linearGradient id="gradient-bg" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="0%" style="stop-color:#2563eb; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#4f46e5; stop-opacity:1" />
+                </linearGradient>
+            </defs>
+
+            <path class="overlay__path" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z"
+                fill="url(#gradient-bg)" />
+        </svg>
+
+        <div
+            class="relative menu-wrap h-screen w-screen transition-all duration-300 ease-in-out pointer-events-none opacity-0">
+
+            <div class="flex h-full relative">
+                <div
+                    class="flex flex-wrap md:flex-row items-start justify-between flex-1 bg-gradient-to-r from-blue-600 to-indigo-700 text-white z-20 py-20 lg:py-40 px-10 space-y-6 md:space-y-0 transition-all duration-500">
+
+                    <div class="hidden md:flex flex-row text-2xl font-[110] items-start justify-start w-1/2">
+                        <h1 class="text-neutral-400 mr-8">Social Media</h1>
+                        <div class="flex flex-col text-white space-y-3 md:space-y-6">
+                            <span>
+                                <a href="/" class="menu__item focus:outline-none hover-underline">Instagram</a>
+                            </span>
+                            <span>
+                                <a href="/" class="menu__item focus:outline-none hover-underline">Linkedin</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col md:flex-row text-2xl font-[110] items-start justify-start w-full md:w-1/2">
+                        <h1 class="text-2xl text-neutral-200 pb-4 mr-8">Menu</h1>
+                        <div class="flex flex-col text-white space-y-9 md:space-y-6">
+                            <span>
+                                <a href=""
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Home</a>
+                            </span>
+                            <span>
+                                <a href=""
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Pendahuluan</a>
+                            </span>
+                            <span>
+                                <a href=""
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Tinjauan</a>
+                            </span>
+                            <span>
+                                <a href=""
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Metode</a>
+                            </span>
+                            <span>
+                                <a href=""
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Hasil</a>
+                            </span>
+                            <span>
+                                <a href=""
+                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Kesimpulan</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h1 class="text-2xl font-[110] text-neutral-200">Get in touch</h1>
+                        <a href="/"
+                            class="menu__item text-[24px] font-normal text-white focus:outline-none hover-underline">
+                            info@skripsi.achmadzakariya.my.id
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header> --}}
 <!-- ========== END HEADER ========== -->

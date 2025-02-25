@@ -36,9 +36,9 @@
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-collapse group-hover:text-white"><path d="m3 10 2.5-2.5L3 5"/><path d="m3 19 2.5-2.5L3 14"/><path d="M10 6h11"/><path d="M10 12h11"/><path d="M10 18h11"/></svg>'
                     title="Kriteria" :active="Route::is('kriteria*')" />
 
-                <x-nav-item href="{{ route('subkriteria.index') }}"
+                {{-- <x-nav-item href="{{ route('subkriteria.index') }}"
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-tree group-hover:text-white"><path d="M21 12h-8"/><path d="M21 6H8"/><path d="M21 18h-8"/><path d="M3 6v4c0 1.1.9 2 2 2h3"/><path d="M3 10v6c0 1.1.9 2 2 2h3"/></svg>'
-                    title="Subkriteria" :active="Route::is('subkriteria*')" />
+                    title="Subkriteria" :active="Route::is('subkriteria*')" /> --}}
 
                 <x-nav-item href="{{ route('alternatif.index') }}"
                     icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -112,8 +112,14 @@
             @endrole
         </ul>
         <ul class="space-y-2 p-2 border-t border-gray-200 dark:border-gray-700">
-            <x-nav-item href="{{ route('profile.edit') }}"
-                icon=' <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            @role('admin')
+                <x-nav-item-dropdown hrefSystem="{{ route('system.index') }}" hrefAccount="{{ route('profile.edit') }}" title="Pengaturan"
+                    icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings group-hover:text-white"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>'
+                    active="{{ request()->is('settings*') }}" />
+            @endrole
+            @role('mahasiswa')
+                <x-nav-item href="{{ route('profile.edit') }}"
+                    icon=' <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="lucide lucide-user-round-cog group-hover:text-white">
                         <path d="M2 21a8 8 0 0 1 10.434-7.62" />
@@ -128,7 +134,8 @@
                         <path d="m19.5 21.7-.4-.9" />
                         <path d="m16.9 15.2-.4-.9" />
                     </svg>'
-                title="Akun" :active="Route::is('profile*')" />
+                    title="Akun" :active="Route::is('profile*')" />
+            @endrole
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

@@ -15,7 +15,7 @@
                     <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
                 </svg>
                 <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                    href="{{ route('subkriteria.index') }}">
+                    href="{{ route('kriteria.edit', $kriteria) }}">
                     Data Subkriteria
                 </a>
                 <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <form action="{{ route('subkriteria.update', $subkriteria->id_subkriteria) }}" method="POST">
+        <form action="{{ route('kriteria.subkriteria.update', [$kriteria, $subkriteria]) }}" method="POST">
             @csrf
             @method('PUT')
             <!-- Section -->
@@ -85,7 +85,8 @@
                     <select for="af-submit-application-kriteria" name="id_kriteria"
                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                         <option selected disabled>Pilih Kriteria</option>
-                        <option value="{{ $subkriteria->kriteria->id_kriteria }}" selected>{{ $subkriteria->kriteria->kode_kriteria }} -
+                        <option value="{{ $subkriteria->kriteria->id_kriteria }}" selected>
+                            {{ $subkriteria->kriteria->kode_kriteria }} -
                             {{ $subkriteria->kriteria->kriteria_name }}</option>
                     </select>
                 </div>
@@ -100,7 +101,8 @@
 
                 <div class="sm:col-span-9">
                     <div class="sm:flex">
-                        <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text" value="{{ $subkriteria->subkriteria_name }}"
+                        <input id="af-submit-application-subkriteria-name" name="subkriteria_name" type="text"
+                            value="{{ $subkriteria->subkriteria_name }}"
                             class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                     </div>
                 </div>
@@ -115,21 +117,35 @@
                 <!-- End Col -->
 
                 <div class="sm:col-span-9">
-                    <select for="af-submit-application-nilai" name="nilai"
+                    <select name="nilai"
                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                        <option selected disabled>Pilih Nilai</option>
-                        @for ($i = 1; $i <= 10; $i++)
-                            <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
+                        
+                        <option disabled>Pilih Nilai</option>
+                
+                        @if ($subkriteria instanceof \Illuminate\Support\Collection)
+                            <option selected disabled>{{ $subkriteria->first()->nilai->value ?? 'Tidak Ada Nilai' }}</option>
+                            
+                            @foreach ($subkriteria as $value)
+                                @php
+                                    $notChosee = $value->nilai->value !== ($subkriteria->first()->nilai->value ?? null);
+                                @endphp
+                                @if ($notChosee)
+                                    <option value="{{ $value->nilai->value }}">{{ $value->nilai->value }}</option>
+                                @endif
+                            @endforeach
+                        @else
+                            <option selected disabled>{{ $subkriteria->nilai->value ?? 'Tidak Ada Nilai' }}</option>
+                        @endif
                     </select>
                 </div>
+                
                 <!-- End Col -->
 
             </div>
             <!-- End Section -->
 
             <div class="flex justify-center lg:justify-end items-center w-full gap-2">
-                <a href="{{ route('aspek.index') }}"
+                <a href="{{ route('kriteria.edit', $kriteria) }}"
                     class="w-full lg:w-1/12 py-3 px-4 flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-400 text-white hover:bg-gray-500 focus:outline-none focus:bg-gray-600 disabled:opacity-50 disabled:pointer-events-none">
                     Batal
                 </a>

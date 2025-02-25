@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <table id="pagination-table">
+        {{-- <table id="pagination-table">
             <thead>
                 <tr>
                     <th>
@@ -148,90 +148,266 @@
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+        </table> --}}
+
+        <div class="flex flex-col">
+            <div class="overflow-x-auto min-h-fit ">
+                <div class="min-w-full inline-block align-middle">
+                    <div
+                        data-hs-datatable='{
+        "pageLength": 10,
+        "pagingOptions": {
+          "pageBtnClasses": "min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:focus:bg-neutral-700 dark:hover:bg-neutral-700"
+        },
+        "language": {
+          "zeroRecords": "<div class=\"py-10 px-5 flex flex-col justify-center items-center text-center\"><svg class=\"shrink-0 size-6 text-gray-500 dark:text-neutral-500\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><div class=\"max-w-sm mx-auto\"><p class=\"mt-2 text-sm text-gray-600 dark:text-neutral-400\">No search results</p></div></div>"
+        }
+      }'>
+                        <div class="py-3">
+                            <div class="relative max-w-xs">
+                                <label for="hs-table-input-search" class="sr-only">Search</label>
+                                <input type="text" name="hs-table-search" id="hs-table-input-search"
+                                    class="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                    placeholder="Search for items" data-hs-datatable-search="">
+                                <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3">
+                                    <svg class="size-4 text-gray-400 dark:text-neutral-500"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overflow-hidden min-h-fit ">
+                            <table class="min-w-full">
+                                <thead class="border-y border-gray-200 dark:border-neutral-700">
+                                    <tr>
+                                        <th scope="col"
+                                            class="py-1 group text-center font-normal focus:outline-none">
+                                            <div
+                                                class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
+                                                No
+                                                <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500"
+                                                        d="m7 15 5 5 5-5"></path>
+                                                    <path
+                                                        class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500"
+                                                        d="m7 9 5-5 5 5"></path>
+                                                </svg>
+                                            </div>
+                                        </th>
+
+                                        <th scope="col"
+                                            class="py-1 group text-center font-normal focus:outline-none">
+                                            <div
+                                                class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
+                                                Kode
+                                                <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500"
+                                                        d="m7 15 5 5 5-5"></path>
+                                                    <path
+                                                        class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500"
+                                                        d="m7 9 5-5 5 5"></path>
+                                                </svg>
+                                            </div>
+                                        </th>
+
+                                        <th scope="col"
+                                            class="py-1 group text-center font-normal focus:outline-none">
+                                            <div
+                                                class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
+                                                Aspek
+                                                <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500"
+                                                        d="m7 15 5 5 5-5"></path>
+                                                    <path
+                                                        class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500"
+                                                        d="m7 9 5-5 5 5"></path>
+                                                </svg>
+                                            </div>
+                                        </th>
+
+                                        <th scope="col"
+                                            class="py-1 group text-center font-normal focus:outline-none">
+                                            <div
+                                                class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
+                                                Persentase
+                                                <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500"
+                                                        d="m7 15 5 5 5-5"></path>
+                                                    <path
+                                                        class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500"
+                                                        d="m7 9 5-5 5 5"></path>
+                                                </svg>
+                                            </div>
+                                        </th>
+
+                                        <th scope="col"
+                                            class="py-1 group text-center font-normal focus:outline-none">
+                                            <div
+                                                class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
+                                                Keterangan
+                                                <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500"
+                                                        d="m7 15 5 5 5-5"></path>
+                                                    <path
+                                                        class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500"
+                                                        d="m7 9 5-5 5 5"></path>
+                                                </svg>
+                                            </div>
+                                        </th>
+
+                                        <th scope="col"
+                                            class="py-2 px-3 text-center font-normal text-sm text-gray-500 --exclude-from-ordering dark:text-neutral-500">
+                                            Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+                                    @foreach ($aspek as $item)
+                                        <tr>
+                                            <td
+                                                class="p-3 whitespace-nowrap text-sm text-center font-medium text-gray-800 dark:text-neutral-200">
+                                                {{ $loop->iteration }}</td>
+                                            <td
+                                                class="p-3 whitespace-nowrap text-sm text-center font-medium text-gray-800 dark:text-neutral-200">
+                                                {{ $item->kode_aspek }}</td>
+                                            <td
+                                                class="p-3 whitespace-nowrap text-sm text-center text-gray-800 dark:text-neutral-200">
+                                                {{ $item->aspek_name }}</td>
+                                            <td
+                                                class="p-3 whitespace-nowrap text-sm text-center text-gray-800 dark:text-neutral-200">
+                                                {{ $item->persentase }}%</td>
+                                            <td
+                                                class="p-3 whitespace-nowrap text-sm text-center text-gray-800 dark:text-neutral-200">
+                                                {{ $item->keterangan }}</td>
+                                            <td class="p-3 whitespace-nowrap text-sm text-center font-medium">
+                                                <div
+                                                    class="hs-dropdown [--placement:bottom-right] relative inline-flex">
+                                                    <button id="hs-dropdown-custom-icon-trigger" type="button"
+                                                        class="hs-dropdown-toggle flex justify-center items-center size-9 text-sm text-center font-semibold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                                                        aria-haspopup="menu" aria-expanded="false"
+                                                        aria-label="Dropdown">
+                                                        <svg class="flex-none size-4 text-gray-600 dark:text-neutral-500"
+                                                            xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <circle cx="12" cy="12" r="1" />
+                                                            <circle cx="12" cy="5" r="1" />
+                                                            <circle cx="12" cy="19" r="1" />
+                                                        </svg>
+                                                    </button>
+
+                                                    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-fit bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 z-20"
+                                                        role="menu" aria-orientation="vertical"
+                                                        aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                        <div class="p-1 space-y-0.5">
+                                                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                                href="{{ route('aspek.show', $item->id_aspek) }}">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                                    class="lucide lucide-text shrink-0 size-4">
+                                                                    <path d="M17 6.1H3" />
+                                                                    <path d="M21 12.1H3" />
+                                                                    <path d="M15.1 18H3" />
+                                                                </svg>
+                                                                View
+                                                            </a>
+                                                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                                href="{{ route('aspek.edit', $item->id_aspek) }}">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                                    class="lucide lucide-pencil shrink-0 size-4">
+                                                                    <path
+                                                                        d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+                                                                    <path d="m15 5 4 4" />
+                                                                </svg>
+                                                                Edit
+                                                            </a>
+                                                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                                href="#"
+                                                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_aspek }}').submit();">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                                    class="lucide lucide-trash-2 shrink-0 size-4">
+                                                                    <path d="M3 6h18" />
+                                                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                                                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                                                                    <line x1="10" x2="10"
+                                                                        y1="11" y2="17" />
+                                                                    <line x1="14" x2="14"
+                                                                        y1="11" y2="17" />
+                                                                </svg>
+                                                                Hapus
+                                                            </a>
+                                                        </div>
+                                                        <form id="delete-form-{{ $item->id_aspek }}"
+                                                            action="{{ route('aspek.destroy', $item->id_aspek) }}"
+                                                            method="POST" style="display: none;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="py-1 px-4 hidden" data-hs-datatable-paging="">
+                            <nav class="flex items-center space-x-1">
+                                <button type="button"
+                                    class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                    data-hs-datatable-paging-prev="">
+                                    <span aria-hidden="true">«</span>
+                                    <span class="sr-only">Previous</span>
+                                </button>
+                                <div class="flex items-center space-x-1 [&>.active]:bg-gray-100 dark:[&>.active]:bg-neutral-700"
+                                    data-hs-datatable-paging-pages=""></div>
+                                <button type="button"
+                                    class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                    data-hs-datatable-paging-next="">
+                                    <span class="sr-only">Next</span>
+                                    <span aria-hidden="true">»</span>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
-    <script>
-         $(document).ready(() => {
-            const container = $('#content-aspek');
-            const apiUrl = `{{ url('/api/v1/aspek') }}`;
-            let metaData = null;
-
-            const loadAspek = (apiUrl) => {
-                $.ajax({
-                    url: apiUrl,
-                    type: "GET",
-                    beforeSend: () => {
-                        container.empty();
-                        container.append(`
-                                <div class="col-span-full flex justify-center items-center h-64" id="loading">
-                                    <div class="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full dark:text-blue-500" role="status" aria-label="loading">
-                                    <span class="sr-only">Loading...</span>
-                                    </div>
-                                </div>
-                            `);
-                    },
-                    success: (response) => {
-                        const {
-                            data: aspek,
-                            pagination
-                        } = response;
-                        metaData = pagination;
-
-                        $('#loading').remove();
-
-                        if (aspek.length === 0) {
-                            container.append(`
-                                    <div class="col-span-full flex justify-center items-center h-64">
-                                    <h4 class="text-lg font-semibold text-center text-gray-700 dark:text-gray-400">Data tidak ditemukan</h4>
-                                    </div>
-                                `);
-                            return;
-                        } else {
-                            renderAspek(aspek);
-                        }
-                    }
-                });
-            };
-
-            const renderAspek = (aspek) => {
-                container.empty();
-
-                $.each(aspek, (index, item) => {
-                    container.append(`
-                            <div class="grid sm:grid-cols-12 gap-2 sm:gap-4">
-                                <div class="sm:col-span-3 my-0 lg:my-2">
-                                    <label for="kriteria-${item.id_kriteria}" class="inline-block text-sm font-medium text-gray-500 mt-2.5 lg:my-2.5 dark:text-neutral-500">
-                                        ${item.kriteria_name}
-                                    </label>
-                                </div>
-                                <div class="sm:col-span-9 my-0 lg:my-2">
-                                    <select
-                                    data-hs-select='{
-                                        "placeholder": "Pilih ${item.kriteria_name}",
-                                        "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 ps-4 pe-9 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border-gray-200 rounded-lg text-start text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-neutral-600",
-                                        "dropdownClasses": "mt-2 z-50 w-full max-h-72 p-1 space-y-0.5 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-neutral-900 dark:border-neutral-700",
-                                        "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hover:bg-primary hover:text-white rounded-lg focus:outline-none focus:bg-primary dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-neutral-200 dark:focus:bg-neutral-800"
-                                    }'
-                                    id="kriteria-${item.id_kriteria}"
-                                    class="hidden" name="kriteria-${item.id_kriteria}"
-                                    >
-                                    <option value="">Pilih ${item.kriteria_name}</option>
-                                        ${subkriteriaOptions}
-                                    </select>
-                                    @error('kriteria-${item.id_kriteria}')
-                                        <div class="text-red-500 text-sm">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                        `);
-                });
-
-                window.HSStaticMethods.autoInit(['select']);
-            };
-
-            loadAspek(apiUrl);
-        });
-    </script>
 </x-app-layout>

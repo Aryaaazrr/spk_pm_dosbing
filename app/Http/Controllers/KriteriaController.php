@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Kriteria\KriteriaRequest;
 use App\Models\Aspek;
 use App\Models\Kriteria;
+use App\Models\Subkriteria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -51,7 +52,11 @@ class KriteriaController extends Controller
      */
     public function show(string $id)
     {
+        $data['kriteria'] = Kriteria::find($id);
+        $data['aspek'] = Aspek::all();
+        $data['subkriteria'] = Subkriteria::with('kriteria')->where('id_kriteria', $id)->get();
 
+        return view('pages.kriteria.show', $data);
     }
 
     /**
@@ -61,6 +66,7 @@ class KriteriaController extends Controller
     {
         $data['kriteria'] = Kriteria::find($id);
         $data['aspek'] = Aspek::all();
+        $data['subkriteria'] = Subkriteria::with('kriteria')->where('id_kriteria', $id)->get();
 
         return view('pages.kriteria.edit', $data);
     }

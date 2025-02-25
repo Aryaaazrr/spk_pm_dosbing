@@ -15,65 +15,64 @@ class SubkriteriaSeeder extends Seeder
     {
         $kriteriaData = [
             1 => [
-                ['subkriteria' => '1 Mahasiswa', 'nilai' => 1],
-                ['subkriteria' => '2 Mahasiswa', 'nilai' => 2],
-                ['subkriteria' => '3 Mahasiswa', 'nilai' => 3],
-                ['subkriteria' => '4 Mahasiswa', 'nilai' => 4],
-                ['subkriteria' => '5 Mahasiswa', 'nilai' => 5],
-                ['subkriteria' => '6 Mahasiswa', 'nilai' => 6],
-                ['subkriteria' => '7 Mahasiswa', 'nilai' => 7],
-                ['subkriteria' => '8 Mahasiswa', 'nilai' => 8],
-                ['subkriteria' => '9 Mahasiswa', 'nilai' => 9],
-                ['subkriteria' => '10 Mahasiswa', 'nilai' => 10],
+                ['subkriteria' => '1 - 3 Mahasiswa', 'id_nilai' => 1],
+                ['subkriteria' => '4 - 6 Mahasiswa', 'id_nilai' => 2],
+                ['subkriteria' => '6 - 8 Mahasiswa', 'id_nilai' => 3],
+                ['subkriteria' => '9 - 11 Mahasiswa', 'id_nilai' => 4],
+                ['subkriteria' => '12 - 15 Mahasiswa', 'id_nilai' => 5],
             ],
             2 => [
-                ['subkriteria' => 'Terpenuhi', 'nilai' => 1],
-                ['subkriteria' => 'Belum Terpenuhi', 'nilai' => 2],
+                ['subkriteria' => 'Tersisa 20%', 'id_nilai' => 1],
+                ['subkriteria' => 'Tersisa 40%', 'id_nilai' => 2],
+                ['subkriteria' => 'Tersisa 60%', 'id_nilai' => 3],
+                ['subkriteria' => 'Tersisa 80%', 'id_nilai' => 4],
+                ['subkriteria' => 'Tersisa 100%', 'id_nilai' => 5],
+                // ['subkriteria' => 'Terpenuhi'],
+                // ['subkriteria' => 'Belum Terpenuhi'],
             ],
             3 => [
-                ['subkriteria' => 'Software Engineer', 'nilai' => 1],
-                ['subkriteria' => 'Software Quality Assurance Analyst', 'nilai' => 2],
-                ['subkriteria' => 'Information Technology Entrepreneur', 'nilai' => 3],
+                ['subkriteria' => 'Software Engineer', 'id_nilai' => 3],
+                ['subkriteria' => 'Software Quality Assurance Analyst', 'id_nilai' => 2],
+                ['subkriteria' => 'Information Technology Entrepreneur', 'id_nilai' => 1],
             ],
             4 => [
-                ['subkriteria' => '1998 - 2003', 'nilai' => 1],
-                ['subkriteria' => '2004 - 2009', 'nilai' => 2],
-                ['subkriteria' => '2010 - 2015', 'nilai' => 3],
-                ['subkriteria' => '2016 - 2021', 'nilai' => 4],
-                ['subkriteria' => '2022 - 2027', 'nilai' => 5],
+                ['subkriteria' => '2022 - 2027', 'id_nilai' => 1],
+                ['subkriteria' => '2016 - 2021', 'id_nilai' => 2],
+                ['subkriteria' => '2010 - 2015', 'id_nilai' => 3],
+                ['subkriteria' => '2004 - 2009', 'id_nilai' => 4],
+                ['subkriteria' => '1998 - 2003', 'id_nilai' => 5],
             ],
             5 => [
-                ['subkriteria' => '1 Tahun', 'nilai' => 1],
-                ['subkriteria' => '4 Tahun', 'nilai' => 2],
-                ['subkriteria' => '5 Tahun', 'nilai' => 3],
-                ['subkriteria' => '8 Tahun', 'nilai' => 4],
-                ['subkriteria' => '10 Tahun', 'nilai' => 5],
-                ['subkriteria' => '11 Tahun', 'nilai' => 6],
-                ['subkriteria' => '12 Tahun', 'nilai' => 7],
-                ['subkriteria' => '15 Tahun', 'nilai' => 8],
-                ['subkriteria' => '18 Tahun', 'nilai' => 9],
-                ['subkriteria' => '27 Tahun', 'nilai' => 10],
+                ['subkriteria' => '1 - 6 Tahun', 'id_nilai' => 1],
+                ['subkriteria' => '7 - 13 Tahun', 'id_nilai' => 2],
+                ['subkriteria' => '14 - 20 Tahun', 'id_nilai' => 3],
+                ['subkriteria' => '21 - 27 Tahun', 'id_nilai' => 4],
+                ['subkriteria' => 'Lebih dari 27 Tahun', 'id_nilai' => 5],
+                // ['subkriteria' => '4 Tahun'],
+                // ['subkriteria' => '5 Tahun'],
+                // ['subkriteria' => '8 Tahun'],
+                // ['subkriteria' => '10 Tahun'],
+                // ['subkriteria' => '11 Tahun'],
+                // ['subkriteria' => '12 Tahun'],
+                // ['subkriteria' => '15 Tahun'],
+                // ['subkriteria' => '18 Tahun'],
+                // ['subkriteria' => '27 Tahun'],
             ],
             6 => [
-                ['subkriteria' => '11 - 01 Jurnal', 'nilai' => 1],
-                ['subkriteria' => '22 - 12 Jurnal', 'nilai' => 2],
-                ['subkriteria' => '33 - 23 Jurnal', 'nilai' => 3],
-                ['subkriteria' => '44 - 34 Jurnal', 'nilai' => 4],
-                ['subkriteria' => '55 - 45 Jurnal', 'nilai' => 5],
-                ['subkriteria' => '66 - 56 Jurnal', 'nilai' => 6],
-                ['subkriteria' => '77 - 67 Jurnal', 'nilai' => 7],
-                ['subkriteria' => '88 - 78 Jurnal', 'nilai' => 8],
-                ['subkriteria' => '99 - 89 Jurnal', 'nilai' => 9],
-                ['subkriteria' => 'Lebih dari 100 Jurnal', 'nilai' => 10],
+                ['subkriteria' => '0 - 20 Jurnal', 'id_nilai' => 1],
+                ['subkriteria' => '21 - 41 Jurnal', 'id_nilai' => 2],
+                ['subkriteria' => '42 - 62 Jurnal', 'id_nilai' => 3],
+                ['subkriteria' => '63 - 85 Jurnal', 'id_nilai' => 4],
+                ['subkriteria' => 'Lebih dari 85 Jurnal', 'id_nilai' => 5],
             ]
         ];
 
         foreach ($kriteriaData as $kriteriaId => $subkriterias) {
-            foreach ($subkriterias as $subkriteria) {
+            foreach ($subkriterias as $value) {
                 Subkriteria::create([
                     'id_kriteria' => $kriteriaId,
-                    'subkriteria_name' => $subkriteria['subkriteria'],
-                    'nilai' => $subkriteria['nilai']
+                    'subkriteria_name' => $value['subkriteria'],
+                    'id_nilai' => $value['id_nilai']
                 ]);
             }
         }

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('id_kriteria');
             $table->foreign('id_kriteria')->references('id_kriteria')->on('kriteria')->onUpdate('cascade')->onDelete('cascade');
             $table->string('subkriteria_name');
-            $table->integer('nilai');
             $table->timestamps();
         });
     }

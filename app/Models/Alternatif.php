@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Alternatif extends Model
 {
+    use HasFactory;
+    
     protected $table = 'alternatif';
 
     protected $primaryKey = 'id_alternatif';
@@ -39,10 +42,5 @@ class Alternatif extends Model
     public function profile_method()
     {
         return $this->hasMany(ProfileMethod::class, 'id_alternatif');
-    }
-
-    public function submission()
-    {
-        return $this->hasMany(Submissions::class, 'id_alternatif');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\KuotaUpdated;
 use Illuminate\Database\Eloquent\Model;
 
 class Subkriteria extends Model
@@ -13,7 +14,7 @@ class Subkriteria extends Model
     protected $fillable = [
         'id_kriteria',
         'subkriteria_name',
-        'nilai',
+        'id_nilai'
     ];
 
     public function kriteria()
@@ -21,9 +22,13 @@ class Subkriteria extends Model
         return $this->belongsTo(Kriteria::class, 'id_kriteria');
     }
 
+    public function nilai()
+    {
+        return $this->belongsTo(nilai::class, 'id_nilai');
+    }
+
     public function profile_method()
     {
         return $this->hasMany(ProfileMethod::class, 'id_subkriteria');
     }
-
 }

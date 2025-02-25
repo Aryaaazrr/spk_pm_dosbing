@@ -9,6 +9,8 @@ const DOM = {
     openMenuCtrl: document.querySelector("button#navbutton"),
     closeMenuCtrl: document.querySelector(".button#navbutton.open"),
     menuToggle: document.querySelector("#navbutton"),
+    brand: document.querySelector("#brand"),
+    navLink: document.querySelectorAll("#nav-link"),
 };
 
 let isAnimating = false;
@@ -127,6 +129,31 @@ const closeMenu = () => {
         );
 };
 
+const handleScroll = () => {
+    const contentSection = document.querySelector("#content-report");
+    const isPendahuluan = window.location.hash === "#pendahuluan";
+
+    if (!contentSection) return;
+    const contentTop = contentSection.offsetTop;
+    const contentHeight = contentSection.offsetHeight;
+    const scrollPosition = window.scrollY;
+    const idInContent = scrollPosition >= contentTop && scrollPosition <= contentTop + contentHeight;
+
+    DOM.navLink.forEach((link) => {
+        link.classList.toggle("text-white", !idInContent && !isPendahuluan);
+        link.classList.toggle("text-neutral-950", idInContent || isPendahuluan);
+    });
+
+    DOM.brand.classList.toggle("text-white", !idInContent && !isPendahuluan);
+    DOM.brand.classList.toggle("text-neutral-950", idInContent || isPendahuluan);
+};
+
+const initScrollEvents = () => {
+    window.addEventListener("scroll", () => requestAnimationFrame(handleScroll));
+    window.addEventListener("hashchange", handleScroll);
+    handleScroll();
+};
+
 export function initNavigation() {
     if (!DOM.menuToggle) return;
 
@@ -137,4 +164,6 @@ export function initNavigation() {
             openMenu();
         }
     });
+
+    initScrollEvents();
 }

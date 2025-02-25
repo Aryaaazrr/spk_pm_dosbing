@@ -18,7 +18,7 @@ class ProfileMethodController extends Controller
     public function index()
     {
         $data['profile_method'] = ProfileMethod::all();
-        $data['kriteria'] = Kriteria::all();
+        $data['kriteria'] = Kriteria::with('subkriteria')->get();
 
         return view('pages.profile-method.index', $data);
     }

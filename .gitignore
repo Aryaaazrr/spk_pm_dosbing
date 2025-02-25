@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 tailwind.config copy.js
 composer.lock
+.phpunit.result.cache

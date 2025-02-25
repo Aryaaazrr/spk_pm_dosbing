@@ -113,7 +113,7 @@
                                 @endphp
                                 <option value="{{ $subkriteriaItem->id_subkriteria }}"
                                     {{ $selected ? 'selected' : '' }}>
-                                    {{ $subkriteriaItem->nilai }} - ({{ $subkriteriaItem->subkriteria_name }})
+                                    {{ $subkriteriaItem->nilai->value }} - ({{ $subkriteriaItem->subkriteria_name }})
                                 </option>
                             @endforeach
                         </select>

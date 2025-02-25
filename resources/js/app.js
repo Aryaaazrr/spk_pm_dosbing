@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import Lenis from "lenis";
 import Alpine from "alpinejs";
 import HSStepper from "@preline/stepper";
-import { HSDataTable, HSOverlay } from "preline";
+import HSDataTable from "@preline/datatable";
 import { initNavigation } from "./animated/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -30,22 +30,22 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-if (
-    document.getElementById("pagination-table") &&
-    typeof simpleDatatables.DataTable !== "undefined"
-) {
-    const dataTable = new simpleDatatables.DataTable("#pagination-table", {
-        paging: true,
-        perPage: 10,
-        perPageSelect: [10, 15, 20, 25],
-        sortable: true,
-        firstLast: true,
-        nextPrev: true,
-        searchable: true,
-        sensitivity: "base",
-        searchQuerySeparator: " ",
-    });
-}
+// if (
+//     document.getElementById("pagination-table") &&
+//     typeof simpleDatatables.DataTable !== "undefined"
+// ) {
+//     const dataTable = new simpleDatatables.DataTable("#pagination-table", {
+//         paging: true,
+//         perPage: 10,
+//         perPageSelect: [10, 15, 20, 25],
+//         sortable: true,
+//         firstLast: true,
+//         nextPrev: true,
+//         searchable: true,
+//         sensitivity: "base",
+//         searchQuerySeparator: " ",
+//     });
+// }
 
 function formatPresentase(input) {
     let value = parseInt(input.value.replace(/[^0-9]/g, ""), 10);
@@ -107,15 +107,14 @@ document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".slider-testimonials", {
         modules: [Navigation, Pagination],
         centeredSlides: true,
+        centeredSlidesBounds: false,
         effect: "slide",
         lazyLoadingInPrevNext: true,
         preloadImages: true,
         freeMode: true,
-        centeredSlides: true,
-        centerInsufficientSlides: true,
-        centeredSlidesBounds: true,
         loop: true,
-        slidesPerView: 1.45,
+        slidesPerView: 3,
+        slidesPerGroup: 1,
         spaceBetween: 10,
         breakpoints: {
             320: {
@@ -186,8 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
             prevEl: "#button-prev",
         },
     });
+
+    window.HSStaticMethods.autoInit(["select"]);
+
+    initNavigation();
 });
 
-window.HSStaticMethods.autoInit(["select"]);
-
-initNavigation();

@@ -2,15 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+    overflow: hidden !important;
+    scroll-behavior: smooth;
+}
+
 .dt-layout-row:has(.dt-search),
 .dt-layout-row:has(.dt-length),
 .dt-layout-row:has(.dt-paging) {
     display: none !important;
 }
 
+.dt-empty {
+    height: 125px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.scroll-tab::-webkit-scrollbar {
+    display: none !important;
+}
+
+.scroll-tab {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
 .swiper-slide {
     width: 248px !important;
-    transition: all 1s ease, opacity 0.5s ease !important;
+    transition:
+        all 1s ease,
+        opacity 0.5s ease !important;
 }
 
 .swiper-slide img {
