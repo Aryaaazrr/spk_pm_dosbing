@@ -21,6 +21,14 @@ Route::get('pendahuluan', function () {
     return view('pages.home.pendahuluan');
 });
 
+Route::get('metode', function () {
+    return view('pages.home.metode');
+});
+
+Route::get('kesimpulan', function () {
+    return view('pages.home.kesimpulan');
+});
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'] )->name('dashboard.index');
 

@@ -1,19 +1,23 @@
-<x-app-layout>
-
-    <div class="mt-10 mb-6 md:-mt-3">
+@section('Breadcrumb')
+    <div class="mt-10 mb-6">
         <div class="p-0 text-navy font-bold dark:text-gray-100">
             {{ __('Data Kriteria') }}
         </div>
         <ol class="flex items-center whitespace-nowrap">
             <li class="inline-flex items-center">
-                <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                    href="{{ route('dashboard.index') }}">
-                    {{ Auth::user()->name }}
+                <a href="{{ route('dashboard.index') }}"
+                    class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                    </svg>
+                    Home
+                    <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
+                    </svg>
                 </a>
-                <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
-                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
-                </svg>
             </li>
             <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                 aria-current="page">
@@ -21,7 +25,15 @@
             </li>
         </ol>
     </div>
+@endsection
 
+@section('mobile-breadcrumb')
+    <li class="text-sm font-semibold text-gray-800 line-clamp-1 dark:text-neutral-400" aria-current="page">
+        Kriteria
+    </li>
+@endsection
+
+<x-app-layout>
     <div class="grid grid-cols-1 bg-white rounded-2xl shadow-sm p-6">
 
         <div>
@@ -35,131 +47,6 @@
                 </a>
             </div>
         </div>
-
-        {{-- <table id="pagination-table">
-            <thead>
-                <tr>
-                    <th>
-                        <span class="flex items-center">
-                            No
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Kode Kriteria
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Nama Kriteria
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Aspek
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Tipe
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Keterangan
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                    <th>
-                        <span class="flex items-center">
-                            Tindakan
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                            </svg>
-                        </span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($kriteria as $item)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->kode_kriteria }}</td>
-                        <td>{{ $item->kriteria_name }}</td>
-                        <td>{{ $item->aspek->aspek_name }}</td>
-                        <td>{{ $item->tipe }}</td>
-                        <td>{{ $item->keterangan }}</td>
-                        <td>
-                            <button id="dropdownMenuIconHorizontalButton"
-                                data-dropdown-toggle="dropdownDotsHorizontal-{{ $item->id_kriteria }} "
-                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                                type="button">
-                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 16 3">
-                                    <path
-                                        d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-                                </svg>
-                            </button>
-
-                            <!-- Dropdown menu -->
-                            <div id="dropdownDotsHorizontal-{{ $item->id_kriteria }} "
-                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                    aria-labelledby="dropdownMenuIconHorizontalButton">
-                                    <li>
-                                        <a href="{{ route('kriteria.edit', $item->id_kriteria) }}"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_kriteria }}').submit();"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hapus</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <form id="delete-form-{{ $item->id_kriteria }}"
-                                action="{{ route('kriteria.destroy', $item->id_kriteria) }}" method="POST"
-                                style="display: none;">
-                                @csrf
-                                @method('DELETE')
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table> --}}
 
         <div class="flex flex-col">
             <div class="overflow-x-auto min-h-fit ">

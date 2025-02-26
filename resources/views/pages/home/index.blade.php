@@ -188,9 +188,10 @@
                             <!-- Icon -->
                             <span
                                 class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-bug-off shrink-0 size-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-bug-off shrink-0 size-5">
                                     <path d="M15 7.13V6a3 3 0 0 0-5.14-2.1L8 2" />
                                     <path d="M14.12 3.88 16 2" />
                                     <path d="M22 13h-4v-2a4 4 0 0 0-4-4h-1.3" />
@@ -328,8 +329,8 @@
                                 <div class="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
                                     <svg class="w-16 h-auto text-orange-500" width="121" height="135"
                                         viewBox="0 0 121 135" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor"
-                                            stroke-width="10" stroke-linecap="round" />
+                                        <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164"
+                                            stroke="currentColor" stroke-width="10" stroke-linecap="round" />
                                         <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5"
                                             stroke="currentColor" stroke-width="10" stroke-linecap="round" />
                                         <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874"
@@ -354,7 +355,6 @@
             </div>
         </section>
 
-        <!-- FAQ -->
         <section class="bg-white py-20 space-y-28" id="faq">
             <div class="max-w-screen-xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <!-- Grid -->
@@ -382,9 +382,9 @@
                                     href="#">
                                     Pelajari lebih lanjut
                                     <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m9 18 6-6-6-6" />
                                     </svg>
                                 </a>
@@ -396,21 +396,23 @@
                     <div class="md:col-span-3">
                         <!-- Accordion -->
                         <div class="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700">
-                            <div class="hs-accordion pb-3 active" id="hs-basic-with-title-and-arrow-stretched-heading-one">
+                            <div class="hs-accordion pb-3 active"
+                                id="hs-basic-with-title-and-arrow-stretched-heading-one">
                                 <button
                                     class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
-                                    aria-expanded="true" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one">
+                                    aria-expanded="true"
+                                    aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one">
                                     Penentuan Variable
                                     <svg class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m6 9 6 6 6-6" />
                                     </svg>
                                     <svg class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m18 15-6-6-6 6" />
                                     </svg>
                                 </button>
@@ -436,15 +438,15 @@
                                     aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
                                     Perhitungan GAP Profil
                                     <svg class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m6 9 6 6 6-6" />
                                     </svg>
                                     <svg class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m18 15-6-6-6 6" />
                                     </svg>
                                 </button>
@@ -460,28 +462,30 @@
                                 </div>
                             </div>
 
-                            <div class="hs-accordion pt-6 pb-3" id="hs-basic-with-title-and-arrow-stretched-heading-three">
+                            <div class="hs-accordion pt-6 pb-3"
+                                id="hs-basic-with-title-and-arrow-stretched-heading-three">
                                 <button
                                     class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                                     aria-expanded="false"
                                     aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three">
                                     Menghitung Bobot Dari Pemetaan GAP Kompetensi
                                     <svg class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m6 9 6 6 6-6" />
                                     </svg>
                                     <svg class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m18 15-6-6-6 6" />
                                     </svg>
                                 </button>
                                 <div id="hs-basic-with-title-and-arrow-stretched-collapse-three"
                                     class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-                                    role="region" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three">
+                                    role="region"
+                                    aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three">
                                     <p class="text-gray-600 dark:text-neutral-400">
                                         Our subscriptions are tiered. Understanding the task at hand and ironing out the
                                         wrinkles is key.
@@ -496,15 +500,15 @@
                                     aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four">
                                     Mengelompokkan dan menghitung Core Factor dan Secondary Factor
                                     <svg class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m6 9 6 6 6-6" />
                                     </svg>
                                     <svg class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m18 15-6-6-6 6" />
                                     </svg>
                                 </button>
@@ -526,15 +530,15 @@
                                     aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five">
                                     Menghitung nilai total dari tiap aspek dan kriteria
                                     <svg class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m6 9 6 6 6-6" />
                                     </svg>
                                     <svg class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m18 15-6-6-6 6" />
                                     </svg>
                                 </button>
@@ -563,15 +567,15 @@
                                     aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six">
                                     Perangkingan
                                     <svg class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m6 9 6 6 6-6" />
                                     </svg>
                                     <svg class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="m18 15-6-6-6 6" />
                                     </svg>
                                 </button>
@@ -596,7 +600,6 @@
                 <!-- End Grid -->
             </div>
         </section>
-        <!-- End FAQ -->
 
         <section class="section-our-work bg-white space-y-28" id="our-work">
             <div class="max-w-screen-xl mx-auto px-4">
@@ -611,9 +614,9 @@
                         </p>
                         <span
                             class="group-hover:bg-white/10 group-focus:bg-white/10 py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-white/10 font-semibold text-white text-sm">
-                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="m9 18 6-6-6-6" />
                             </svg>
                         </span>
@@ -630,17 +633,19 @@
                             <div class="swiper-pagination flex-grow h-[1px] bg-transparent rounded-full "></div>
                             <div id="button-prev"
                                 class="p-3 hover:scale-125 rounded-full bg-white shadow-xl cursor-pointer transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-chevron-left text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-left text-primary">
                                     <path d="m15 18-6-6 6-6" />
                                 </svg>
                             </div>
                             <div id="button-next"
                                 class="p-3 hover:scale-125 rounded-full bg-white shadow-xl cursor-pointer transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-chevron-right text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-right text-primary">
                                     <path d="m9 18 6-6-6-6" />
                                 </svg>
                             </div>
@@ -660,44 +665,47 @@
             const spreadsheetId = '1WpS5Rqfjn2M9weDbOm7KQaRvqZkZxJY_nNbTbDUfi2A';
             const range = 'Form Responses 1!C2:AA';
 
-            const response = await fetch(
-                `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
-            );
-
             try {
+                const response = await fetch(
+                    `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
+                );
                 const data = await response.json();
-                const testimonialsContainer = document.querySelector('.swiper-wrapper');
 
+                if (!data.values) {
+                    console.error("No data found.");
+                    return;
+                }
+
+                const testimonialsContainer = document.querySelector('.swiper-wrapper');
                 testimonialsContainer.innerHTML = '';
 
-                data.values.forEach(item => {
-                    const name = item[0];
-                    const feedback = item[24];
+                // Ambil hanya 10 data pertama
+                data.values.slice(0, 10).forEach(item => {
+                    const name = item[0] || 'Anonim';
+                    const feedback = item[24] || 'Tidak ada feedback';
 
                     const testimonialHTML = `
-                        <div class="swiper-slide cursor-pointer">
-                            <div class="p-8 bg-white rounded-xl shadow-lg h-fit">
-                                <div class="flex items-center gap-4 mb-6" id="profile-card">
-                                    <img src="{{ asset('static/image/profile-placeholder.jpg') }}" alt="User" class="w-12 h-12 rounded-full">
-                                    <div>
-                                        <h4 class="font-bold text-gray-900">${name}</h4>
-                                        <p class="text-sm text-gray-600">Teknik Informatika</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 leading-relaxed text-center text-content-swipper">${feedback}</p>
+                <div class="swiper-slide cursor-pointer">
+                    <div class="p-8 bg-white rounded-xl shadow-lg h-fit">
+                        <div class="flex items-center gap-4 mb-6" id="profile-card">
+                            <img src="{{ asset('static/image/profile-placeholder.jpg') }}" alt="User" class="w-12 h-12 rounded-full">
+                            <div>
+                                <h4 class="font-bold text-gray-900">${name}</h4>
+                                <p class="text-sm text-gray-600">Teknik Informatika</p>
                             </div>
                         </div>
-                    `;
+                        <p class="text-gray-600 leading-relaxed text-center text-content-swipper">${feedback}</p>
+                    </div>
+                </div>
+            `;
 
                     testimonialsContainer.innerHTML += testimonialHTML;
                 });
             } catch (error) {
-                console.error('Invalid JSON response:', error);
+                console.error('Error fetching data:', error);
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            fetchGoogleSheetData();
-        });
+        document.addEventListener("DOMContentLoaded", fetchGoogleSheetData);
     </script>
 @endsection

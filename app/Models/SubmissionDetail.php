@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use App\Observers\SubmissionsDetailObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+#[ObservedBy([SubmissionsDetailObserver::class])]
 class SubmissionDetail extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'submission_detail';
 
     protected $primaryKey = 'id_submission_detail';

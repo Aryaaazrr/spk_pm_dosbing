@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SubmissionCreated;
 use App\Http\Requests\Submission\SubmissionRequest;
 use App\Models\Alternatif;
 use App\Models\IzinPemilihan;
@@ -9,7 +10,9 @@ use App\Models\Kriteria;
 use App\Models\ProfileMethod;
 use App\Models\SubmissionDetail;
 use App\Models\Submissions;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -20,7 +23,7 @@ class SubmissionsController extends Controller
      */
     public function index()
     {
-        $data['submission'] = Submissions::with(['submission_detail' ,'users'])->get();
+        $data['submission'] = Submissions::with(['submission_detail', 'users'])->get();
         $data['submission_detail'] = SubmissionDetail::with('alternatif')->get();
         $data['profile'] = ProfileMethod::with(['alternatif', 'kriteria', 'subkriteria'])->get();
         $data['kriteria'] = Kriteria::with('subkriteria')->get();
@@ -37,6 +40,22 @@ class SubmissionsController extends Controller
         $data['alternatif'] = Alternatif::all();
         $data['izin'] = IzinPemilihan::first();
 
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            if ($user->hasRole(User::ROLE_MAHASISWA)) {
+                if (empty($user->nim) || empty($user->id_angkatan)) {
+                    Log::error('Submission gagal: Profil tidak lengkap', [
+                        'id' => $user->id,
+                        'nim' => $user->nim,
+                        'id_angkatan' => $user->id_angkatan,
+                    ]);
+
+                    return redirect()->route('profile.edit')->withErrors(['error' => 'Gagal mengakses pengajuan: Silahkan lengkapi profil anda!']);
+                }
+            }
+        }
+
         return view('pages.submissions.create', $data);
     }
 
@@ -46,6 +65,7 @@ class SubmissionsController extends Controller
     public function store(SubmissionRequest $request)
     {
         DB::beginTransaction();
+
         try {
             $validatedSubmission = $request->validated();
 
@@ -54,7 +74,6 @@ class SubmissionsController extends Controller
                 'judul' => $validatedSubmission['judul'],
                 'deskripsi' => $validatedSubmission['deskripsi'],
                 'prodi' => $validatedSubmission['prodi'],
-                'angkatan' => $validatedSubmission['angkatan'],
             ]);
 
             SubmissionDetail::create([
@@ -69,7 +88,7 @@ class SubmissionsController extends Controller
             DB::rollBack();
             Log::error($e->getMessage());
 
-            return back()->withErrors(['error' => 'Pengajuan Gagal: Formulir wajib diisi!']);
+            return back()->withErrors(['error' => 'Pengajuan Gagal: Terjadi kesalahan!']);
         }
     }
 

@@ -19,19 +19,19 @@ class ProfileMethodSeeder extends Seeder
                     ['id_subkriteria' => 4],
                 ],
                 2 => [
-                    ['id_subkriteria' => 10],
+                    ['id_subkriteria' => 7],
                 ],
                 3 => [
-                    ['id_subkriteria' => 11],
+                    ['id_subkriteria' => 10],
                 ],
                 4 => [
-                    ['id_subkriteria' => 18]
+                    ['id_subkriteria' => 15]
                 ],
                 5 => [
-                    ['id_subkriteria' => 21],
+                    ['id_subkriteria' => 19],
                 ],
                 6 => [
-                    ['id_subkriteria' => 27],
+                    ['id_subkriteria' => 22],
                 ]
             ],
             2 => [
@@ -39,19 +39,19 @@ class ProfileMethodSeeder extends Seeder
                     ['id_subkriteria' => 4],
                 ],
                 2 => [
-                    ['id_subkriteria' => 10],
+                    ['id_subkriteria' => 7],
                 ],
                 3 => [
-                    ['id_subkriteria' => 11],
+                    ['id_subkriteria' => 10],
                 ],
                 4 => [
-                    ['id_subkriteria' => 18],
+                    ['id_subkriteria' => 15],
                 ],
                 5 => [
-                    ['id_subkriteria' => 20],
+                    ['id_subkriteria' => 18],
                 ],
                 6 => [
-                    ['id_subkriteria' => 28],
+                    ['id_subkriteria' => 23],
                 ]
             ],
             3 => [
@@ -59,19 +59,19 @@ class ProfileMethodSeeder extends Seeder
                     ['id_subkriteria' => 4],
                 ],
                 2 => [
-                    ['id_subkriteria' => 10],
+                    ['id_subkriteria' => 7],
                 ],
                 3 => [
-                    ['id_subkriteria' => 11],
+                    ['id_subkriteria' => 10],
                 ],
                 4 => [
-                    ['id_subkriteria' => 17],
+                    ['id_subkriteria' => 14],
                 ],
                 5 => [
-                    ['id_subkriteria' => 20],
+                    ['id_subkriteria' => 18],
                 ],
                 6 => [
-                    ['id_subkriteria' => 28],
+                    ['id_subkriteria' => 25],
                 ]
             ],
             4 => [
@@ -79,19 +79,19 @@ class ProfileMethodSeeder extends Seeder
                     ['id_subkriteria' => 4],
                 ],
                 2 => [
-                    ['id_subkriteria' => 10],
+                    ['id_subkriteria' => 7],
                 ],
                 3 => [
-                    ['id_subkriteria' => 11],
+                    ['id_subkriteria' => 10],
                 ],
                 4 => [
-                    ['id_subkriteria' => 17],
+                    ['id_subkriteria' => 14],
                 ],
                 5 => [
-                    ['id_subkriteria' => 20],
+                    ['id_subkriteria' => 18],
                 ],
                 6 => [
-                    ['id_subkriteria' => 25],
+                    ['id_subkriteria' => 21],
                 ]
             ],
             5 => [
@@ -99,293 +99,13 @@ class ProfileMethodSeeder extends Seeder
                     ['id_subkriteria' => 4],
                 ],
                 2 => [
-                    ['id_subkriteria' => 10],
+                    ['id_subkriteria' => 7],
                 ],
                 3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 18],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            6 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
                     ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 17],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 26],
-                ]
-            ],
-            7 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 17],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 27],
-                ]
-            ],
-            8 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
                 ],
                 4 => [
                     ['id_subkriteria' => 15],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            9 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 17],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            10 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 15],
-                ],
-                5 => [
-                    ['id_subkriteria' => 21],
-                ],
-                6 => [
-                    ['id_subkriteria' => 26],
-                ]
-            ],
-            11 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 15],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            12 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 15],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            13 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 15],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            14 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 15],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            15 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 15],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 27],
-                ]
-            ],
-            16 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 14],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 25],
-                ]
-            ],
-            17 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 14],
-                ],
-                5 => [
-                    ['id_subkriteria' => 19],
-                ],
-                6 => [
-                    ['id_subkriteria' => 26],
-                ]
-            ],
-            18 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 14],
-                ],
-                5 => [
-                    ['id_subkriteria' => 20],
-                ],
-                6 => [
-                    ['id_subkriteria' => 28],
-                ]
-            ],
-            19 => [
-                1 => [
-                    ['id_subkriteria' => 4],
-                ],
-                2 => [
-                    ['id_subkriteria' => 10],
-                ],
-                3 => [
-                    ['id_subkriteria' => 11],
-                ],
-                4 => [
-                    ['id_subkriteria' => 14],
                 ],
                 5 => [
                     ['id_subkriteria' => 19],
@@ -394,15 +114,35 @@ class ProfileMethodSeeder extends Seeder
                     ['id_subkriteria' => 24],
                 ]
             ],
-            20 => [
+            6 => [
                 1 => [
                     ['id_subkriteria' => 4],
                 ],
                 2 => [
-                    ['id_subkriteria' => 10],
+                    ['id_subkriteria' => 7],
                 ],
                 3 => [
-                    ['id_subkriteria' => 11],
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 14],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 22],
+                ]
+            ],
+            7 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
                 ],
                 4 => [
                     ['id_subkriteria' => 14],
@@ -411,7 +151,267 @@ class ProfileMethodSeeder extends Seeder
                     ['id_subkriteria' => 19],
                 ],
                 6 => [
+                    ['id_subkriteria' => 22],
+                ]
+            ],
+            8 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 12],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 23],
+                ]
+            ],
+            9 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 14],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 24],
+                ]
+            ],
+            10 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 13],
+                ],
+                5 => [
+                    ['id_subkriteria' => 20],
+                ],
+                6 => [
+                    ['id_subkriteria' => 22],
+                ]
+            ],
+            11 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 12],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 24],
+                ]
+            ],
+            12 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 12],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
                     ['id_subkriteria' => 25],
+                ]
+            ],
+            13 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 12],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 25],
+                ]
+            ],
+            14 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 12],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 23],
+                ]
+            ],
+            15 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 12],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 22],
+                ]
+            ],
+            16 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 11],
+                ],
+                5 => [
+                    ['id_subkriteria' => 19],
+                ],
+                6 => [
+                    ['id_subkriteria' => 21],
+                ]
+            ],
+            17 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 11],
+                ],
+                5 => [
+                    ['id_subkriteria' => 17],
+                ],
+                6 => [
+                    ['id_subkriteria' => 21],
+                ]
+            ],
+            18 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 11],
+                ],
+                5 => [
+                    ['id_subkriteria' => 18],
+                ],
+                6 => [
+                    ['id_subkriteria' => 23],
+                ]
+            ],
+            19 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 11],
+                ],
+                5 => [
+                    ['id_subkriteria' => 16],
+                ],
+                6 => [
+                    ['id_subkriteria' => 21],
+                ]
+            ],
+            20 => [
+                1 => [
+                    ['id_subkriteria' => 4],
+                ],
+                2 => [
+                    ['id_subkriteria' => 7],
+                ],
+                3 => [
+                    ['id_subkriteria' => 10],
+                ],
+                4 => [
+                    ['id_subkriteria' => 11],
+                ],
+                5 => [
+                    ['id_subkriteria' => 4],
+                ],
+                6 => [
+                    ['id_subkriteria' => 21],
                 ]
             ],
         ];

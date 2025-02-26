@@ -69,20 +69,7 @@
                     </a>
 
                     <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#" id="nav-link">
-                        <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 12h.01" />
-                            <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-                            <path d="M22 13a18.15 18.15 0 0 1-20 0" />
-                            <rect width="20" height="14" x="2" y="6" rx="2" />
-                        </svg>
-                        Tinjauan
-                    </a>
-
-                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#" id="nav-link">
+                        href="/metode" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -96,21 +83,7 @@
                     </a>
 
                     <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#" id="nav-link">
-                        <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
-                            <path d="M18 14h-8" />
-                            <path d="M15 18h-5" />
-                            <path d="M10 6h8v4h-8V6Z" />
-                        </svg>
-                        Hasil
-                    </a>
-
-                    <a class="p-2 flex items-center text-sm text-white hover:text-neutral-700 focus:outline-none focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-                        href="#" id="nav-link">
+                        href="/kesimpulan" id="nav-link">
                         <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -239,101 +212,3 @@
         </div>
     </nav>
 </header>
-
-{{-- <header>
-    <nav
-        class="bg-gradient-to-r from-blue-600 to-indigo-700 fixed lg:h-0 w-full h-[68px] z-20 lg:-z-50 top-0 left-0 frame">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" id="navheader">
-            <div class="flex items-center space-x-3 rtl:space-x-reverse" id="navheader-left">
-                <a href="/" class="flex items-center space-x-3 lg:hidden">
-                    <img src="{{ asset('static/image/logo_polije.png') }}" class="h-8" alt="logo">
-                    <span class="font-semibold text-white text-lg">SPK PM</span>
-                </a>
-            </div>
-
-            <div class="flex order-last space-x-3 md:space-x-0 rtl:space-x-reverse" id="navheader-right">
-                <button id="navbutton"
-                    class="relative flex flex-col justify-between w-[60px] h-[28px] group p-2 border-2 border-transparent lg:hidden">
-                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300 lg:hidden"></span>
-                    <span class="menu-line w-full h-[1px] bg-white transition-all duration-300 lg:hidden"></span>
-                </button>
-            </div>
-        </div>
-
-        <svg class="overlay absolute inset-0 w-screen h-screen z-50 pointer-events-none" width="100%"
-            height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-
-            <defs>
-                <linearGradient id="gradient-bg" x1="0%" y1="50%" x2="100%" y2="50%">
-                    <stop offset="0%" style="stop-color:#2563eb; stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#4f46e5; stop-opacity:1" />
-                </linearGradient>
-            </defs>
-
-            <path class="overlay__path" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z"
-                fill="url(#gradient-bg)" />
-        </svg>
-
-        <div
-            class="relative menu-wrap h-screen w-screen transition-all duration-300 ease-in-out pointer-events-none opacity-0">
-
-            <div class="flex h-full relative">
-                <div
-                    class="flex flex-wrap md:flex-row items-start justify-between flex-1 bg-gradient-to-r from-blue-600 to-indigo-700 text-white z-20 py-20 lg:py-40 px-10 space-y-6 md:space-y-0 transition-all duration-500">
-
-                    <div class="hidden md:flex flex-row text-2xl font-[110] items-start justify-start w-1/2">
-                        <h1 class="text-neutral-400 mr-8">Social Media</h1>
-                        <div class="flex flex-col text-white space-y-3 md:space-y-6">
-                            <span>
-                                <a href="/" class="menu__item focus:outline-none hover-underline">Instagram</a>
-                            </span>
-                            <span>
-                                <a href="/" class="menu__item focus:outline-none hover-underline">Linkedin</a>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex flex-col md:flex-row text-2xl font-[110] items-start justify-start w-full md:w-1/2">
-                        <h1 class="text-2xl text-neutral-200 pb-4 mr-8">Menu</h1>
-                        <div class="flex flex-col text-white space-y-9 md:space-y-6">
-                            <span>
-                                <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Home</a>
-                            </span>
-                            <span>
-                                <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Pendahuluan</a>
-                            </span>
-                            <span>
-                                <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Tinjauan</a>
-                            </span>
-                            <span>
-                                <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Metode</a>
-                            </span>
-                            <span>
-                                <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Hasil</a>
-                            </span>
-                            <span>
-                                <a href=""
-                                    class="menu__item text-[40px] lg:text-5xl focus:outline-none hover-underline">Kesimpulan</a>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <h1 class="text-2xl font-[110] text-neutral-200">Get in touch</h1>
-                        <a href="/"
-                            class="menu__item text-[24px] font-normal text-white focus:outline-none hover-underline">
-                            info@skripsi.achmadzakariya.my.id
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header> --}}
-<!-- ========== END HEADER ========== -->

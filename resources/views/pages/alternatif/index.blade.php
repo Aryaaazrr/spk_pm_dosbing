@@ -1,20 +1,24 @@
-<x-app-layout>
-
-    @role('admin')
-        <div class="mt-10 mb-6 md:-mt-3">
+@role('admin')
+    @section('Breadcrumb')
+        <div class="mt-10 mb-6">
             <div class="p-0 text-navy font-bold dark:text-gray-100">
                 {{ __('Data Alternatif') }}
             </div>
             <ol class="flex items-center whitespace-nowrap">
                 <li class="inline-flex items-center">
-                    <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                        href="{{ route('dashboard.index') }}">
-                        {{ Auth::user()->name }}
+                    <a href="{{ route('dashboard.index') }}"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                        </svg>
+                        Home
+                        <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
+                        </svg>
                     </a>
-                    <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
-                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
-                    </svg>
                 </li>
                 <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                     aria-current="page">
@@ -22,31 +26,53 @@
                 </li>
             </ol>
         </div>
-    @endrole
+    @endsection
 
-    @role('mahasiswa')
-        <div class="mt-10 mb-6 md:-mt-3">
+    @section('mobile-breadcrumb')
+        <li class="text-sm font-semibold text-gray-800 line-clamp-1 dark:text-neutral-400" aria-current="page">
+            Alternatif
+        </li>
+    @endsection
+@endrole
+
+@role('mahasiswa')
+    @section('Breadcrumb')
+        <div class="mt-10 mb-6">
             <div class="p-0 text-navy font-bold dark:text-gray-100">
-                {{ __('Daftar Dosen') }}
+                {{ __('Data Dosen') }}
             </div>
             <ol class="flex items-center whitespace-nowrap">
                 <li class="inline-flex items-center">
-                    <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                        href="{{ route('dashboard.index') }}">
-                        {{ Auth::user()->name }}
+                    <a href="{{ route('dashboard.index') }}"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                        </svg>
+                        Home
+                        <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
+                        </svg>
                     </a>
-                    <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
-                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
-                    </svg>
                 </li>
                 <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                     aria-current="page">
-                    Daftar Dosen
+                    Data Dosen
                 </li>
             </ol>
         </div>
-    @endrole
+    @endsection
+
+    @section('mobile-breadcrumb')
+        <li class="text-sm font-semibold text-gray-800 line-clamp-1 dark:text-neutral-400" aria-current="page">
+            Dosen
+        </li>
+    @endsection
+@endrole
+
+<x-app-layout>
 
     <div class="grid grid-cols-1 bg-white rounded-2xl shadow-sm p-6">
 
@@ -316,44 +342,54 @@
                                                         aria-labelledby="hs-dropdown-custom-icon-trigger">
                                                         <div class="p-1 space-y-0.5">
                                                             @role('mahasiswa')
-                                                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-                                                                href="https://jti.polije.ac.id/dosen" target="__blank">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link shrink-0 size-4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                                                                Lihat Sumber
-                                                            </a>
+                                                                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                                    href="https://jti.polije.ac.id/dosen"
+                                                                    target="__blank">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="lucide lucide-link shrink-0 size-4">
+                                                                        <path
+                                                                            d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                                                        <path
+                                                                            d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                                                    </svg>
+                                                                    Lihat Sumber
+                                                                </a>
                                                             @endrole
                                                             @role('admin')
-                                                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-                                                                href="{{ route('alternatif.edit', $item->id_alternatif) }}">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="lucide lucide-pencil shrink-0 size-4">
-                                                                    <path
-                                                                        d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
-                                                                    <path d="m15 5 4 4" />
-                                                                </svg>
-                                                                Edit
-                                                            </a>
-                                                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-                                                                href="#"
-                                                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_alternatif }}').submit();">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="lucide lucide-trash-2 shrink-0 size-4">
-                                                                    <path d="M3 6h18" />
-                                                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-                                                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-                                                                    <line x1="10" x2="10"
-                                                                        y1="11" y2="17" />
-                                                                    <line x1="14" x2="14"
-                                                                        y1="11" y2="17" />
-                                                                </svg>
-                                                                Hapus
-                                                            </a>
+                                                                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                                    href="{{ route('alternatif.edit', $item->id_alternatif) }}">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="lucide lucide-pencil shrink-0 size-4">
+                                                                        <path
+                                                                            d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+                                                                        <path d="m15 5 4 4" />
+                                                                    </svg>
+                                                                    Edit
+                                                                </a>
+                                                                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                                    href="#"
+                                                                    onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id_alternatif }}').submit();">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="lucide lucide-trash-2 shrink-0 size-4">
+                                                                        <path d="M3 6h18" />
+                                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                                                                        <line x1="10" x2="10"
+                                                                            y1="11" y2="17" />
+                                                                        <line x1="14" x2="14"
+                                                                            y1="11" y2="17" />
+                                                                    </svg>
+                                                                    Hapus
+                                                                </a>
                                                             @endrole
                                                         </div>
                                                         <form id="delete-form-{{ $item->id_alternatif }}"

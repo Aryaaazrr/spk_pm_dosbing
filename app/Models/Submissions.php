@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Events\SubmissionCreated;
+use App\Observers\SubmissionsObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,17 +21,12 @@ class Submissions extends Model
         'judul',
         'deskripsi',
         'prodi',
-        'angkatan',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::created(function ($submission) {
-            event(new SubmissionCreated($submission));
-        });
-    }
+    // protected static function booted()
+    // {
+    //     static::observe(SubmissionsObserver::class);
+    // }
 
     public function users()
     {

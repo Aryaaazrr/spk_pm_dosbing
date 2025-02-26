@@ -1,13 +1,10 @@
-<x-app-layout>
+@section('mobile-breadcrumb')
+    <li class="text-sm font-semibold text-gray-800 line-clamp-1 dark:text-neutral-400" aria-current="page">
+        Hello, {{ Auth::user()->name }}
+    </li>
+@endsection
 
-    <div class="mt-10 mb-6 md:-mt-3">
-        <div class="p-0 text-purple font-bold dark:text-gray-100">
-            {{ __('Hello, ' . Auth::user()->name) }}
-        </div>
-        <div class="p-0 text-navy font-bold text-2xl">
-            {{ __('Welcome to SPK Pemilihan Dosen Pembimbing!') }}
-        </div>
-    </div>
+<x-app-layout>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
         <!-- Card Section -->
@@ -213,10 +210,10 @@
                                 alt="Polije Logo" />
 
                             <div class="flex flex-col items-start">
-                                <span class="text-base font-bold whitespace-nowrap text-navy dark:text-white">
+                                <span class="text-base font-bold line-clamp-1 text-navy dark:text-white">
                                     {{ $item->name }}
                                 </span>
-                                <span class="text-sm font-medium whitespace-nowrap text-navy dark:text-white">
+                                <span class="text-sm font-medium line-clamp-1 text-navy dark:text-white">
                                     {{ $item->nip }}
                                 </span>
                             </div>

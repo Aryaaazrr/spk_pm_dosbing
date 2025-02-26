@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\SubmissionDetail;
 use App\Models\Submissions;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -20,7 +21,7 @@ class SubmissionCreated
     /**
      * Create a new event instance.
      */
-    public function __construct(Submissions $submission)
+    public function __construct(SubmissionDetail $submission)
     {
         $this->submission = $submission;
     }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Alternatif extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'alternatif';
 
     protected $primaryKey = 'id_alternatif';
@@ -42,5 +42,10 @@ class Alternatif extends Model
     public function profile_method()
     {
         return $this->hasMany(ProfileMethod::class, 'id_alternatif');
+    }
+
+    public function submission_detail()
+    {
+        return $this->hasMany(SubmissionDetail::class, 'id_alternatif');
     }
 }

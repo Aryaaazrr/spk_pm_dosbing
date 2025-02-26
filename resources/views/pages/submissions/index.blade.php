@@ -1,31 +1,43 @@
-<x-app-layout>
-
-    @role('admin')
-        <div class="mt-10 mb-6 md:-mt-3">
+@role('admin')
+    @section('Breadcrumb')
+        <div class="mt-10 mb-6">
             <div class="p-0 text-navy font-bold dark:text-gray-100">
-                {{ __('Daftar Pengajuan') }}
+                {{ __('Data Pengajuan Judul') }}
             </div>
             <ol class="flex items-center whitespace-nowrap">
                 <li class="inline-flex items-center">
-                    <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                        href="{{ route('dashboard.index') }}">
-                        {{ Auth::user()->name }}
+                    <a href="{{ route('dashboard.index') }}"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                        </svg>
+                        Home
+                        <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
+                        </svg>
                     </a>
-                    <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
-                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
-                    </svg>
                 </li>
                 <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
                     aria-current="page">
-                    Daftar Pengajuan
+                    Data Pengajuan Judul
                 </li>
             </ol>
         </div>
-    @endrole
+    @endsection
 
-    @role('mahasiswa')
-        <div class="mt-10 mb-6 md:-mt-3">
+    @section('mobile-breadcrumb')
+        <li class="text-sm font-semibold text-gray-800 line-clamp-1 dark:text-neutral-400" aria-current="page">
+            Pengajuan Judul
+        </li>
+    @endsection
+@endrole
+
+@role('mahasiswa')
+    @section('Breadcrumb')
+        <div class="mt-10 mb-6">
             <div class="p-0 text-navy font-bold dark:text-gray-100">
                 {{ __('Pemilihan Dosen') }}
             </div>
@@ -51,8 +63,16 @@
                 </li>
             </ol>
         </div>
-    @endrole
+    @endsection
 
+    @section('mobile-breadcrumb')
+        <li class="text-sm font-semibold text-gray-800 line-clamp-1 dark:text-neutral-400" aria-current="page">
+            Pemilihan Dosen
+        </li>
+    @endsection
+@endrole
+
+<x-app-layout>
     <div class="grid grid-cols-1 bg-white rounded-2xl shadow-sm p-6">
 
         <div>
@@ -103,8 +123,8 @@
                                             <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">1</span>
                                             <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round">
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="20 6 9 17 4 12"></polyline>
                                             </svg>
                                         </span>
@@ -129,8 +149,8 @@
                                             <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
                                             <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round">
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="20 6 9 17 4 12"></polyline>
                                             </svg>
                                         </span>
@@ -1004,10 +1024,10 @@
                 <div class="sm:col-span-9">
                     ${selectedKriteria.length > 0
                         ? selectedKriteria.map(k => `
-                                                    <div class="py-2 px-4 my-4 bg-white border border-gray-200 rounded-lg text-gray-800 shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
-                                                        ✅ ${k.subkriteria_name}
-                                                    </div>
-                                                `).join('')
+                                                                <div class="py-2 px-4 my-4 bg-white border border-gray-200 rounded-lg text-gray-800 shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+                                                                    ✅ ${k.subkriteria_name}
+                                                                </div>
+                                                            `).join('')
                         : `<p class="text-gray-500">Belum ada kriteria dipilih</p>`
                     }
                 </div>
@@ -1020,11 +1040,11 @@
                 <div class="sm:col-span-9">
                     ${selectedDosen.length > 0
                         ? selectedDosen.map(d => `
-                                                <div class="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 my-4">
-                                                    <img class="size-[38px] rounded-full mr-3" src="/static/image/logo_polije.png" alt="Avatar">
-                                                    <span class="text-gray-800 font-semibold dark:text-neutral-200">${d.name}</span>
-                                                </div>
-                                            `).join('')
+                                                            <div class="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 my-4">
+                                                                <img class="size-[38px] rounded-full mr-3" src="/static/image/logo_polije.png" alt="Avatar">
+                                                                <span class="text-gray-800 font-semibold dark:text-neutral-200">${d.name}</span>
+                                                            </div>
+                                                        `).join('')
                         : `<p class="text-gray-500">Belum ada dosen dipilih</p>`
                     }
                 </div>

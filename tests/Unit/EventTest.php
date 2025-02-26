@@ -18,9 +18,9 @@ class EventTest extends TestCase
     {
         // Event::fake();
 
-        $users = User::factory()->count(5)->create();
+        $users = User::factory()->count(25)->create();
 
-        $alternatifs = Alternatif::factory()->count(5)->create();
+        $alternatifs = Alternatif::factory()->count(25)->create();
 
         $submissions = $users->map(fn ($user) => Submissions::factory()->create(['id' => $user->id]));
 
