@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         SubkriteriaSeeder::class,
         AlternatifSeeder::class,
         ProfileMethodSeeder::class,
+        // KuotaSeeder::class,
     ]);
     }
 }

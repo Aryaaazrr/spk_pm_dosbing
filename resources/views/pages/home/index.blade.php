@@ -17,7 +17,7 @@
                     metode <i><b>Profile Matching</b></i>.
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                    <a href="{{ route('login') }}"
+                    <a href="https://forms.gle/ezLuyqbznaZLuxTUA"
                         class="px-8 py-4 text-blue-900 bg-white rounded-lg hover:bg-blue-50 transition duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-semibold">
                         Isi Kuisioner
                     </a>

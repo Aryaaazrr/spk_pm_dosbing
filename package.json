@@ -28,10 +28,13 @@
         "@preline/layout-splitter": "^2.5.2",
         "@preline/stepper": "^2.5.2",
         "@preline/tooltip": "^2.5.2",
+        "datatables.net-buttons": "^3.2.2",
         "datatables.net-dt": "^2.2.2",
         "gsap": "^3.12.7",
         "jquery": "^3.7.1",
+        "jszip": "^3.10.1",
         "lenis": "^1.1.20",
+        "pdfmake": "^0.2.18",
         "preline": "^2.7.0",
         "simple-datatables": "^9.2.1",
         "swiper": "^11.2.3"

@@ -78,7 +78,7 @@ class ProfileMatchingController extends Controller
             $resultsGAP[$dosen->id_alternatif] = $gapValues;
         }
         Log::info('Ideal Value:', ['data' => $idealValue]);
-        Log::info('GAP Values:', ['dosenId' => $dosen->id_alternatif, 'gapValues' => $gapValues]);
+        Log::info('GAP Values:', $resultsGAP);
 
         return $resultsGAP;
     }
@@ -107,6 +107,8 @@ class ProfileMatchingController extends Controller
 
             $normalizedGAP[$dosenId] = $normalizedValues;
         }
+
+        Log::info('Pemetaan GAP:', $normalizedGAP);
 
         return $normalizedGAP;
     }
@@ -155,6 +157,8 @@ class ProfileMatchingController extends Controller
             $resultsFactor[$dosenId] = $aspek;
         }
 
+        Log::info('NCSF:', $resultsFactor);
+
         return $resultsFactor;
     }
 
@@ -182,6 +186,8 @@ class ProfileMatchingController extends Controller
             }
             $totalValues[$dosenId] = $aspek;
         }
+
+        Log::info('Nilai Total:', $totalValues);
 
         return $totalValues;
     }
@@ -215,6 +221,8 @@ class ProfileMatchingController extends Controller
         foreach ($rankedResults as $index => &$result) {
             $result['rank'] = $index + 1;
         }
+
+        Log::info('Ranking:', $rankedResults);
 
         return $rankedResults;
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('angkatan', function (Blueprint $table) {
             $table->id('id_angkatan');
             $table->string('tahun');
-            $table->string('jumlah_mahasiswa');
+            // $table->float('jumlah_mahasiswa');
             $table->timestamps();
         });
     }

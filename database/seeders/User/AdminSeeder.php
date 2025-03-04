@@ -20,9 +20,9 @@ class AdminSeeder extends Seeder
 
         $admin = User::firstOrCreate([
             'nim' => 'E4211320',
-            'email' => 'admin@gmail.com',
+            'email' => 'e41211320@student.polije.ac.id',
         ], [
-            'name' => 'Admin',
+            'name' => 'e41211320',
             'password' => Hash::make('p4ssword'),
             'email_verified_at' => now(),
         ]);

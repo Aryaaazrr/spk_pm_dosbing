@@ -123,19 +123,19 @@ class SettingSeeder extends Seeder
         DB::table('angkatan')->insert([
             [
                 'tahun' => '2021',
-                'jumlah_mahasiswa' => '185',
+                // 'jumlah_mahasiswa' => '185',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'tahun' => '2022',
-                'jumlah_mahasiswa' => '169',
+                // 'jumlah_mahasiswa' => '169',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'tahun' => '2023',
-                'jumlah_mahasiswa' => '181',
+                // 'jumlah_mahasiswa' => '181',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

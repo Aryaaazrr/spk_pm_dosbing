@@ -85,6 +85,23 @@ function limitCheckboxes(checkbox) {
     }
 }
 
+// window.addEventListener("load", () => {
+//     (function () {
+//         const { dataTable } = new HSDataTable("#hs-datatable-with-export");
+//         const buttons = document.querySelectorAll(
+//             "#hs-dropdown-datatable-with-export .hs-dropdown-menu button",
+//         );
+
+//         buttons.forEach((btn) => {
+//             const type = btn.getAttribute("data-hs-datatable-action-type");
+
+//             btn.addEventListener("click", () =>
+//                 dataTable.button(`.buttons-${type}`).trigger(),
+//             );
+//         });
+//     })();
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
     const checkboxes = document.querySelectorAll(".checkbox");
 
@@ -190,4 +207,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     initNavigation();
 });
-

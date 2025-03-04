@@ -418,157 +418,6 @@
         @endrole
 
         @role('admin')
-            {{-- <table id="pagination-table">
-                <thead>
-                    <tr>
-                        <th>
-                            <span class="flex items-center">
-                                No
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        @role('admin')
-                            <th>
-                                <span class="flex items-center">
-                                    NIM
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Nama Mahasiswa
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Judul Skripsi
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Dosen Pembimbing
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                        @endrole
-                        @role('mahasiswa')
-                            <th>
-                                <span class="flex items-center">
-                                    NIP
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Nama Dosen
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                        @endrole
-                        <th>
-                            <span class="flex items-center">
-                                Tindakan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($submission as $item)
-                        @role('admin')
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->users->nim }}</td>
-                                <td>{{ $item->users->name }}</td>
-                                <td>{{ $item->judul }}</td>
-                                @foreach ($item->submission_detail as $detail)
-                                    <td>{{ $detail->alternatif->name ?? '-' }}</td>
-                                @endforeach
-                                <td>
-                                    <button id="dropdownMenuIconHorizontalButton"
-                                        data-dropdown-toggle="dropdownDotsHorizontal-{{ $item->id_alternatif }} "
-                                        class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                                        type="button">
-                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                            fill="currentColor" viewBox="0 0 16 3">
-                                            <path
-                                                d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-                                        </svg>
-                                    </button>
-
-                                    <!-- Dropdown menu -->
-                                    <div id="dropdownDotsHorizontal-{{ $item->id_alternatif }} "
-                                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                            aria-labelledby="dropdownMenuIconHorizontalButton">
-                                            @role('admin')
-                                                <li>
-                                                    <a href=""
-                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        onclick=""
-                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hapus</a>
-                                                </li>
-                                            @endrole
-                                            @role('mahasiswa')
-                                                <li>
-                                                    <a href="https://jti.polije.ac.id/dosen" target="__blank"
-                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Lihat
-                                                        Sumber</a>
-                                                </li>
-                                            @endrole
-                                        </ul>
-                                    </div>
-
-                                    <form id="delete-form-"
-                                        action="" method="POST"
-                                        style="display: none;">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
-                                </td>
-                            </tr>
-                        @endrole
-                    @endforeach
-                </tbody>
-            </table> --}}
-
             <div class="flex flex-col">
                 <div class="overflow-x-auto min-h-fit ">
                     <div class="min-w-full inline-block align-middle">
@@ -928,36 +777,39 @@
             const submitButton = document.getElementById("submit-btn");
             const checkbox = document.querySelector("input[name='izin_pemilihan']");
 
-            checkbox.addEventListener("change", function() {
-                const izinStatus = this.checked ? "on" : "off";
+            if (checkbox) {
 
-                console.log("Mengubah izin menjadi:", izinStatus);
+                checkbox.addEventListener("change", function() {
+                    const izinStatus = this.checked ? "on" : "off";
 
-                fetch("/settings/submited-permission/update", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
-                        },
-                        body: JSON.stringify({
-                            izin: izinStatus
+                    console.log("Mengubah izin menjadi:", izinStatus);
+
+                    fetch("/settings/submited-permission/update", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+                            },
+                            body: JSON.stringify({
+                                izin: izinStatus
+                            })
                         })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === "success") {
-                            alert("Izin berhasil diperbarui!");
-                        } else {
-                            alert("Gagal memperbarui izin!");
-                            checkbox.checked = !checkbox
-                                .checked;
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error:", error);
-                        checkbox.checked = !checkbox.checked;
-                    });
-            });
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === "success") {
+                                alert("Izin berhasil diperbarui!");
+                            } else {
+                                alert("Gagal memperbarui izin!");
+                                checkbox.checked = !checkbox
+                                    .checked;
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            checkbox.checked = !checkbox.checked;
+                        });
+                });
+            }
 
             document.addEventListener("change", function(e) {
                 if (e.target.matches('select[name="kriteria[]"]')) {

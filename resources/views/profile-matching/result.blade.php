@@ -1,32 +1,39 @@
-<x-app-layout>
-    @role('mahasiswa')
-        <div class="mt-10 mb-6 md:-mt-3">
-            <div class="p-0 text-navy font-bold dark:text-gray-100">
-                {{ __('Pemilihan Dosen') }}
-            </div>
-            <ol class="flex items-center whitespace-nowrap">
-                <li class="inline-flex items-center">
-                    <a href="{{ route('dashboard.index') }}"
-                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                        <svg class="me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
-                        </svg>
-                        Home
-                        <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
-                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
-                        </svg>
-                    </a>
-                </li>
-                <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
-                    aria-current="page">
-                    Pemilihan Dosen
-                </li>
-            </ol>
+@section('Breadcrumb')
+    <div class="mt-10 mb-6">
+        <div class="p-0 text-navy font-bold dark:text-gray-100">
+            {{ __('Pemilihan Dosen') }}
         </div>
-    @endrole
+        <ol class="flex items-center whitespace-nowrap">
+            <li class="inline-flex items-center">
+                <a href="{{ route('dashboard.index') }}"
+                    class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                    </svg>
+                    Home
+                    <svg class="shrink-0 size-5 text-gray-400 dark:text-neutral-600 mx-2" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="inline-flex items-center text-sm font-semibold text-navy truncate dark:text-neutral-200"
+                aria-current="page">
+                Pemilihan Dosen
+            </li>
+        </ol>
+    </div>
+@endsection
+
+@section('mobile-breadcrumb')
+    <li class="text-sm font-semibold text-gray-800 line-clamp-1 dark:text-neutral-400" aria-current="page">
+        Pemilihan Dosen
+    </li>
+@endsection
+
+<x-app-layout>
 
     <div class="grid grid-cols-1 bg-white rounded-2xl shadow-md dark:bg-neutral-800 p-6">
 
@@ -239,25 +246,28 @@
                                             <thead
                                                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                 <tr>
-                                                    <th scope="col" colspan="2" rowspan="2"
-                                                        class="px-6 py-3 text-center">
-                                                        No
-                                                    </th>
-                                                    <th scope="col" colspan="2" rowspan="2"
-                                                        class="px-6 py-3 text-center">
-                                                        Kode Alternatif
-                                                    </th>
+                                                    <th scope="col" colspan="2" rowspan="3"
+                                                        class="px-6 py-3 text-center">No</th>
+                                                    <th scope="col" colspan="2" rowspan="3"
+                                                        class="px-6 py-3 text-center">Kode Alternatif</th>
                                                     @foreach ($data_aspek as $item)
-                                                        <th scope="col" colspan="2" class="px-6 py-3 text-center">
+                                                        <th scope="col" colspan="4" class="px-6 py-3 text-center">
                                                             {{ $item->kode_aspek }}
                                                         </th>
                                                     @endforeach
                                                 </tr>
                                                 <tr>
                                                     @foreach ($data_kriteria as $item)
-                                                        <th scope="col" class="px-6 py-3 text-center">
-                                                            {{ $item->kode_kriteria }}
-                                                        </th>
+                                                        <th scope="col" colspan="2" class="px-6 py-3 text-center">
+                                                            {{ $item->kode_kriteria }}</th>
+                                                    @endforeach
+                                                </tr>
+                                                <tr>
+                                                    @foreach ($data_aspek as $item)
+                                                        <th scope="col" colspan="2" class="px-6 py-3 text-center">
+                                                            NCF</th>
+                                                        <th scope="col" colspan="2" class="px-6 py-3 text-center">
+                                                            NSF</th>
                                                     @endforeach
                                                 </tr>
                                             </thead>
@@ -272,15 +282,20 @@
                                                             class="px-6 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">
                                                             {{ $alternatif }}
                                                         </th>
-                                                        @foreach ($kriteria as $item)
-                                                            <th scope="row"
-                                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                                {{ is_array($item) ? implode(', ', $item) : $item }}
-                                                            </th>
+                                                        @foreach ($aspek as $kriteria => $faktor)
+                                                            <td scope="row" colspan="2"
+                                                                class="px-6 py-4 text-center text-gray-900 whitespace-nowrap dark:text-white">
+                                                                {{ $faktor['NCF'] ?? '-' }}
+                                                            </td>
+                                                            <td scope="row" colspan="2"
+                                                                class="px-6 py-4 text-center text-gray-900 whitespace-nowrap dark:text-white">
+                                                                {{ $faktor['NSF'] ?? '-' }}
+                                                            </td>
                                                         @endforeach
                                                     </tr>
                                                 @endforeach
                                             </tbody>
+
                                         </table>
 
                                     </div>

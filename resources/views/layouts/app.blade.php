@@ -91,7 +91,7 @@
     <!-- End Sidebar -->
 
     <!-- Content -->
-    <div class="w-full bg-body lg:ps-72">
+    <div class="w-full min-h-screen bg-body lg:ps-72">
         <div class="p-4 sm:px-6 space-y-4 sm:space-y-6">
             {{ $slot }}
         </div>
@@ -102,8 +102,18 @@
     {{-- flowbite --}}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+
+    {{-- <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script> --}}
 
 </body>
 

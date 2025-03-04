@@ -12,7 +12,7 @@ class Angkatan extends Model
 
     protected $fillable = [
         'tahun',
-        'jumlah_mahasiswa',
+        // 'jumlah_mahasiswa',
     ];
 
     public function users()
