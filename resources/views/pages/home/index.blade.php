@@ -17,7 +17,7 @@
                     metode <i><b>Profile Matching</b></i>.
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                    <a href="https://forms.gle/ezLuyqbznaZLuxTUA"
+                    <a href="https://forms.gle/ezLuyqbznaZLuxTUA" target="__blank"
                         class="px-8 py-4 text-blue-900 bg-white rounded-lg hover:bg-blue-50 transition duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-semibold">
                         Isi Kuisioner
                     </a>
@@ -379,7 +379,7 @@
 
                             <p class="mt-5">
                                 <a class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                    href="#">
+                                    href="/metode">
                                     Pelajari lebih lanjut
                                     <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -608,7 +608,7 @@
                     berdasarkan hasil pengisian kuisioner</p>
                 <div class="flex justify-center">
                     <a class="group inline-flex flex-wrap items-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none p-1 ps-4 rounded-full shadow-md"
-                        href="#">
+                        target="__blank" href="https://forms.gle/ezLuyqbznaZLuxTUA">
                         <p class="me-2 text-white text-sm">
                             Tautan Kuisioner.
                         </p>

@@ -22,7 +22,6 @@ class SubmissionsFactory extends Factory
             'judul' => $this->faker->sentence(),
             'deskripsi' => $this->faker->text(),
             'prodi' => 'Teknik Informatika',
-            'angkatan' => $this->faker->numberBetween(2020, 2025),
         ];
     }
 }

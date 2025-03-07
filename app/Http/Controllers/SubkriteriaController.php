@@ -27,11 +27,11 @@ class SubkriteriaController extends Controller
     public function create(Kriteria $kriteria)
     {
         $count = Subkriteria::where('id_kriteria', $kriteria->id_kriteria)->count();
-        
+
         if ($count >= 5) {
             return redirect()->route('kriteria.edit', $kriteria)->withErrors(['Kriteria ' . $kriteria->kriteria_name .' sudah memiliki subkriteria maksimal 5']);
         }
-        
+
         $data['kriteria'] = $kriteria;
         $data['nilai'] = Nilai::all();
 
@@ -104,7 +104,7 @@ class SubkriteriaController extends Controller
     {
         try {
             Subkriteria::find($subkriteria)->delete();
-            
+
             return redirect()->route('kriteria.edit', $kriteria)->with('success', 'Data Berhasil Dihapus');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
