@@ -26,8 +26,8 @@ class ProfileMatchingRequest extends FormRequest
         //     'deskripsi' => ['required', 'max:255'],
         // ];
 
-        $rules['kriteria'] = ['required', 'array', 'size:6'];
-        foreach (range(0, 5) as $index) {
+        $rules['kriteria'] = ['required', 'array'];
+        foreach (range(0, 3) as $index) {
             $rules["kriteria.$index"] = ['required', 'exists:subkriteria,id_subkriteria'];
         }
 
@@ -53,7 +53,6 @@ class ProfileMatchingRequest extends FormRequest
 
             'kriteria.required' => 'Semua kriteria harus diisi.',
             'kriteria.array' => 'Format kriteria tidak valid.',
-            'kriteria.size' => 'Semua 6 kriteria harus dipilih.',
             'kriteria.*.exists' => 'Kriteria yang dipilih tidak valid.',
 
             'alternatif.required' => 'Setidaknya satu alternatif harus dipilih.',

@@ -16,7 +16,7 @@ class KriteriaController extends Controller
     {
         $limit = $request->limit ?? 10;
 
-        $kriteria = Kriteria::with('subkriteria')->paginate($limit);
+        $kriteria = Kriteria::where('id_aspek', '!=', 1)->with('subkriteria')->paginate($limit);
 
         return new KriteriaResource($kriteria);
     }

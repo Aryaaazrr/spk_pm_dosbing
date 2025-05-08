@@ -28,7 +28,7 @@ class ProfileMethodController extends Controller
      */
     public function create()
     {
-        $data['alternatif'] = Alternatif::all();
+        $data['alternatif'] = Alternatif::with('profile_method')->whereDoesntHave('profile_method')->get();
         $data['kriteria'] = Kriteria::all();
         $data['subkriteria'] = Subkriteria::all();
 
@@ -42,16 +42,31 @@ class ProfileMethodController extends Controller
     {
         try {
             foreach ($request->kriteria as $id_kriteria => $id_subkriteria) {
-                if ($id_subkriteria) {
-                    ProfileMethod::updateOrCreate(
-                        [
-                            'id_alternatif' => $request->id_alternatif,
-                            'id_kriteria' => $id_kriteria,
-                        ],
-                        [
-                            'id_subkriteria' => $id_subkriteria,
-                        ]
-                    );
+                if (is_array($id_subkriteria)) {
+                    foreach ($id_subkriteria as $subId) {
+                        if ($subId) {
+                            ProfileMethod::updateOrCreate(
+                                [
+                                    'id_alternatif' => $request->id_alternatif,
+                                    'id_kriteria' => $id_kriteria,
+                                    'id_subkriteria' => $subId,
+                                ],
+                                []
+                            );
+                        }
+                    }
+                } else {
+                    if ($id_subkriteria) {
+                        ProfileMethod::updateOrCreate(
+                            [
+                                'id_alternatif' => $request->id_alternatif,
+                                'id_kriteria' => $id_kriteria,
+                            ],
+                            [
+                                'id_subkriteria' => $id_subkriteria,
+                            ]
+                        );
+                    }
                 }
             }
 
@@ -91,16 +106,38 @@ class ProfileMethodController extends Controller
     {
         try {
             foreach ($request->kriteria as $id_kriteria => $id_subkriteria) {
-                if ($id_subkriteria) {
-                    ProfileMethod::find($id)->updateOrCreate(
-                        [
-                            'id_alternatif' => $request->id_alternatif,
-                            'id_kriteria' => $id_kriteria,
-                        ],
-                        [
-                            'id_subkriteria' => $id_subkriteria,
-                        ]
-                    );
+                if (is_array($id_subkriteria)) {
+                    // Hapus semua yang tidak termasuk dalam pilihan baru
+                    ProfileMethod::where('id_alternatif', $request->id_alternatif)
+                        ->where('id_kriteria', $id_kriteria)
+                        ->whereNotIn('id_subkriteria', $id_subkriteria)
+                        ->delete();
+
+                    foreach ($id_subkriteria as $subId) {
+                        if ($subId) {
+                            ProfileMethod::updateOrCreate(
+                                [
+                                    'id_alternatif' => $request->id_alternatif,
+                                    'id_kriteria' => $id_kriteria,
+                                    'id_subkriteria' => $subId,
+                                ],
+                                []
+                            );
+                        }
+                    }
+                } else {
+                    if ($id_subkriteria) {
+                        // Update untuk kriteria dengan 1 nilai saja
+                        ProfileMethod::updateOrCreate(
+                            [
+                                'id_alternatif' => $request->id_alternatif,
+                                'id_kriteria' => $id_kriteria,
+                            ],
+                            [
+                                'id_subkriteria' => $id_subkriteria,
+                            ]
+                        );
+                    }
                 }
             }
 

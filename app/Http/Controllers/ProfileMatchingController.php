@@ -17,11 +17,33 @@ class ProfileMatchingController extends Controller
 {
     public function handleProfileMatching(ProfileMatchingRequest $request)
     {
+        // dd($request->all());
+        $subkriteria1 = ProfileMethod::where('id_kriteria', 1)
+            ->pluck('id_subkriteria')
+            ->toArray();
+
+        // $subkriteria2 = ProfileMethod::where('id_kriteria', 2)
+        //     ->pluck('id_subkriteria')
+        //     ->toArray();
+
+        $countSubkriteria1 = array_count_values($subkriteria1);
+        // $countSubkriteria2 = array_count_values($subkriteria2);
+
+        $mostKriteria1 = array_search(max($countSubkriteria1), $countSubkriteria1);
+        // $mostKriteria2 = array_search(max($countSubkriteria2), $countSubkriteria2);
+
         try {
             $validated = $request->validated();
 
-            $selectedKriteria = $request->input('kriteria', []);
+            $selectKriteria = $request->input('kriteria', []);
             $selectedAlternatif = $request->input('alternatif', []);
+
+            $selectKriteria = array_merge([$mostKriteria1, 7], $selectKriteria);
+            $selectedKriteria = $selectKriteria;
+
+            $selectedKriteria = array_map(function ($item) {
+                return (string) $item;
+            }, $selectedKriteria);
 
             if (empty($selectedKriteria) || empty($selectedAlternatif)) {
                 return back()->withErrors('Kriteria dan alternatif harus dipilih.')->withInput();
@@ -53,7 +75,6 @@ class ProfileMatchingController extends Controller
         }
     }
 
-
     private function gapProfil($alternatif, $kriteria)
     {
         $resultsGAP = [];
@@ -63,19 +84,40 @@ class ProfileMatchingController extends Controller
 
         foreach ($dosenProfile as $dosen) {
 
-            $dosenSubkriteria = $dosen->subkriteria;
-            $dosenKriteria = $dosen->kriteria;
+            $totalKeahlianUtama = ProfileMethod::with('kriteria')
+            ->where('id_alternatif', $dosen->id_alternatif)
+            ->whereHas('kriteria', function ($query) {
+                $query->where('kriteria_name', 'Keahlian Utama');
+            })->count();
 
-            foreach ($kriteria as $key => $subkriteriaId) {
+            foreach ($kriteria as $subkriteriaId) {
                 $idealValue = Subkriteria::with('kriteria')->find($subkriteriaId);
                 $idealKriteria = $idealValue->kriteria;
 
-                if ($dosenKriteria->id_kriteria == $idealKriteria->id_kriteria) {
-                    $gapValues[$idealValue->id_kriteria] = $dosenSubkriteria->nilai->value - $idealValue->nilai->value;
+                if ($dosen->kriteria->id_kriteria == $idealKriteria->id_kriteria) {
+                    $dosenNilai = optional($dosen->subkriteria->nilai)->value;
+                    $idealNilai = optional($idealValue->nilai)->value;
+
+                    $gap = $dosenNilai - $idealNilai;
+
+                    if ($idealKriteria->kriteria_name === 'Keahlian Utama') {
+                        if ($totalKeahlianUtama > 1) {
+                            if (abs($gap) <= 1) {
+                                $gapValues[$idealKriteria->id_kriteria] = $gap;
+                            }
+                        } else {
+                            $gapValues[$idealKriteria->id_kriteria] = $gap;
+                        }
+                    } else {
+                        $gapValues[$idealKriteria->id_kriteria] = $gap;
+                    }
                 }
             }
 
-            $resultsGAP[$dosen->id_alternatif] = $gapValues;
+            if (!empty($gapValues)) {
+                ksort($gapValues);
+                $resultsGAP[$dosen->id_alternatif] = $gapValues;
+            }
         }
         Log::info('Ideal Value:', ['data' => $idealValue]);
         Log::info('GAP Values:', $resultsGAP);

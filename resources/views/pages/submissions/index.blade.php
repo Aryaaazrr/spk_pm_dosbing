@@ -123,8 +123,8 @@
                                             <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">1</span>
                                             <svg class="hidden shrink-0 size-3 hs-stepper-success:block"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="20 6 9 17 4 12"></polyline>
                                             </svg>
                                         </span>
@@ -245,6 +245,10 @@
                                                 @foreach ($groupedProfiles as $alternatifId => $items)
                                                     @php
                                                         $firstItem = $items->first();
+                                                        $subkriteriaIds = $items
+                                                            ->pluck('subkriteria.id_subkriteria')
+                                                            ->filter()
+                                                            ->values();
                                                     @endphp
 
                                                     <div
@@ -255,6 +259,7 @@
                                                                     <input id="dosen-{{ $firstItem->id_alternatif }}"
                                                                         type="checkbox" name="alternatif[]"
                                                                         value="{{ $firstItem->id_alternatif }}"
+                                                                        data-subkriteria='@json($subkriteriaIds)'
                                                                         class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-700 cursor-pointer focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600 checkbox" />
                                                                     <label for="dosen-{{ $firstItem->id_alternatif }}"
                                                                         class="sr-only">
@@ -331,26 +336,36 @@
                                                                 </div>
                                                                 <div class="p-4 overflow-y-auto">
                                                                     <div class="grid grid-cols-1 gap-2 w-full">
-                                                                        @foreach ($items as $item)
-                                                                            @if (isset($item->kriteria, $item->subkriteria))
-                                                                                <div class="flex items-center gap-2">
+                                                                        @php
+                                                                            $groupedItems = $items->groupBy('kriteria.kriteria_name');
+                                                                        @endphp
+
+                                                                        @foreach ($groupedItems as $kriteriaName => $group)
+                                                                            @php
+                                                                                // Ambil semua nama subkriteria unik
+                                                                                $subkriteriaNames = $group
+                                                                                    ->pluck('subkriteria.subkriteria_name')
+                                                                                    ->unique()
+                                                                                    ->filter()
+                                                                                    ->values()
+                                                                                    ->all();
+                                                                            @endphp
+
+                                                                            @if (!empty($subkriteriaNames))
+                                                                                <div class="flex items-start gap-2">
                                                                                     <!-- Nama Kriteria -->
-                                                                                    <span
-                                                                                        class="text-base font-normal text-gray-500 dark:text-gray-400">
-                                                                                        {{ $item->kriteria->kriteria_name }}:
+                                                                                    <span class="text-base font-semibold text-gray-700 dark:text-gray-300 min-w-[150px]">
+                                                                                        {{ $kriteriaName }}:
                                                                                     </span>
-                                                                                    <!-- Nama Subkriteria -->
-                                                                                    <span
-                                                                                        class="text-base font-normal text-gray-500 dark:text-gray-400">
-                                                                                        <a href="#"
-                                                                                            class="hover:underline">
-                                                                                            {{ $item->subkriteria->subkriteria_name }}
-                                                                                        </a>
+                                                                                    <!-- Gabungan Subkriteria -->
+                                                                                    <span class="text-base text-gray-600 dark:text-gray-400">
+                                                                                        {{ implode(', ', $subkriteriaNames) }}
                                                                                     </span>
                                                                                 </div>
                                                                             @endif
                                                                         @endforeach
                                                                     </div>
+
                                                                 </div>
                                                                 <div
                                                                     class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
@@ -476,7 +491,7 @@
                                                 class="py-1 group text-center font-normal focus:outline-none">
                                                 <div
                                                     class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                                                    Kode
+                                                    NIM
                                                     <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -495,7 +510,7 @@
                                                 class="py-1 group text-center font-normal focus:outline-none">
                                                 <div
                                                     class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                                                    Kriteria
+                                                    Nama Mahasiswa
                                                     <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -514,7 +529,7 @@
                                                 class="py-1 group text-center font-normal focus:outline-none">
                                                 <div
                                                     class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                                                    Aspek
+                                                    Judul
                                                     <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -533,7 +548,7 @@
                                                 class="py-1 group text-center font-normal focus:outline-none">
                                                 <div
                                                     class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                                                    Tipe
+                                                    Dosen Pembimbing
                                                     <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -548,9 +563,9 @@
                                                 </div>
                                             </th>
 
-                                            <th scope="col"
+                                            {{-- <th scope="col"
                                                 class="py-2 px-3 text-center font-normal text-sm text-gray-500 --exclude-from-ordering dark:text-neutral-500">
-                                                Action</th>
+                                                Action</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
@@ -573,7 +588,7 @@
                                                         class="p-3 whitespace-nowrap text-sm text-center text-gray-800 dark:text-neutral-200">
                                                         {{ $detail->alternatif->name ?? '-' }}</td>
                                                 @endforeach
-                                                <td class="p-3 whitespace-nowrap text-sm text-center font-medium">
+                                                {{-- <td class="p-3 whitespace-nowrap text-sm text-center font-medium">
                                                     <div
                                                         class="hs-dropdown [--placement:bottom-right] relative inline-flex">
                                                         <button id="hs-dropdown-custom-icon-trigger" type="button"
@@ -648,7 +663,7 @@
                                                             </form>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -788,7 +803,8 @@
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
-                                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+                                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]')
+                                    .content
                             },
                             body: JSON.stringify({
                                 izin: izinStatus
@@ -808,6 +824,34 @@
                             console.error("Error:", error);
                             checkbox.checked = !checkbox.checked;
                         });
+                });
+            }
+
+            function filterDosen() {
+                const selectedKriteria = JSON.parse(sessionStorage.getItem("selectedKriteria") || "[]");
+                const selectedSubkriteriaIds = selectedKriteria.map(k => k.subkriteria_id);
+
+                document.querySelectorAll('.checkbox').forEach(checkbox => {
+                    const dosenCard = checkbox.closest('.group');
+                    const alternatifId = checkbox.value;
+                    const subkriteriaData = checkbox.getAttribute('data-subkriteria');
+                    const dosenSubkriteria = JSON.parse(subkriteriaData || "[]");
+
+                    const isMatch = dosenSubkriteria.some(subId =>
+                        selectedSubkriteriaIds.includes(subId.toString())
+                    );
+
+                    if (isMatch) {
+                        dosenCard?.style.removeProperty('display');
+                        const modal = document.querySelector(
+                            `#hs-vertically-centered-modal-${alternatifId}`);
+                        modal?.style.removeProperty('display');
+                    } else {
+                        dosenCard?.style.setProperty('display', 'none');
+                        const modal = document.querySelector(
+                            `#hs-vertically-centered-modal-${alternatifId}`);
+                        modal?.style.setProperty('display', 'none');
+                    }
                 });
             }
 
@@ -853,6 +897,7 @@
                 sessionStorage.setItem("selectedDosen", JSON.stringify(selectedDosen));
 
                 displaySelected();
+                filterDosen();
             }
 
             function displaySelected() {
@@ -876,10 +921,10 @@
                 <div class="sm:col-span-9">
                     ${selectedKriteria.length > 0
                         ? selectedKriteria.map(k => `
-                                                                <div class="py-2 px-4 my-4 bg-white border border-gray-200 rounded-lg text-gray-800 shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
-                                                                    ✅ ${k.subkriteria_name}
-                                                                </div>
-                                                            `).join('')
+                                                                                        <div class="py-2 px-4 my-4 bg-white border border-gray-200 rounded-lg text-gray-800 shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+                                                                                            ✅ ${k.subkriteria_name}
+                                                                                        </div>
+                                                                                    `).join('')
                         : `<p class="text-gray-500">Belum ada kriteria dipilih</p>`
                     }
                 </div>
@@ -892,11 +937,11 @@
                 <div class="sm:col-span-9">
                     ${selectedDosen.length > 0
                         ? selectedDosen.map(d => `
-                                                            <div class="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 my-4">
-                                                                <img class="size-[38px] rounded-full mr-3" src="/static/image/logo_polije.png" alt="Avatar">
-                                                                <span class="text-gray-800 font-semibold dark:text-neutral-200">${d.name}</span>
-                                                            </div>
-                                                        `).join('')
+                                                                                    <div class="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 my-4">
+                                                                                        <img class="size-[38px] rounded-full mr-3" src="/static/image/logo_polije.png" alt="Avatar">
+                                                                                        <span class="text-gray-800 font-semibold dark:text-neutral-200">${d.name}</span>
+                                                                                    </div>
+                                                                                `).join('')
                         : `<p class="text-gray-500">Belum ada dosen dipilih</p>`
                     }
                 </div>

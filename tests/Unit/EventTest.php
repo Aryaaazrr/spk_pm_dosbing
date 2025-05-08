@@ -125,8 +125,8 @@ class EventTest extends TestCase
                 ->toArray();
 
             if (count($chosenAlternatifs) === 1) {
-                Log::info("Dispatching event for Submission ID: {$submission->id_submission}");
-                Log::info("Alternatif terpilih untuk angkatan {$submission->angkatan}: " . json_encode($chosenAlternatifs));
+                // Log::info("Dispatching event for Submission ID: {$submission->id_submission}");
+                // Log::info("Alternatif terpilih untuk angkatan {$submission->angkatan}: " . json_encode($chosenAlternatifs));
                 // event(new SubmissionCreated($submission));
 
                 $processedSubmissions[] = $submission->id_submission;

@@ -257,12 +257,6 @@
                                                     @endforeach
                                                 </tr>
                                                 <tr>
-                                                    @foreach ($data_kriteria as $item)
-                                                        <th scope="col" colspan="2" class="px-6 py-3 text-center">
-                                                            {{ $item->kode_kriteria }}</th>
-                                                    @endforeach
-                                                </tr>
-                                                <tr>
                                                     @foreach ($data_aspek as $item)
                                                         <th scope="col" colspan="2" class="px-6 py-3 text-center">
                                                             NCF</th>

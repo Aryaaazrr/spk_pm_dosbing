@@ -128,9 +128,10 @@
                                                     class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md cursor-pointer hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
                                                     {{ $item->kode_kriteria }}
                                                     <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500"
-                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
                                                         <path
                                                             class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500"
                                                             d="m7 15 5 5 5-5"></path>
@@ -155,21 +156,53 @@
                                                 {{ $loop->iteration }}</td>
                                             <td
                                                 class="p-3 whitespace-nowrap text-sm text-center font-medium text-gray-800 dark:text-neutral-200">
-                                                {{ $profileData->first()->alternatif->name }}</td>
+                                                {{ $profileData->first()->alternatif->name }}
+                                            </td>
+
                                             @foreach ($kriteria as $kriteriaItem)
                                                 @php
-                                                    $subkriteriaItem = $profileData->firstWhere(
+                                                    $matchedProfiles = $profileData->where(
                                                         'id_kriteria',
                                                         $kriteriaItem->id_kriteria,
                                                     );
-                                                    $nilai = $subkriteriaItem
-                                                        ? $subkriteriaItem->subkriteria->nilai->value
-                                                        : '-';
+                                                    $alternatifId = $profileData->first()->id_alternatif ?? 'alt';
+                                                    $tooltipId =
+                                                        'tooltip-keahlian-' .
+                                                        $kriteriaItem->id_kriteria .
+                                                        '-' .
+                                                        $alternatifId;
                                                 @endphp
-                                                <td
-                                                    class="p-3 whitespace-nowrap text-sm text-center font-medium text-gray-800 dark:text-neutral-200">
-                                                    {{ $nilai }}</td>
+
+                                                <td class="p-3 whitespace-nowrap text-sm text-center font-medium text-gray-800 dark:text-neutral-200 relative"
+                                                    data-tooltip-target="{{ $tooltipId }}"
+                                                    data-tooltip-trigger="hover">
+
+                                                    @if ($kriteriaItem->kriteria_name === 'Keahlian Utama')
+                                                        @if ($matchedProfiles->isNotEmpty())
+                                                            {{ $matchedProfiles->pluck('subkriteria.nilai.value')->implode(' - ') }}
+                                                        @else
+                                                            -
+                                                        @endif
+                                                    @else
+                                                        @php
+                                                            $single = $matchedProfiles->first();
+                                                            $nilai = $single ? $single->subkriteria->nilai->value : '-';
+                                                        @endphp
+                                                        {{ $nilai }}
+                                                    @endif
+
+                                                    <div id="{{ $tooltipId }}" role="tooltip"
+                                                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                                                        @if ($kriteriaItem->kriteria_name === 'Keahlian Utama' && $matchedProfiles->isNotEmpty())
+                                                            {{ $matchedProfiles->pluck('subkriteria.subkriteria_name')->implode(', ') }}
+                                                        @else
+                                                            {{ $matchedProfiles->pluck('subkriteria.subkriteria_name')->implode(', ') }}
+                                                        @endif
+                                                        <div class="tooltip-arrow" data-popper-arrow></div>
+                                                    </div>
+                                                </td>
                                             @endforeach
+
                                             <td class="p-3 whitespace-nowrap text-sm text-center font-medium">
                                                 <div
                                                     class="hs-dropdown [--placement:bottom-right] relative inline-flex">
@@ -192,7 +225,7 @@
                                                         role="menu" aria-orientation="vertical"
                                                         aria-labelledby="hs-dropdown-custom-icon-trigger">
                                                         <div class="p-1 space-y-0.5">
-                                                            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                                                            {{-- <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
                                                                 href="{{ route('method-profile.show', $id_alternatif) }}">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                     height="24" viewBox="0 0 24 24" fill="none"
@@ -204,7 +237,7 @@
                                                                     <path d="M15.1 18H3" />
                                                                 </svg>
                                                                 View
-                                                            </a>
+                                                            </a> --}}
                                                             <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
                                                                 href="{{ route('method-profile.edit', $id_alternatif) }}">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24"
